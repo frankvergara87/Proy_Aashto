@@ -1,0 +1,63 @@
+﻿@using SIS_Ga2.Entity
+@{
+    Session.Remove("MenuBarOpciones");
+    List<MenubarOpcion> MenuOpciones = Session["MenuBarOpciones"] as List<MenubarOpcion>;
+
+
+    //valor = usuario.tipoentidad == "A" ? 1 : (usuario.tipoentidad == "B" ? 2 : 3);
+    //List<UsuarioRoles> RolesUsuario = SIS_Ga2.Business.ProcesoBL.GetProcesoRolUsuarioByUsuarioId(usuario.idAutorizacionusuario);
+    //if (RolesUsuario.Count > 0)
+    //{
+    //    List<Int32> RolesByUsuario = RolesUsuario.GroupBy(a => a.idRol).Select(a => a.Key).ToList();
+
+    //    foreach (Int32 RolId in RolesByUsuario)
+    //    {
+    Autorizacionusuario usuario = Session["sistema.usuario"] as Autorizacionusuario;
+    //List<MenubarOpcion> MenuOpcionesRol = SIS_Ga2.Business.menuOpcionBL.GetMenubarOpciones(usuario.CodigoSociedad);
+    //if (MenuOpciones == null) { MenuOpciones = new List<MenubarOpcion>(); }
+    //MenuOpciones.AddRange(MenuOpcionesRol);
+
+
+    Session["MenuBarOpciones"] = MenuOpciones;
+    }
+
+
+
+<ul id="nav">
+    @*<li class="current">
+        <a href="@Url.Action("index", "Home")">
+            <i class="icon-dashboard"></i>
+            <span id="config.start" name="config.start">config.start</span>
+        </a>
+    </li>*@
+
+    @{
+        if (MenuOpciones != null && MenuOpciones.Count < 0)
+        {
+            foreach (MenubarOpcion menubar in MenuOpciones)
+            {
+                bool isOpen = menubar.MenubarDetalle.FindIndex(a => a.RutaRelativa.Contains(Html.CurrentController())) >= 0;
+                <li class="@(isOpen ? "current open":"")">
+                    <a href="javascript:void(0);">
+                        <i class="@(String.IsNullOrEmpty(menubar.Icono)?"icon-film":menubar.Icono)"></i>
+                       @menubar.NombreOpcion
+                        
+                    </a>
+                    <ul class="sub-menu">
+                        @foreach (MenubarOpcion detalle in menubar.MenubarDetalle)
+                        {
+
+                                <li class="@Html.IsSelectedDetail(detalle.RutaRelativa, "current")">
+                                    <a href="@Url.Action("Index", detalle.RutaRelativa)">
+                                        <i class="icon-angle-right"></i>
+                                        @detalle.NombreOpcion
+                                    </a>
+                                </li>
+                            
+                        }                        
+                    </ul>
+                </li>
+            }
+        }
+    }
+</ul>

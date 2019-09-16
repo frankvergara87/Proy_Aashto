@@ -1,0 +1,90 @@
+﻿@model ransa.warrants.entity.UI
+
+
+@section FormTitle
+{
+    <span id="Elemento.Titulo" name="Elemento.Titulo" class="textotitulo">Elemento.Titulo</span>
+}
+
+<div class="col-md-12">
+    <div class="widget box">
+        <div class="widget-header">
+            <h4><i class="icon-reorder"></i> <span id="Cliente.Titulo" name="Cliente.Titulo">Cliente.Titulo</span></h4>
+        </div>
+        <div class="widget-content">
+
+            @using (Html.BeginForm("Create", "UI", null, FormMethod.Post, new { @class = "form-horizontal row-border" }))
+            {
+                
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">
+                        <span id="Elemento.Codigo" name="Elemento.Codigo">Elemento.Codigo</span>
+                    </label>
+                    <div class="col-md-7">
+                        @Html.EditorFor(model => model.ElementCode, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ElementCode, "", new { @class = "text-danger" })
+                    </div>
+                    <div id="divCodigoELemento"></div>
+                </div>
+
+                <div class="form-actions fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-offset-3 col-md-9">
+
+                                <button type="submit" class="submit btn btn-primary pull-right" onclick="return ValidarCampoRequerido();">
+                                    <span id="Elemento.Registrar" name="Elemento.Registrar">Elemento.Registrar</span>
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+        </div>
+    </div>
+</div>
+
+
+<a href="@Url.Action("Index","UI")"><span id="General.VolvListado" name="General.VolvListado">General.VolvListado</span></a>
+
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+<script type="text/javascript">
+
+
+    function MensajeError(val)
+    {
+        var capa = document.getElementById(val);
+        var h1 = document.createElement("span");
+        h1.innerHTML = "* Campo requerido";
+        h1.className = "label-control"
+        h1.style.cssText = "color:red";
+        capa.appendChild(h1);
+    }
+
+    function ValidarCampoRequerido() {
+
+        var bandera = true;
+        document.getElementById("divCodigoELemento").innerHTML = "";
+        var ElementCode = document.getElementById("ElementCode").value;
+        
+
+        if (ElementCode.length == 0) {
+            MensajeError("divCodigoELemento");
+            bandera = false;
+        } else {
+            document.getElementById("divCodigoELemento").innerHTML = "";
+        }
+        return bandera;
+    }
+
+
+</script>
+
+
+
+

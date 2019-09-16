@@ -1,0 +1,233 @@
+﻿@using ransa.warrants.entity
+@{
+    Layout = null;
+
+    Int32 idempresa = 0;
+    parametrogeneral parametros = new parametrogeneral();
+    Autorizacionusuario usuario = Session["sistema.usuario"] as Autorizacionusuario;
+    if (usuario == null)
+    {
+        Response.Redirect(Url.Action("Login", "Seguridad"));
+        return;
+    }
+
+    if (usuario != null) { idempresa = usuario.idempresa; }
+
+    if (idempresa > 0)
+    {
+        parametros = ransa.warrants.business.parametrogeneralBL.GetParametroGeneralByEmpresaId(idempresa);
+    }
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>..:: Warrant - AFI ::..</title>
+    @Styles.Render("~/Content/css")
+
+    @Scripts.Render("~/Content/js")
+    <style>
+        .navbar {
+            background-color: @parametros.color !important;
+        }
+    </style>
+</head>
+<body>
+    <header class="header navbar navbar-fixed-top" role="banner">
+        <!-- Top Navigation Bar -->
+        <div class="container">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown user">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="icon-male"></i>
+                        <span class="username" id="usuario.login" name="usuario.login">@Session["nombreusuario"]</span>
+                        <i class="icon-caret-down small"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        @*<li>
+                                <a href="@Url.Action("Perfil", "Usuario")">
+                                    <i class="icon-user"></i>
+                                    <span id="conf.perfil" name="conf.perfil">conf.perfil</span>
+                                </a>
+                            </li>
+                            <li class="divider"></li>*@
+                        <li>
+                            <a href="@Url.Action("Logout", "Seguridad")">
+                                <i class="icon-key"></i> Log Out
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div id="container" style="margin:0px 20px 0px 20px;">
+        <div class="row hidden-xs hidden-sm" style="height:150px; margin-top:6px; margin-bottom:20px;">
+        </div>
+        <div class="row" style="text-align:center;">
+            <h3>Seleccione un perfil válido</h3>
+        </div>
+        <div class="row" style="margin-top:6px; margin-bottom:20px;">
+
+            <div class="col-xs-hidden col-sm-hidden col-md-3 col-lg-4">
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                <form id="ChangeProfile" name="ChangeProfile" method="post" action="@Url.Action("ChangeProfile","Seguridad")">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group" style="padding-bottom:0px !important;">
+                                <label class="control-label">
+                                    <span id="TipoEntidad" name="TipoEntidad">Tipo Entidad</span>
+                                </label>
+                                @Html.DropDownList("CboTipoEntidad", new WebWarrantAfi.Controllers.GenericController().ComboCatalogo("TIPOENTIDAD", ""), new { @class = "form-control", @onchange = "llenarCombo(this);limpiardiv('ValidaTipoEntidad');" })
+                                <div id="ValidaTipoEntidad"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group" style="padding-bottom:0px !important;">
+                                <label class="control-label">
+                                    <span id="Entidad" name="Entidad">Entidad</span>
+                                    <img src="~/assets/img/loader.gif" id="loader" style="height:12px; width:12px; visibility:collapse;" />
+                                </label>
+                                @Html.DropDownList("CboEntidad", Enumerable.Empty<SelectListItem>(), "SELECCIONAR", new { @class = "form-control", @onchange = "limpiardiv('ValidaEntidad');llenarComboU();" })
+                                <div id="ValidaEntidad"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group" style="padding-bottom:0px !important;">
+                                <label class="control-label">
+                                    <span id="Usuario" name="Usuario">Usuario</span>
+                                    <img src="~/assets/img/loader.gif" id="loaderUsuario" style="height:12px; width:12px; visibility:collapse;" />
+                                </label>
+                                @Html.DropDownList("CboUsuario", Enumerable.Empty<SelectListItem>(), "SELECCIONAR", new { @class = "form-control", @onchange = "limpiardiv('ValidaUsuario');" })
+                                <div id="ValidaUsuario"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-hidden col-sm-hidden col-md-3 col-lg-3">
+                        </div>
+                        <button class="btn btn-primary col-xs-12 col-sm-12 col-md-6 col-lg-6" type="submit" onclick="">
+                            Continuar
+                        </button>
+                        <div class="col-xs-hidden col-sm-hidden col-md-3 col-lg-3">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-xs-hidden col-sm-hidden col-md-3 col-lg-4">
+            </div>
+
+        </div>
+        <div class="row" style="text-align:center;">
+            <h4>Seleccione un perfil para trabajar con el Sistema AFI</h4>
+        </div>
+        <div class="row" style="text-align:center; margin-top:50px;">
+            <img src="~/assets/WarrantAFI.png" />
+        </div>
+    </div>
+
+    <script>
+
+        $('#ChangeProfile').submit(function (e) {
+            e.preventDefault();
+            var tipoentidad = document.getElementsByName('CboTipoEntidad')[0].value;
+            var entidad = document.getElementsByName('CboEntidad')[0].value;
+            var usuario = document.getElementsByName('CboUsuario')[0].value;
+            //debugger;
+
+            if (tipoentidad == 0 || tipoentidad == '') {
+                validacion('ValidaTipoEntidad');
+                return;
+            }
+            if (entidad === 0 || entidad == '') {
+                validacion('ValidaEntidad');
+                return;
+            }
+            if (usuario === 0 || usuario == '') {
+                validacion('ValidaUsuario');
+                return;
+            }
+
+            document.forms["ChangeProfile"].submit();
+        });
+
+        function validacion(val) {
+            var capa = document.getElementById(val);
+            var h1 = document.createElement("span");
+            h1.innerHTML = "* Campo requerido";
+            h1.className = "label-control"
+            h1.style.cssText = "color:red";
+            capa.appendChild(h1);
+        }
+        function limpiardiv(val) {
+            document.getElementById(val).innerHTML = "";
+        }
+
+        function llenarCombo(obj) {
+
+            var num = obj.value;
+            var codigo = obj.form;
+            $("#loader").css('visibility', 'visible');
+
+            if (num == "A") {
+                codigo = 4;
+            } else if (num == "B") {
+                codigo = 2;
+            } else if (num == "C") {
+                codigo = 1;
+            } else {
+                codigo = 0;
+            }
+
+            $("#CboEntidad").empty();
+            $("#CboUsuario").empty();
+            if (codigo === 0) {
+                $("#loader").css('visibility', 'collapse');
+                return;
+            }
+
+            $.get("/Generic/listar_financiador_autoriza", { tipo: codigo }, function (data) {
+                // debugger;
+                $.each(data, function (index, row) {
+                    $("#CboEntidad").append("<option value='" + row.codigounico + "'>" + row.valor + "</option>")
+                });
+                if (num == "A") {
+                    llenarComboU();
+                }
+                $("#loader").css('visibility', 'collapse');
+            });
+        }
+        function llenarComboU() {
+            var tipoentidad = document.getElementsByName('CboTipoEntidad')[0].value;
+            var entidad = document.getElementsByName('CboEntidad')[0].value;
+            $("#loaderUsuario").css('visibility', 'visible');
+
+            $("#CboUsuario").empty();
+            if (tipoentidad == 0 || tipoentidad == '') {
+                $("#loaderUsuario").css('visibility', 'collapse');
+                return;
+            }
+            if (entidad === 0 || entidad == '') {
+                $("#loaderUsuario").css('visibility', 'collapse');
+                return;
+            }
+
+
+            $.get("/Generic/ListarUsuariosByEntidad", { TipoEntidad: tipoentidad, CodigoUnico: entidad}, function (data) {
+                // debugger;
+                $.each(data, function (index, row) {
+                    $("#CboUsuario").append("<option value='" + row.codigounico + "'>" + row.valor + "</option>")
+                });
+                $("#loaderUsuario").css('visibility', 'collapse');
+            });
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,120 @@
+﻿@using SIS_Ga2.Entity
+@using SIS_Ga2.Controllers
+
+@model IEnumerable<SIS_Ga2.Entity.Proyecto>
+@{
+    ViewBag.Title = "Diseno";
+    Usuario usuario = Session["sistema.usuario"] as Usuario;
+    Sistema sistema = Session["sistema.general"] as Sistema;
+    if (sistema == null)
+    {
+        Response.Redirect(Url.Action("Login", "Seguridad"));
+        return;
+    }
+}
+
+<input type="hidden" id="txtidTipoDiseno" value="@sistema.idAplicacion" />
+<input type="hidden" id="txtUsuario" value="@sistema.idUsuario" />
+
+<div class="row" style="height:150px;">
+    @*<div class="col-md-8 col-lg-8" style="border:1px solid #666; box-shadow: 10px 6px 39px -8px rgba(21,56,79,0.79); border-radius:10px; margin-left:0px;">*@
+    <div class="col-md-8 col-lg-8">
+        <div class="widget box">
+            <div class="widget-header">
+                <h4>DISEÑO DE PAVIMENTOS - </h4>
+                <div class="toolbar no-padding">
+                    <div class="btn-group">
+                        <span class="btn btn-xs widget-collapse">
+                            <i class="icon-angle-down"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="widget-content">
+                <table class="table table-hover" id="Parametros">
+                    <thead>
+                        <tr>
+                            <th class="align-center;">Parametros Diseño</th>
+                            <th class="align-center;">Indices Diseño</th>
+                            <th class="align-center;">Calculo</th>
+                            <th class="align-center;">Ayuda</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyParametro">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    $(document).ready(function () {
+
+
+        //$('#myTable').DataTable({
+        //    "lengthMenu": [[25, 50, -1], [25, 50, "All"]]
+        //    //"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]
+        //});
+        ListarParametros();
+    });
+
+    function ListarParametros() {
+        var Diseno = document.getElementById("txtidTipoDiseno").value;
+        var objData = {};
+        var contenido = "";
+
+        debugger;
+
+        objData["idTipoDiseno"] = Diseno;
+
+        $.ajax({
+                type: "POST",
+                url: '@Url.Action("ListarParametrosxTipoDiseno", "Diseno")',
+                data: JSON.stringify(objData),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (ParametrosDiseno) {
+                    var obj = (typeof ParametrosDiseno) == 'string' ? eval('(' + ParametrosDiseno + ')') : ParametrosDiseno;
+                    for (i = 0; i < obj.length; i++) {
+                        contenido = contenido + "<tr>" +
+                            "<td style='text-align:left; border:0; border-bottom:groove'>" + obj[i].DescripcionParametro + "</td>" +
+                            "<td style='text-align:center; border:0; border-bottom:groove'>0.00</td>" +
+                            //"<td style='text-align:center; border:0; border-bottom:groove; cursor:pointer;' onclick='CalcularParametro(" + obj[i].idParametro + ', ' + obj[i].idTipoDiseno + ")>" +
+                            "<td style='text-align:left; border:0; border-bottom:groove;'>" +
+                            "<a title='Calcular Parametro' style='cursor:pointer;' onclick='CalcularParametro(" + obj[i].idParametro + ', ' + obj[i].idTipoDiseno + ")'>" +
+                            "<i class='icol-calculator'></i></a></td >" +
+                            "<td style='text-align:center; border:0; border-bottom:groove;'><i class='icol-comment'></i></td>" +
+                            "</tr>"
+                    }
+                    $('#tbodyParametro').empty().html(contenido);
+                    $('#tbodyParametro').DataTable({
+                    "paging": true,
+                    "ordering": true,
+                    "info": true,
+                    "searching": true,
+                });
+                }
+        });
+    };
+
+    function CalcularParametro(idParametro, idTipoDiseno) {
+
+    }
+
+
+</script>
+
+
+@*"<td style='display:none;'>" + obj[i].idTipoDiseno + "</td>" +
+    "<td style='text-align: center'>" + obj[i].TipoDiseno + "</td>" +
+    "<td style='text-align: center'>" + obj[i].NumDiseno + "</td>" +
+    "<td style='text-align: center'>" + obj[i].Tramo + "</td>" +
+    "<td style='text-align: center'>" + obj[i].Ubicacion + "</td>" +
+    "<td style='text-align: center'>" + obj[i].Reglamento + "</td>" +
+    "<td style='display:none;'>" + obj[i].idReglamento + "</td>" +
+    "<td><a title='Editar' style='cursor:pointer' onclick='EditarProductoVentas(" + obj[i].idProyecto + ")'>" +
+    "<i class='icol-text-signature'></i>" +
+    "</a> &nbsp </td></tr>"*@
+

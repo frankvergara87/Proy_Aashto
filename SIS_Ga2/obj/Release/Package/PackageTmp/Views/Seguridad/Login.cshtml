@@ -1,0 +1,51 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AASHTO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/assets/css/style.css" rel="stylesheet" />
+</head>
+<body style="background: cadetblue;">
+
+    <div class="container">
+        <div class="box-login">
+            <div class="box-img">
+                <img src="~/images/logoAsocem.png" />
+            </div>
+            @using (Html.BeginForm("IniciarSesion", "Seguridad", FormMethod.Post))
+            {
+                <h3></h3>
+                <form action="">
+                    <div class="inputBox">
+                        <span class="logo-input">
+                            <i class="fas fa-user"></i>
+                        </span>
+                        <input type="text" name="user" id="cuenta" autofocus required />
+                        <label for="">Usuario</label>
+                        <div id="divcuentaerror"></div>
+                    </div>
+                    <div class="inputBox">
+                        <span class="logo-input">
+                            <i class="fas fa-key"></i>
+                        </span>
+                        <input type="password" name="password" id="clave" required />
+                        <label for="">Clave</label>
+                    </div>
+                    <div class="box-btn">
+                        <button type="submit" class="btn" onclick="return validalogin(this);">
+                            Iniciar Sesion
+                        </button>
+                    </div>
+                </form>
+            }
+        </div>
+    </div>
+
+
+</body>
+</html>

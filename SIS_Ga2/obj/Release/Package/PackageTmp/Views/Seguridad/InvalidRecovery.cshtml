@@ -1,0 +1,53 @@
+﻿@model WebWarrantAfi.Models.LoginModel
+@{
+    Layout = String.Empty;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>GA2</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <link href="~/Content/Login.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="page-signin-header p-a-2 text-sm-center bg-white">
+        <a class="px-demo-brand px-demo-brand-lg text-default" href="@Url.Action("Login", "Seguridad")">
+            <span class="px-demo-logo bg-primary m-t-0">
+                <span class="px-demo-logo-1"></span>
+                <span class="px-demo-logo-2"></span>
+                <span class="px-demo-logo-3"></span>
+                <span class="px-demo-logo-4"></span>
+                <span class="px-demo-logo-5"></span>
+                <span class="px-demo-logo-6"></span>
+                <span class="px-demo-logo-7"></span>
+                <span class="px-demo-logo-8"></span>
+                <span class="px-demo-logo-9"></span>
+            </span>
+        </a>
+    </div>
+
+    <div class="page-signin-container">
+        <h2 class="m-t-0 m-b-4 text-xs-center font-weight-semibold font-size-20">Error de operación</h2>
+
+        <p style="text-align:justify;">La operación de restablecimiento de contraseña no puede continuar, debido a que la operación no es válida o el tiempo de vigencia ya expiro.</p>
+
+        <div class="m-t-2 text-muted">
+            <a href="@Url.Action("Login", "Seguridad")">&larr; Regresar</a>
+        </div>
+
+    </div>
+
+    <!-- jQuery -->
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+</body>
+</html>
+

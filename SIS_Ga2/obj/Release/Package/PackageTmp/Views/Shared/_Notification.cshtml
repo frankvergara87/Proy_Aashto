@@ -1,0 +1,62 @@
+﻿@using SIS_Ga2.Entity
+
+<div class="sidebar-title">
+    @*<span id="webindex.status" name="webindex.status">webindex.status</span>*@
+</div>
+@*
+<ul class="notifications demo-slide-in" id="Notificaciones2">
+
+</ul>
+*@
+<div class="sidebar-widget align-center">    
+    <div class="btn-group" data-toggle="buttons" id="theme-switcher">
+        <label class="btn">
+            <input type="radio" name="theme-switcher" data-theme="bright"><i class="icon-sun"></i>Claro
+        </label>
+        <label class="btn active">
+            <input type="radio" name="theme-switcher" data-theme="dark"><i class="icon-moon"></i>Oscuro
+        </label>
+    </div>
+</div>
+<div class="footer align-center" style="font-weight:bold;font-size:13px;">Ga2 Sistemas &copy; 2019</div>
+
+@*<script type="text/javascript">
+            $(document).ready(function () {
+                //debugger;
+                $.get("/Notificaciones/ObteneListaNotificion2", { id: '@usuarioid', tipomensaje :'notificacion' }, function (data) {
+
+                        //debugger;
+                        //$("#idalmacen").append("<option value='" + row.idalmacen + "'>" + row.direccion + "</option>")
+
+                        var rows = '';
+                        var indice = data.length - 1;
+                        var contador = 0;
+                        $.each(data, function (index, row) {
+                           // debugger;
+                            if (contador == indice) {
+                                rows += " <li>"
+                                    + " <div class='col-left'>"
+                                    + " <span class='label label-info'><i class='icon-envelope'></i></span>"
+                                    + "</div>"
+                                    + "<div class='col-right with-margin'>"
+                                    + "<span class='message'> Tiene " + row.total + " Firmas Pendientes</span>"
+                                    + "</div>"
+                                    + "</li>";
+                            } else {
+                                rows += " <li style='display: none;'>"
+                                    + " <div class='col-left'>"
+                                    + " <span class='label label-danger'><i class='icon-warning-sign'></i></span>"
+                                    + "</div>"
+                                    + "<div class='col-right with-margin'>"
+                                    + "<span class='message'>Hay " + row.total + "  firmas por vencer</span>"
+                                    + "</div>"
+                                    + "</li>";
+                            }
+
+                            contador++;
+                        });
+
+                        $('#Notificaciones2').append(rows);
+                    });
+            });
+    </script>*@

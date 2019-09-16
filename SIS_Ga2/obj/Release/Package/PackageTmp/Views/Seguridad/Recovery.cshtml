@@ -1,0 +1,104 @@
+﻿@model  WebWarrantAfi.Models.RecoveryModel
+@{
+    Layout = String.Empty;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <link href="~/assets/css/login.css" rel="stylesheet" />
+
+    <!-- jQuery -->
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function ()
+        {
+                document.getElementById('newPassword').focus();
+        });
+
+        function validalogin()
+        {
+            //debugger;
+            document.getElementById("divcuentaerror").innerHTML = "";
+            var password = document.getElementById("newPassword").value;
+            var re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\w{6,}$/;
+
+            if (password.length == 0) {
+                mensajeError("divcuentaerror");
+                return false;
+            }
+            else if (!re.test(password))
+            {
+                mensajeErrorPasswordLevel("divcuentaerror");
+                return false;
+            } else {
+                document.getElementById("divcuentaerror").innerHTML = "";
+                return true;
+            }
+
+            
+        }
+
+        function mensajeError(val)
+        {
+            var capa = document.getElementById(val);
+            var h1 = document.createElement("span");
+            h1.innerHTML = "* Campo requerido";
+            h1.className = "label-control"
+            h1.style.cssText = "color:red";
+            capa.appendChild(h1);
+        }
+
+        function mensajeErrorPasswordLevel(val) {
+            var capa = document.getElementById(val);
+            var h1 = document.createElement("span");
+            h1.innerHTML = "* Contraseña no valido";
+            h1.className = "label-control"
+            h1.style.cssText = "color:red";
+            capa.appendChild(h1);
+        }
+    </script>
+
+</head>
+<body class="login">
+    <div class="boxRecovery">
+        <div class="content">
+            <div class="page-signin-container" id="page-signin-form">
+                <h3 class="font-weight-semibold font-size-20">@Model.username</h3>
+                <form id="login-form" method="post">
+                    @Html.AntiForgeryToken()
+                    <fieldset class="form-group form-group-lg">
+                            Ingrese una nueva contraseña
+                        @Html.HiddenFor(m => m.username)
+                        @Html.TextBoxFor(m => m.newPassword, new { @Type = "password", @class = "form-control", @placeholder = "Nueva contraseña"})
+                    </fieldset>
+                    <div id="divcuentaerror"></div>
+                    <button type="submit" class="btn btn-block btn-lg btn-primary m-t-3" onclick="return validalogin();">Cambiar contraseña</button>
+                    
+                    <br />
+                    El nivel de dificultad es lo siguiente:
+                    <ol>
+                        <li>De seis o más caracteres.</li>
+                        <li>Que contenga al menos un dígito de [0-9].</li>
+                        <li>Que al menos haya un carácter en minúscula y en mayúscula.</li>
+                    </ol>
+                    
+                    
+                    
+                </form>
+
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

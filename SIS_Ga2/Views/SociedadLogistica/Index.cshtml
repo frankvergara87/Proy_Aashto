@@ -1,0 +1,92 @@
+﻿@model IEnumerable<SIS_Ga2.Entity.Sociedades_Logistica>
+@{
+    ViewBag.Title = "Mantenimiento Sociedades Logistica";
+}
+<div class="widget box">
+    <div class="widget-header">
+        <h4><i class="icon-reorder"></i><span id="Cliente.Accion" name="Cliente.Accion">Cliente.Accion</span></h4>
+    </div>
+    <div class="widget-content">
+        <form asp-action="Index" method="post" class="form-horizontal row-border">
+            <div class="form-actions fluid">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <a class="btn btn-primary button-submit" style="width:80%;" href="@Url.Action("Registrar","SociedadLogistica")">
+                                <span id="SociendadLogistica.Nuevo" name="SociendadLogistica.Nuevo">SociendadLogistica.Nuevo</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+    <!--=== Responsive DataTable ===-->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="widget box">
+                <div class="widget-header">
+                    <h4><span id="SocLog.Filtro" name="SocLog.Filtro">SocLog.Filtro</span></h4>
+                    <div class="toolbar no-padding">
+                        <div class="btn-group">
+                            <span class="btn btn-xs widget-collapse"><i class="icon-angle-down"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget-content no-padding">
+                    <table class="table table-striped table-bordered table-hover table-checkable table-responsive datatable" id="myTable">
+                        <thead>
+                            <tr>
+                                <th class="hidden-xs;align-center;"><span id="SocLog.Codigo_Sociedad" name="SocLog.Codigo_Sociedad">SocLog.Codigo_Sociedad</span></th>
+                                <th class="hidden-xs;align-center;"><span id="SocLog.Descripcion_Sociedad" name="SocLog.Descripcion_Sociedad">SocLog.Descripcion_Sociedad</span></th>
+                                <th class="hidden-xs;align-center;"><span id="SocLog.Numero_RUC_Sociedad" name="SocLog.Numero_RUC_Sociedad">SocLog.Numero_RUC_Sociedad</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td class="hidden-xs">
+                                        @Html.DisplayFor(modelItem => item.Codigo_Sociedad)
+                                    </td>
+                                    <td class="hidden-xs">
+                                        @Html.DisplayFor(modelItem => item.Descripcion_Sociedad)
+                                    </td>
+                                    <td class="hidden-xs">
+                                        @Html.DisplayFor(modelItem => item.Numero_RUC_Sociedad)
+                                    </td>
+
+                                    <td class="align-center">
+                                        <a href="@Url.Action("Actualizar", "SociedadLogistica", new { Codigo_Sociedad = item.Codigo_Sociedad})" class="bs-tooltip" title="" data-original-title="Editar"><i class="glyphicon glyphicon-edit " style="font-size:16px;color:darkslategrey"></i></a>
+                                    </td>
+
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Responsive DataTable -->
+
+@section ViewScript {
+    <script type="text/javascript">
+
+
+
+    $('#myTable').on('draw.dt', function ()
+    {
+        //debugger;
+        ActualizarCaption_sInfo();
+    });
+
+
+
+    </script>
+}
+
+

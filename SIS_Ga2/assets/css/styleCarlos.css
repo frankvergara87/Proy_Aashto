@@ -1,0 +1,247 @@
+
+/****************************
+* Magenes y padding !!
+****************************/
+/* Margins */
+.mt-0 {
+    margin-top: 0;
+}
+
+.mt-10 {
+    margin-top: 10px !important;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+.m-0 {
+    margin: 0;
+}
+
+.ml-0 {
+    margin-left: 0;
+}
+
+.ml-15 {
+    margin-left: 1.5rem;
+}
+
+/* Paddings!! */
+.pdt-20 {
+    padding-top: 20px;
+}
+
+.pt-1 {
+    padding-top: 1rem;
+}
+
+.pl-0 {
+    padding-left: 0;
+}
+
+.pl-15 {
+    padding-left: 1.5rem;
+}
+
+.pr-15{
+    padding-right: 1.5rem;
+}
+
+.pd-left-rirght-10 {
+    padding: 0 10px;
+}
+
+
+/*********************
+* Tamaños !!
+*********************/
+.mxw-45 {
+    max-width: 45px;
+}
+
+.width-10-xciento {
+    width: 10%;
+}
+
+.width-100-xciento {
+    width: 100%;
+}
+
+
+/********************
+* Alineacion !!
+********************/
+.flex-end {
+    display: flex; 
+    align-items: flex-end;
+}
+
+.text-right {
+    text-align:right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-upper {
+    text-transform:uppercase;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.container-column-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.center-children-horizon {
+    display: flex;
+    flex: 1;
+    align-content: center;
+}
+
+.vertical-center {
+    vertical-align: middle !important;
+}
+
+/* // para centrar verticalmente los td hijos */
+.center-vertical-td > td{
+    vertical-align: middle !important;
+}
+
+/************************
+* Bordes !!
+************************/
+
+.border-buton {
+    border-bottom: 1px solid #bebcbc;
+}
+
+.no-border-left {
+    height: 26px; 
+    border-radius: 0 5px 5px 0 !important; 
+    border-left-color: transparent;
+}
+
+.no-border-right {
+    border-radius: 5px 0 0 5px !important;
+}
+
+.border-top-gray {
+    border-top: 1px solid #cac5c5;
+}
+
+.border-bottom-gray{
+    border-bottom: 1px solid #cac5c5;
+}
+
+.border-radius-input {
+    border-radius: 5px !important;
+}
+
+.row-footer {
+    border-top: none !important;
+    border-bottom: 1px solid #111;
+}
+
+.border-bt-success {
+    border-bottom: 1.5px solid #51a351;
+}
+
+/***********************
+* Fuentes !!
+***********************/
+
+.font-size-14 {
+    font-size: 14px !important;
+}
+
+.bold-600 {
+    font-weight: 600;
+}
+
+
+.fz-13 {
+    font-size: 13px !important;
+}
+
+/********************
+* Fixes !!
+********************/
+
+.visible-none {
+    visibility: hidden;
+}
+
+.nowrap-space {
+    white-space: nowrap;
+}
+
+/* Se usa para poder darle tamaños diferentes a cada celda,
+si no se usa esta propiedad en la table, no toma los tamaños! */
+.table > tbody > tr > td {
+    white-space: nowrap;
+}
+
+.over-auto {
+    overflow: auto;
+}
+
+span.switch-right {
+    padding-left: 4px;
+    padding-right: 1.5rem;
+}
+
+/****************
+* Utiles !!
+****************/
+.style-shadow-form {
+    padding: 16px 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px 3px rgba(47,97,116,0.27);
+}
+
+.tFooter-monto {
+    font-size: 13px;
+    font-weight: 600;
+    color: #34819ec2;
+}
+
+.color-monto {
+    color: #34819ec2;
+}
+
+.ajustado-precio {
+    -webkit-box-shadow: inset -1px -3px 9px 3px rgba(232,44,12,0.7); 
+    box-shadow: inset -1px -3px 9px 3px rgba(232,44,12,0.7);
+}
+
+.pointer-wait, .pointer-wait:hover, .pointer-wait:focus, .pointer-wait::after {
+    cursor: wait !important;
+}
+
+.width-td-check {
+    width: 4rem;
+    min-width: 21px;
+}
+
+
+/*********************
+* Custom !!
+*********************/
+
+.title-modal-nospace {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 16px;
+}

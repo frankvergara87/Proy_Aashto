@@ -1,0 +1,305 @@
+﻿@model IEnumerable<SIS_Ga2.Entity.Aplicacion>
+@{
+    ViewBag.Title = "Mantenimiento de Aplicación";
+}
+
+<!--=== Responsive DataTable ===-->
+<script type="text/javascript" src="~/Scripts/javaga2/JavaScriptGa2.js"></script>
+<script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+<link href="~/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="~/plugins/jquery-ui/jquery-ui-1.10.2.custom.css" rel="stylesheet" />
+
+<div class="table-responsive">
+    <div class="widget">
+        <div class="widget-header">
+            <div class="col-md-10">
+                <h3><span id="Mantenimiento de Aplicación" name="Mantenimiento de Aplicación">Mantenimiento de Aplicación</span></h3>
+            </div>
+            <div class="col-md-2">
+                <a class="btn btn-lg" style="background-color:#39749C; color:white;" onclick="NuevoAplicacion();">
+                    <i class="icol-add"></i>
+                    <span id="Nuevo" name="Nuevo">Nuevo</span>
+
+                </a>
+            </div>
+        </div>
+    </div>
+    <table class="table table-hover table-checkable table-responsive" id="tblAplicacion">
+        <thead style="color:darkblue;">
+            <tr>
+                <th style="text-align:center;"><span>Nombre de Aplicación</span></th>
+                <th style="text-align:center;"><span>Estado</span></th>
+                @*<th style="text-align:center;"><span>Opción</span></th>*@
+            </tr>
+        </thead>
+        <tbody id="tbodyAplicacion"></tbody>
+    </table>
+</div>
+
+
+<div class="modal fade" id="VentanaNuevoAplicacion" role="dialog" data-backdrop="static">
+    @using (Html.BeginForm("RegistrarAplicacion", "Aplicaciones", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+        <div class="modal-dialog  modal-lg" style="width: 40%;">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">Registro de Aplicación</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Nombre de Aplicación</label>
+                            <div class="col-md-8">
+                                <input class="form-control" type="text" id="NombreAplicacion" name="NombreAplicacion" value="" onkeyup="fMayuscula(this);" onfocus="limpiardiv('dnombre');" />
+                                <div id="dnombre"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Imagen de Aplicación</label>
+                            <div class="col-md-3">
+                                <input type="file" id="dataFile" name="upload" class="btn btn-default button-submit" />
+                                <div id="dimagen"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">
+                                Color de Botón
+                            </label>
+                            <div class="col-md-8">
+                                <input class="form-control" type="text" id="ColorBoton" name="ColorBoton" value="" onfocus="limpiardiv('dcolor');" />
+                                <div id="dcolor"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary button-submit" onclick="return validarimagen();">
+                        Registrar
+                    </button>
+                </div>
+
+
+            </div>
+        </div>
+    }
+</div>
+
+<div class="modal fade" id="Alerta" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="bootbox-close-button close" style="margin-top: -10px;"></button>
+                <div class="bootbox-body" id="txtMensaje"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true" id="btn_cerrar">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section ViewScript {
+    <script src="~/Scripts/Modal.js"></script>
+    <script type="text/javascript">
+
+
+        $('#myTable').on('draw.dt', function () {
+            //debugger;
+
+        });
+
+        $(document).ready(function () {
+            ListarAplicacion();
+            $('#myTable').DataTable({
+                "lengthMenu": [[25, 50, -1], [25, 50, "All"]]
+                //"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
+            });
+        });
+
+
+        function ListarAplicacion() {
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("ListarAplicacion", "Aplicaciones")',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (aplicaciones) {
+                    var contenido = "";
+                    var obj = (typeof aplicaciones) == 'string' ? eval('(' + aplicaciones + ')') : aplicaciones;
+                    for (var i = 0; i < obj.length; i++) {
+                        contenido += "<tr>" +
+                            "<td style='text-align: center'>" + obj[i].NombreAplicacion + "</td>"
+                        if (obj[i].Estado == true) {
+                            contenido = contenido + "<td style='text-align:center;' id='ACTIVO'>" +
+                                                    "<a class='bs-tooltip' data-original-title='ACTIVO'><i class='icol-accept' style='font-size:16px;'></i></a></td>"
+                        } else {
+                            contenido = contenido + "<td style='text-align:center;' id='DESACTIVO'>" +
+                                                    "<a class='bs-tooltip' data-original-title='DESACTIVO'><i class='icol-cross' style='font-size:16px;'></i></a></td>"
+                        }
+                        contenido = contenido
+                        // + "<td style='text-align:center;'>" +
+                        //    "<a title='Editar' style='cursor:pointer;' onclick='EditarAplicacion(" + obj[i].IdAplicacion + ")'>" +
+                        //            "<i class='icol-text-signature'></i>" +
+                        //        "</a></td > " +
+                            +"</tr>";
+                    }
+                    $('#tbodyAplicacion').empty().html(contenido);
+                    $('#tblAplicacion').DataTable({ responsive: true, details: false });
+                },
+                error: function (response) {
+                    if (response.length != 0) {
+                        alert(response);
+                    }
+                }
+            })
+        }
+        function NuevoAplicacion() {
+            $("#VentanaNuevoAplicacion").modal('show');
+            LimpiarNuevoAplicacion();
+        }
+        function LimpiarNuevoAplicacion() {
+            document.getElementById("txtnombre").value = "";
+            document.getElementById("txtcolor").value = "";
+        }
+
+        function validacion(val) {
+            var capa = document.getElementById(val);
+            var h1 = document.createElement("span");
+            h1.innerHTML = "* Campo requerido";
+            h1.className = "label-control"
+            h1.style.cssText = "color:red";
+            capa.appendChild(h1);
+        }
+        function limpiardiv(val) {
+            document.getElementById(val).innerHTML = "";
+        }
+        function validarimagen() {
+            var _respuesta = false;
+            debugger;
+            var archivo = $('#dataFile').val();
+
+            var extension = $('#dataFile').val().split('.').pop().toLowerCase();
+
+            //if (nombreArchivo == "")
+            //{
+            //    Alerta("Ingrese el nombre de tu usuario [Ejemplo: JuanPeres]");
+            //    _respuesta = false;
+            //}
+            //else
+            if (archivo == "") {
+                Alerta("Seleccione un archivo de imagen (*.jpg , *.png o *.gif)");
+                _respuesta = false;
+            }
+            else if (extension != "jpg" && extension != "png" && extension != "gif") {
+                Alerta("Seleccione el archivo de imagen correcto (*.jpg , *.png o *.gif)");
+                _respuesta = false;
+            }
+            else
+                _respuesta = true;
+            return _respuesta;
+        }
+
+        function Alerta(strMensaje) {
+            $("#Alerta").modal('show');
+            document.getElementById("txtMensaje").innerHTML = '<h3>' + strMensaje + '</h3>';
+        };
+        function RegistrarAplicacion() {
+            debugger;
+            if (validarimagen()) {
+                var nombre = document.getElementById("txtnombre").value;
+                var color = document.getElementById("txtcolor").value;
+
+
+                var objData = {};
+                objData["nombre"] = nombre;
+                objData["color"] = color;
+
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("RegistroAplicacion", "Aplicaciones")',
+                    data: JSON.stringify(objData),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (resultado) {
+                        if (resultado = true) {
+                            location.reload();
+                        }
+                    }
+                });
+            }
+
+        }
+
+        function EditarUsuario(val) {
+            $("#VentanaEditarUsuario").modal("show");
+            var objData = {};
+            objData["idusuario"] = val;
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("EditarUsuario", "Usuario")',
+                data: JSON.stringify(objData),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (usuario) {
+                    document.getElementById("txtcuenta1").value = usuario.cuenta;
+                    document.getElementById("txtnombre1").value = usuario.Nombre;
+                    document.getElementById("txtapellidos1").value = usuario.Apellidos;
+                    document.getElementById("txtdni1").value = usuario.DNI;
+                    document.getElementById("txtcelular1").value = usuario.Celular;
+                    document.getElementById("txtcargo1").value = usuario.Cargo;
+                    document.getElementById("chkrecibe1").checked = usuario.RecibeCorreo;
+                    document.getElementById("txtcorreo1").value = usuario.Correo;;
+                    document.getElementById("idlanguage1").value = usuario.Idlanguage;
+                    document.getElementById("txtidusuario").value = usuario.idautorizacionusuario;
+                    document.getElementById("chkestado1").checked = usuario.Estado;
+                }
+            });
+        }
+        function ActualizarUsuario() {
+            var cuenta = document.getElementById("txtcuenta1").value;
+            var nombre = document.getElementById("txtnombre1").value;
+            var apellidos = document.getElementById("txtapellidos1").value;
+            var dni = document.getElementById("txtdni1").value;
+            var celular = document.getElementById("txtcelular1").value;
+            var cargo = document.getElementById("txtcargo1").value;
+            var chkrecibe = document.getElementById("chkrecibe1").checked;
+            var chkestado = document.getElementById("chkestado1").checked;
+            var correo = document.getElementById("txtcorreo1").value;
+            var idlanguage = document.getElementById("idlanguage1").value;
+            var idusuario = document.getElementById("txtidusuario").value;
+            var clave = document.getElementById("txtclave1").value;
+            var objData = {};
+            objData["cuenta"] = cuenta;
+            objData["nombre"] = nombre;
+            objData["apellidos"] = apellidos;
+            objData["dni"] = dni;
+            objData["celular"] = celular;
+            objData["cargo"] = cargo;
+            objData["chkrecibe"] = chkrecibe;
+            objData["correo"] = correo;
+            objData["idlanguage"] = idlanguage;
+            objData["idusuario"] = idusuario;
+            objData["clave"] = clave;
+            objData["estado"] = chkestado;
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("ActualizarUsuario", "Usuario")',
+                data: JSON.stringify(objData),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (resultado) {
+                    if (resultado = true) {
+                        location.reload();
+                    }
+                }
+            });
+        }
+    </script>
+}

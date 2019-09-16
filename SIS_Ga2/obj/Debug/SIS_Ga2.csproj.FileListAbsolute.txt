@@ -1,0 +1,691 @@
+D:\SIS_Ga2\SIS_Ga2\bin\ApplicationInsights.config
+D:\SIS_Ga2\SIS_Ga2\bin\roslyn\csc.exe
+D:\SIS_Ga2\SIS_Ga2\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\SIS_Ga2\SIS_Ga2\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\SIS_Ga2\SIS_Ga2\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\SIS_Ga2\SIS_Ga2\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\SIS_Ga2\SIS_Ga2\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\SIS_Ga2\SIS_Ga2\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\SIS_Ga2\SIS_Ga2\bin\roslyn\System.Collections.Immutable.dll
+D:\SIS_Ga2\SIS_Ga2\bin\roslyn\System.Reflection.Metadata.dll
+D:\SIS_Ga2\SIS_Ga2\bin\roslyn\vbc.exe
+D:\SIS_Ga2\SIS_Ga2\bin\roslyn\VBCSCompiler.exe
+D:\SIS_Ga2\SIS_Ga2\bin\roslyn\VBCSCompiler.exe.config
+D:\SIS_Ga2\SIS_Ga2\bin\SIS_Ga2.dll.config
+D:\SIS_Ga2\SIS_Ga2\bin\SIS_Ga2.dll
+D:\SIS_Ga2\SIS_Ga2\bin\SIS_Ga2.pdb
+D:\SIS_Ga2\SIS_Ga2\bin\Antlr3.Runtime.dll
+D:\SIS_Ga2\SIS_Ga2\bin\EntityFramework.dll
+D:\SIS_Ga2\SIS_Ga2\bin\EntityFramework.SqlServer.dll
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.AI.Agent.Intercept.dll
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.AI.DependencyCollector.dll
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.AI.Web.dll
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.AI.WindowsServer.dll
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.ApplicationInsights.dll
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.AspNet.Identity.Core.dll
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.Owin.dll
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.Owin.Security.Cookies.dll
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.Owin.Security.dll
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.Owin.Security.Facebook.dll
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.Owin.Security.Google.dll
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.Owin.Security.OAuth.dll
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.Owin.Security.Twitter.dll
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.Web.Infrastructure.dll
+D:\SIS_Ga2\SIS_Ga2\bin\Newtonsoft.Json.dll
+D:\SIS_Ga2\SIS_Ga2\bin\Owin.dll
+D:\SIS_Ga2\SIS_Ga2\bin\SIS_Ga2.Business.dll
+D:\SIS_Ga2\SIS_Ga2\bin\SIS_Ga2.Entity.dll
+D:\SIS_Ga2\SIS_Ga2\bin\System.Web.Helpers.dll
+D:\SIS_Ga2\SIS_Ga2\bin\System.Web.Mvc.dll
+D:\SIS_Ga2\SIS_Ga2\bin\System.Web.Optimization.dll
+D:\SIS_Ga2\SIS_Ga2\bin\System.Web.Razor.dll
+D:\SIS_Ga2\SIS_Ga2\bin\System.Web.WebPages.Deployment.dll
+D:\SIS_Ga2\SIS_Ga2\bin\System.Web.WebPages.dll
+D:\SIS_Ga2\SIS_Ga2\bin\System.Web.WebPages.Razor.dll
+D:\SIS_Ga2\SIS_Ga2\bin\WebGrease.dll
+D:\SIS_Ga2\SIS_Ga2\bin\SIS_Ga2.DataAccess.dll
+D:\SIS_Ga2\SIS_Ga2\bin\DbManager.dll
+D:\SIS_Ga2\SIS_Ga2\bin\CriptoSecurity.dll
+D:\SIS_Ga2\SIS_Ga2\bin\SIS_Ga2.Business.pdb
+D:\SIS_Ga2\SIS_Ga2\bin\SIS_Ga2.Entity.pdb
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.AI.DependencyCollector.xml
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.AI.Web.xml
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.AI.WindowsServer.xml
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.ApplicationInsights.xml
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\SIS_Ga2\SIS_Ga2\bin\Newtonsoft.Json.xml
+D:\SIS_Ga2\SIS_Ga2\bin\System.Web.Helpers.xml
+D:\SIS_Ga2\SIS_Ga2\bin\System.Web.Mvc.xml
+D:\SIS_Ga2\SIS_Ga2\bin\System.Web.Optimization.xml
+D:\SIS_Ga2\SIS_Ga2\bin\System.Web.Razor.xml
+D:\SIS_Ga2\SIS_Ga2\bin\System.Web.WebPages.xml
+D:\SIS_Ga2\SIS_Ga2\bin\System.Web.WebPages.Deployment.xml
+D:\SIS_Ga2\SIS_Ga2\bin\System.Web.WebPages.Razor.xml
+D:\SIS_Ga2\SIS_Ga2\bin\Antlr3.Runtime.pdb
+D:\SIS_Ga2\SIS_Ga2\bin\EntityFramework.xml
+D:\SIS_Ga2\SIS_Ga2\bin\EntityFramework.SqlServer.xml
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.AspNet.Identity.Core.xml
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.Owin.xml
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.Owin.Security.xml
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.Owin.Security.Facebook.xml
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.Owin.Security.Cookies.xml
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.Owin.Security.OAuth.xml
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.Owin.Security.Google.xml
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.Owin.Security.Twitter.xml
+D:\SIS_Ga2\SIS_Ga2\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\SIS_Ga2\SIS_Ga2\bin\SIS_Ga2.DataAccess.pdb
+D:\SIS_Ga2\SIS_Ga2\bin\es\System.Web.Helpers.resources.dll
+D:\SIS_Ga2\SIS_Ga2\bin\es\System.Web.Mvc.resources.dll
+D:\SIS_Ga2\SIS_Ga2\bin\es\System.Web.Optimization.resources.dll
+D:\SIS_Ga2\SIS_Ga2\bin\es\System.Web.Razor.resources.dll
+D:\SIS_Ga2\SIS_Ga2\bin\es\System.Web.WebPages.resources.dll
+D:\SIS_Ga2\SIS_Ga2\bin\es\System.Web.WebPages.Deployment.resources.dll
+D:\SIS_Ga2\SIS_Ga2\bin\es\System.Web.WebPages.Razor.resources.dll
+D:\SIS_Ga2\SIS_Ga2\obj\Debug\SIS_Ga2.csprojResolveAssemblyReference.cache
+D:\SIS_Ga2\SIS_Ga2\obj\Debug\SIS_Ga2.dll
+D:\SIS_Ga2\SIS_Ga2\obj\Debug\SIS_Ga2.pdb
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\ApplicationInsights.config
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\roslyn\csc.exe
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\roslyn\vbc.exe
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\roslyn\VBCSCompiler.exe
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\SIS_Ga2.dll.config
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\SIS_Ga2.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\SIS_Ga2.pdb
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Antlr3.Runtime.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\EntityFramework.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\EntityFramework.SqlServer.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.AI.Web.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.Owin.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.Owin.Security.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Newtonsoft.Json.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Owin.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\SIS_Ga2.Business.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\SIS_Ga2.Entity.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\System.Web.Helpers.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\System.Web.Mvc.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\System.Web.Optimization.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\System.Web.Razor.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\System.Web.WebPages.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\System.Web.WebPages.Razor.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\WebGrease.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\SIS_Ga2.DataAccess.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\DbManager.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\CriptoSecurity.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\SIS_Ga2.Business.pdb
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\SIS_Ga2.Entity.pdb
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.AI.Web.xml
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Newtonsoft.Json.xml
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\System.Web.Helpers.xml
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\System.Web.Mvc.xml
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\System.Web.Optimization.xml
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\System.Web.Razor.xml
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\System.Web.WebPages.xml
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\System.Web.WebPages.Razor.xml
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Antlr3.Runtime.pdb
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\EntityFramework.xml
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\EntityFramework.SqlServer.xml
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.Owin.xml
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.Owin.Security.xml
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\SIS_Ga2.DataAccess.pdb
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\es\System.Web.Optimization.resources.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\es\System.Web.Razor.resources.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\es\System.Web.WebPages.resources.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\obj\Debug\SIS_Ga2.csprojResolveAssemblyReference.cache
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\obj\Debug\SIS_Ga2.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2\obj\Debug\SIS_Ga2.pdb
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\obj\Debug\SIS_Ga2.csprojResolveAssemblyReference.cache
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\obj\Debug\SIS_Ga2.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\obj\Debug\SIS_Ga2.pdb
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\roslyn\csc.exe
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\roslyn\vbc.exe
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\roslyn\VBCSCompiler.exe
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\SIS_Ga2.dll.config
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\SIS_Ga2.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\SIS_Ga2.pdb
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Antlr3.Runtime.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\EntityFramework.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\EntityFramework.SqlServer.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.AI.Web.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.Owin.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.Owin.Security.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Newtonsoft.Json.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Owin.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\SIS_Ga2.Business.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\SIS_Ga2.Entity.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\System.Web.Helpers.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\System.Web.Mvc.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\System.Web.Optimization.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\System.Web.Razor.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\System.Web.WebPages.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\System.Web.WebPages.Razor.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\WebGrease.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\SIS_Ga2.DataAccess.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\DbManager.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\CriptoSecurity.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\SIS_Ga2.Business.pdb
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\SIS_Ga2.Entity.pdb
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.AI.Web.xml
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Newtonsoft.Json.xml
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\System.Web.Helpers.xml
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\System.Web.Mvc.xml
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\System.Web.Optimization.xml
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\System.Web.Razor.xml
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\System.Web.WebPages.xml
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\System.Web.WebPages.Razor.xml
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Antlr3.Runtime.pdb
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\EntityFramework.xml
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\EntityFramework.SqlServer.xml
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.Owin.xml
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.Owin.Security.xml
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\SIS_Ga2.DataAccess.pdb
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\es\System.Web.Optimization.resources.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\es\System.Web.Razor.resources.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\es\System.Web.WebPages.resources.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2\bin\Views\ApplicationInsights.config
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Views\ApplicationInsights.config
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\roslyn\csc.exe
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\roslyn\vbc.exe
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\roslyn\VBCSCompiler.exe
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\SIS_Ga2.dll.config
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\SIS_Ga2.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\SIS_Ga2.pdb
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Antlr3.Runtime.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\EntityFramework.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\EntityFramework.SqlServer.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.AI.Web.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.Owin.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.Owin.Security.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Newtonsoft.Json.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Owin.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\SIS_Ga2.Business.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\SIS_Ga2.Entity.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\System.Web.Helpers.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\System.Web.Mvc.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\System.Web.Optimization.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\System.Web.Razor.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\System.Web.WebPages.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\System.Web.WebPages.Razor.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\WebGrease.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\SIS_Ga2.DataAccess.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\DbManager.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\CriptoSecurity.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\SIS_Ga2.Business.pdb
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\SIS_Ga2.Entity.pdb
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.AI.Web.xml
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Newtonsoft.Json.xml
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\System.Web.Helpers.xml
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\System.Web.Mvc.xml
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\System.Web.Optimization.xml
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\System.Web.Razor.xml
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\System.Web.WebPages.xml
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\System.Web.WebPages.Razor.xml
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Antlr3.Runtime.pdb
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\EntityFramework.xml
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\EntityFramework.SqlServer.xml
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.Owin.xml
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.Owin.Security.xml
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\SIS_Ga2.DataAccess.pdb
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\es\System.Web.Optimization.resources.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\es\System.Web.Razor.resources.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\es\System.Web.WebPages.resources.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\obj\Debug\SIS_Ga2.csprojResolveAssemblyReference.cache
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\obj\Debug\SIS_Ga2.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\obj\Debug\SIS_Ga2.pdb
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.Solver.Foundation.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2\bin\Microsoft.Solver.Foundation.xml
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Views\ApplicationInsights.config
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\roslyn\csc.exe
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\roslyn\vbc.exe
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\roslyn\VBCSCompiler.exe
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\SIS_Ga2.dll.config
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\SIS_Ga2.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\SIS_Ga2.pdb
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Antlr3.Runtime.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\EntityFramework.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\EntityFramework.SqlServer.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.AI.Web.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.Owin.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.Owin.Security.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.Solver.Foundation.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Newtonsoft.Json.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Owin.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\SIS_Ga2.Business.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\SIS_Ga2.Entity.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\System.Web.Helpers.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\System.Web.Mvc.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\System.Web.Optimization.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\System.Web.Razor.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\System.Web.WebPages.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\System.Web.WebPages.Razor.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\WebGrease.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\SIS_Ga2.DataAccess.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\DbManager.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\CriptoSecurity.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\SIS_Ga2.Business.pdb
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\SIS_Ga2.Entity.pdb
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.AI.Web.xml
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.Solver.Foundation.xml
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Newtonsoft.Json.xml
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\System.Web.Helpers.xml
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\System.Web.Mvc.xml
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\System.Web.Optimization.xml
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\System.Web.Razor.xml
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\System.Web.WebPages.xml
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\System.Web.WebPages.Razor.xml
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Antlr3.Runtime.pdb
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\EntityFramework.xml
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\EntityFramework.SqlServer.xml
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.Owin.xml
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.Owin.Security.xml
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\SIS_Ga2.DataAccess.pdb
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\es\System.Web.Optimization.resources.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\es\System.Web.Razor.resources.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\es\System.Web.WebPages.resources.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\obj\Debug\SIS_Ga2.csprojResolveAssemblyReference.cache
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\obj\Debug\SIS_Ga2.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2\obj\Debug\SIS_Ga2.pdb
+C:\Logistica\Solver\SIS_Ga2\bin\Views\ApplicationInsights.config
+C:\Logistica\Solver\SIS_Ga2\bin\roslyn\csc.exe
+C:\Logistica\Solver\SIS_Ga2\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Logistica\Solver\SIS_Ga2\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Logistica\Solver\SIS_Ga2\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Logistica\Solver\SIS_Ga2\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Logistica\Solver\SIS_Ga2\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Logistica\Solver\SIS_Ga2\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Logistica\Solver\SIS_Ga2\bin\roslyn\System.Collections.Immutable.dll
+C:\Logistica\Solver\SIS_Ga2\bin\roslyn\System.Reflection.Metadata.dll
+C:\Logistica\Solver\SIS_Ga2\bin\roslyn\vbc.exe
+C:\Logistica\Solver\SIS_Ga2\bin\roslyn\VBCSCompiler.exe
+C:\Logistica\Solver\SIS_Ga2\bin\roslyn\VBCSCompiler.exe.config
+C:\Logistica\Solver\SIS_Ga2\bin\SIS_Ga2.dll.config
+C:\Logistica\Solver\SIS_Ga2\bin\SIS_Ga2.dll
+C:\Logistica\Solver\SIS_Ga2\bin\SIS_Ga2.pdb
+C:\Logistica\Solver\SIS_Ga2\bin\Antlr3.Runtime.dll
+C:\Logistica\Solver\SIS_Ga2\bin\EntityFramework.dll
+C:\Logistica\Solver\SIS_Ga2\bin\EntityFramework.SqlServer.dll
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.AI.DependencyCollector.dll
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.AI.Web.dll
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.AI.WindowsServer.dll
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.ApplicationInsights.dll
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.Owin.dll
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.Owin.Security.dll
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.Owin.Security.Google.dll
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.Solver.Foundation.dll
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.Web.Infrastructure.dll
+C:\Logistica\Solver\SIS_Ga2\bin\Newtonsoft.Json.dll
+C:\Logistica\Solver\SIS_Ga2\bin\Owin.dll
+C:\Logistica\Solver\SIS_Ga2\bin\SIS_Ga2.Business.dll
+C:\Logistica\Solver\SIS_Ga2\bin\SIS_Ga2.DataAccess.dll
+C:\Logistica\Solver\SIS_Ga2\bin\SIS_Ga2.Entity.dll
+C:\Logistica\Solver\SIS_Ga2\bin\System.Web.Helpers.dll
+C:\Logistica\Solver\SIS_Ga2\bin\System.Web.Mvc.dll
+C:\Logistica\Solver\SIS_Ga2\bin\System.Web.Optimization.dll
+C:\Logistica\Solver\SIS_Ga2\bin\System.Web.Razor.dll
+C:\Logistica\Solver\SIS_Ga2\bin\System.Web.WebPages.Deployment.dll
+C:\Logistica\Solver\SIS_Ga2\bin\System.Web.WebPages.dll
+C:\Logistica\Solver\SIS_Ga2\bin\System.Web.WebPages.Razor.dll
+C:\Logistica\Solver\SIS_Ga2\bin\WebGrease.dll
+C:\Logistica\Solver\SIS_Ga2\bin\DbManager.dll
+C:\Logistica\Solver\SIS_Ga2\bin\CriptoSecurity.dll
+C:\Logistica\Solver\SIS_Ga2\bin\SIS_Ga2.Business.pdb
+C:\Logistica\Solver\SIS_Ga2\bin\SIS_Ga2.DataAccess.pdb
+C:\Logistica\Solver\SIS_Ga2\bin\SIS_Ga2.Entity.pdb
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.AI.DependencyCollector.xml
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.AI.Web.xml
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.AI.WindowsServer.xml
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.ApplicationInsights.xml
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.Solver.Foundation.xml
+C:\Logistica\Solver\SIS_Ga2\bin\Newtonsoft.Json.xml
+C:\Logistica\Solver\SIS_Ga2\bin\System.Web.Helpers.xml
+C:\Logistica\Solver\SIS_Ga2\bin\System.Web.Mvc.xml
+C:\Logistica\Solver\SIS_Ga2\bin\System.Web.Optimization.xml
+C:\Logistica\Solver\SIS_Ga2\bin\System.Web.Razor.xml
+C:\Logistica\Solver\SIS_Ga2\bin\System.Web.WebPages.xml
+C:\Logistica\Solver\SIS_Ga2\bin\System.Web.WebPages.Deployment.xml
+C:\Logistica\Solver\SIS_Ga2\bin\System.Web.WebPages.Razor.xml
+C:\Logistica\Solver\SIS_Ga2\bin\Antlr3.Runtime.pdb
+C:\Logistica\Solver\SIS_Ga2\bin\EntityFramework.xml
+C:\Logistica\Solver\SIS_Ga2\bin\EntityFramework.SqlServer.xml
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.Owin.xml
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.Owin.Security.xml
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.Owin.Security.Google.xml
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Logistica\Solver\SIS_Ga2\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Logistica\Solver\SIS_Ga2\bin\es\System.Web.Helpers.resources.dll
+C:\Logistica\Solver\SIS_Ga2\bin\es\System.Web.Mvc.resources.dll
+C:\Logistica\Solver\SIS_Ga2\bin\es\System.Web.Optimization.resources.dll
+C:\Logistica\Solver\SIS_Ga2\bin\es\System.Web.Razor.resources.dll
+C:\Logistica\Solver\SIS_Ga2\bin\es\System.Web.WebPages.resources.dll
+C:\Logistica\Solver\SIS_Ga2\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Logistica\Solver\SIS_Ga2\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Logistica\Solver\SIS_Ga2\obj\Debug\SIS_Ga2.csprojAssemblyReference.cache
+C:\Logistica\Solver\SIS_Ga2\obj\Debug\SIS_Ga2.csproj.CoreCompileInputs.cache
+C:\Logistica\Solver\SIS_Ga2\obj\Debug\SIS_Ga2.csproj.CopyComplete
+C:\Logistica\Solver\SIS_Ga2\obj\Debug\SIS_Ga2.dll
+C:\Logistica\Solver\SIS_Ga2\obj\Debug\SIS_Ga2.pdb
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Views\ApplicationInsights.config
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\roslyn\csc.exe
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\roslyn\System.Collections.Immutable.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\roslyn\System.Reflection.Metadata.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\roslyn\vbc.exe
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\roslyn\VBCSCompiler.exe
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\roslyn\VBCSCompiler.exe.config
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\SIS_Ga2.dll.config
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\SIS_Ga2.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\SIS_Ga2.pdb
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Antlr3.Runtime.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\EntityFramework.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\EntityFramework.SqlServer.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.AI.DependencyCollector.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.AI.Web.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.AI.WindowsServer.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.ApplicationInsights.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.Owin.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.Owin.Security.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.Owin.Security.Google.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.Solver.Foundation.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.Web.Infrastructure.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Newtonsoft.Json.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Owin.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\SIS_Ga2.Business.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\SIS_Ga2.DataAccess.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\SIS_Ga2.Entity.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\System.Web.Helpers.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\System.Web.Mvc.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\System.Web.Optimization.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\System.Web.Razor.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\System.Web.WebPages.Deployment.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\System.Web.WebPages.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\System.Web.WebPages.Razor.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\WebGrease.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\DbManager.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\CriptoSecurity.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\SIS_Ga2.Business.pdb
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\SIS_Ga2.DataAccess.pdb
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\SIS_Ga2.Entity.pdb
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.AI.DependencyCollector.xml
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.AI.Web.xml
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.AI.WindowsServer.xml
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.ApplicationInsights.xml
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.Solver.Foundation.xml
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Newtonsoft.Json.xml
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\System.Web.Helpers.xml
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\System.Web.Mvc.xml
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\System.Web.Optimization.xml
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\System.Web.Razor.xml
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\System.Web.WebPages.xml
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\System.Web.WebPages.Deployment.xml
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\System.Web.WebPages.Razor.xml
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Antlr3.Runtime.pdb
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\EntityFramework.xml
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\EntityFramework.SqlServer.xml
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.Owin.xml
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.Owin.Security.xml
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.Owin.Security.Google.xml
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\es\System.Web.Helpers.resources.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\es\System.Web.Mvc.resources.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\es\System.Web.Optimization.resources.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\es\System.Web.Razor.resources.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\es\System.Web.WebPages.resources.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\es\System.Web.WebPages.Deployment.resources.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\bin\es\System.Web.WebPages.Razor.resources.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\obj\Debug\SIS_Ga2.csprojAssemblyReference.cache
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\obj\Debug\SIS_Ga2.csproj.CoreCompileInputs.cache
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\obj\Debug\SIS_Ga2.csproj.CopyComplete
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\obj\Debug\SIS_Ga2.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2\obj\Debug\SIS_Ga2.pdb

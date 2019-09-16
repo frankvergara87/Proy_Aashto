@@ -1,0 +1,128 @@
+@import "https://use.fontawesome.com/releases/v5.1.0/css/all.css";
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto";
+}
+.box-login {
+  background: #0f2027; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #2c5364,
+    #203a43,
+    #0f2027
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #2c5364,
+    #203a43,
+    #0f2027
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-repeat: no-repeat;
+  width: 340px;
+  height: 550px;
+  padding: 40px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 5px 5px 10px #070f13;
+}
+
+.box-login h3 {
+  margin-bottom: 26px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.box-login .inputBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box-login .inputBox input {
+    display: block;
+    padding: 10px 0 7px 22px;
+    font-size: 14px;
+    margin-bottom: 30px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: none;
+    color: #fff !important;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: none;
+}
+
+.box-login .inputBox label {
+  position: absolute;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #fff;
+  top: 0;
+  pointer-events: none;
+  transition: 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box-login .inputBox input:focus ~ label,
+.box-login .inputBox input:valid ~ label {
+    top: -20px;
+    color: #4b92b1;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+}
+
+.box-img {
+  text-align: center;
+}
+.box-img img {
+  position: relative;
+  margin-bottom: 10px;
+  width: 49%;
+  border-radius: 50%;
+}
+.logo-input {
+  margin-top: -28px;
+  margin-right: -18px;
+  color: #fff;
+}
+.box-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn {
+  box-sizing: border-box;
+  margin-top: 30px;
+  padding: 8px 20px;
+  border-radius: 10px;
+ /*background: rgba(42, 67, 80, 0.5);*/
+  background: rgba(42, 67, 80, 0.5);
+  box-sizing: unset;
+  border-width: 0 0 2px 0;
+  border-style: outset;
+  border-color: transparent;
+  border-image: 0cm;
+  color: #fff;
+  /*box-shadow: 1px 2px #273f47;*/
+  box-shadow: 1px 2px #273f47;
+  cursor: pointer;
+}
+.box-footer {
+  text-align: center;
+  font-size: 13px;
+  color: #fff;
+  padding-top: 36px;
+}

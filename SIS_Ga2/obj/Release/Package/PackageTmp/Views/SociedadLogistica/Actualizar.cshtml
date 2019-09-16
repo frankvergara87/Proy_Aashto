@@ -1,0 +1,76 @@
+﻿@model SIS_Ga2.Entity.Sociedades_Logistica
+@{
+    ViewBag.Title = "Actualizar Sociedad Logistica";
+}
+ 
+<div class="col-md-12">
+    <div class="widget box">
+        <div class="widget-header">
+            <h4><i class="icon-reorder"></i> <span id="Cliente.Titulo" name="Cliente.Titulo">CLIENTE</span></h4>
+        </div>
+        <div class="widget-content">
+
+            @using (Html.BeginForm("Actualizar", "SociedadLogistica", null, FormMethod.Post, new { id = "formautoriza", name = "formautoriza", @class = "form-horizontal row-border" }))
+            {
+                <div class="widget-content">
+                    <div class="row">
+                   
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                                    <div class="form-group" style="padding-right:5px !important; padding-bottom:0px !important;">
+                                        <label class="control-label">
+                                            <span id="" name="">CodigoEmpresa</span>
+                                        </label>
+                                        @Html.EditorFor(model => model.Codigo_Sociedad, new { htmlAttributes = new { @class = "form-control", @style = "text-transform:uppercase", @onFocus = "limpiardiv('dCodigoEmpresa');" } })
+                                    </div>
+                                    <div id="dCodigoEmpresa"></div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                                    <div class="form-group" style="padding-right:5px !important; padding-bottom:0px !important;">
+                                        <label class="control-label">
+                                            <span id="" name="">CodigoCliente</span>
+                                        </label>
+                                        @Html.EditorFor(model => model.Descripcion_Sociedad, new { htmlAttributes = new { @class = "form-control", @style = "text-transform:uppercase", @onFocus = "limpiardiv('dCodigoCliente');" } })
+                                    </div>
+                                    <div id="dCodigoCliente"></div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                                    <div class="form-group" style="padding-right:5px !important; padding-bottom:0px !important;">
+                                        <label class="control-label">
+                                            <span id="" name="">CodigoUbigeo</span>
+                                        </label>
+                                        @Html.EditorFor(model => model.Numero_RUC_Sociedad, new { htmlAttributes = new { @class = "form-control", @style = "text-transform:uppercase", @onFocus = "limpiardiv('dCodigoUbigeo');" } })
+                                    </div>
+                                    <div id="dCodigoUbigeo"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-3">
+                            </div>
+                            <div class="col-md-3">
+                                <a href="@Url.Action("Index", "SociedadLogistica")" class="btn btn-danger button-submit" style="width:80%;">
+                                    <span id="solicitud.cancelar" name="solicitud.cancelar">Cliente.cancelar</span>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn btn-success button-submit" style="width:80%;" formaction="@Url.Action("Actualizar","SociedadLogistica")">
+                                    <span id="Cliente.Actualizar" name="Cliente.Actualizar">Cliente.Actualizar</span>
+                                </button>
+                            </div>
+                            <div class="col-md-3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+        </div>
+    </div>
+</div>

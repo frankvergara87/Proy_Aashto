@@ -1,0 +1,109 @@
+﻿@model  SIS_Ga2.Entity.parametrogeneral
+
+@{    
+    ViewBag.Title = "Index";
+}
+
+
+<div class="col-md-12">
+    <div class="widget box">
+        <div class="widget-header">
+            <h4><i class="icon-reorder"></i> <span id="ParamentrosGenerales.Titulo" name="ParamentrosGenerales.Titulo">ParamentrosGenerales.Titulo</span></h4>
+        </div>
+        <div class="widget-content">
+            @*@using (Html.BeginForm("Create", "Autorizacionusuario", null, FormMethod.Post, new { id = "formautoriza", name = "formautoriza", @class = "form-horizontal row-border" }))*@
+            @using (Html.BeginForm("Save", "ParametroGeneral", null, FormMethod.Post, new { @class = "form-horizontal row-border" }))
+            {
+                @Html.HiddenFor(model => model.idparametrogeneral)
+                <div class="widget-content">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                                    <div class="form-group" style="padding-right:5px !important; padding-bottom:0px !important;">
+                                        <label class="control-label">
+                                            <span>rutapdf</span>0
+                                        </label>
+                                        @Html.EditorFor(model => model.rutapdf, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.rutapdf, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                                    <div class="form-group" style="padding-right:5px !important; padding-bottom:0px !important;">
+                                        <label class="control-label">
+                                            <span>rutafirma</span>
+                                        </label>
+                                        @Html.EditorFor(model => model.rutafirma, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.rutafirma, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                                    <div class="form-group" style="padding-right:5px !important; padding-bottom:0px !important;">
+                                        <label class="control-label">
+                                            <span>color</span>
+                                        </label>
+                                        @Html.EditorFor(model => model.color, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.color, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                                    <div class="form-group" style="padding-right:5px !important; padding-bottom:0px !important;">
+                                        <label class="control-label">
+                                            <span id="" name="">rutalogo</span>
+                                        </label>
+                                        @Html.EditorFor(model => model.rutalogo, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.rutalogo, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                                    <div class="form-group" style="padding-right:5px !important; padding-bottom:0px !important;">
+                                        <label class="control-label">
+                                            <span id="" name="">tipoletra</span>
+                                        </label>
+                                        @Html.EditorFor(model => model.tipoletra, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.tipoletra, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @*<div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Save" class="btn btn-default" />
+                        </div>
+                    </div>*@
+
+                <div class="form-actions fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-3">
+                            </div>
+                            <div class="col-md-3">
+                                <a href="@Url.Action("Index", "Home")" class="btn btn-danger button-submit" style="width:80%;">
+                                    <span id="solicitud.cancelar" name="solicitud.cancelar">solicitud.cancelar</span>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn btn-success button-submit" style="width:80%;" formaction="@Url.Action("Save","ParametroGeneral")">
+                                    <span id="ParametrosGenerales.Registrar" name="ParametrosGenerales.Registrar">ParametrosGenerales.Registrar </span>
+                                </button>
+                            </div>
+                            <div class="col-md-3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+        </div>
+    </div>
+</div>
+
+

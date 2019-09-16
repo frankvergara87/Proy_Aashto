@@ -1,0 +1,690 @@
+﻿@model  List<SIS_Ga2.Entity.Usuario>
+@using SIS_Ga2.Entity
+@{
+    ViewBag.Title = "Mantenimiento de Usuario";
+    string codigosociedad = ViewBag.codigosociedad;
+}
+<script type="text/javascript" src="~/Scripts/javaga2/JavaScriptGa2.js"></script>
+<script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+<link href="~/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="~/plugins/jquery-ui/jquery-ui-1.10.2.custom.css" rel="stylesheet" />
+<div class="table-responsive">
+    <div class="widget">
+        <div class="widget-header">
+            <div class="col-md-10">
+                <h3><span id="Mantenimiento de Usuario" name="Mantenimiento de Usuario">Mantenimiento de Usuario</span></h3>
+            </div>
+            <div class="col-md-2">
+                <a class="btn btn-lg" style="background-color:#39749C; color:white;" onclick="NuevoUsuario();">
+                    <i class="icol-add"></i>
+                    <span id="Nuevo" name="Nuevo">Nuevo</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <table class="table table-hover table-checkable table-responsive" id="tblUsuario">
+        <thead style="color:darkblue;">
+            <tr>
+                <th style="text-align:center;"><span>Cuenta</span></th>
+                <th style="text-align:center;"><span>Sociedad</span></th>
+                <th style="text-align:center;"><span>DescripcionSociedad</span></th>
+                <th style="text-align:center;"><span>Nombre</span></th>
+                <th style="text-align:center;"><span>Correo</span></th>
+                <th style="text-align:center;"><span>Lenguaje</span></th>
+                <th style="text-align:center;"><span>Estado</span></th>
+                <th style="text-align:center;"><span>AgregarRol</span></th>
+                <th style="text-align:center;"><span>EditarUsuario</span></th>
+            </tr>
+        </thead>
+        <tbody id="tbodyUsuario"></tbody>
+    </table>
+</div>
+
+
+<div class="modal fade" id="VentanaNuevoUsuario" role="dialog" data-backdrop="static">
+    <div class="modal-dialog  modal-lg" style="width: 70%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Registro de Usuarios</h5>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <input type="hidden" id="txtidusuario" class="form-control" value="" />
+                        <label class="col-md-1 control-label">Idiomas</label>
+                        <div class="col-md-3">
+                            @Html.DropDownList("cboidiomas", new SIS_Ga2.Controllers.GenericController().comboidiomas("0"), new { @class = "form-control", @onchange = "limpiardiv('didiomas');" })
+                            <div id="didiomas"></div>
+                        </div>
+                        <label class="col-md-1 control-label">Cuenta</label>
+                        <div class="col-md-3">
+                            <input class="form-control" type="text" id="txtcuenta" name="txtcuenta" value="" onkeyup="fMayuscula(this);" onfocus="limpiardiv('dcuenta');" />
+                            <div id="dcuenta"></div>
+                        </div>
+                        <label class="col-md-1 control-label">
+                            Clave
+                        </label>
+                        <div class="col-md-3">
+                            <input class="form-control" type="text" id="txtclave" name="txtclave" value="" onfocus="limpiardiv('dclave');" />
+                            <div id="dclave"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1 control-label">Nombre</label>
+                        <div class="col-md-3">
+                            <input class="form-control" type="text" id="txtnombre" name="txtnombre" value="" onfocus="limpiardiv('dusuario');" />
+                            <div id="dusuario"></div>
+                        </div>
+                        <label class="col-md-1 control-label">Apellidos</label>
+                        <div class="col-md-3">
+                            <input class="form-control" type="text" id="txtapellidos" name="txtapellidos" value="" onkeyup="fMayuscula(this);" onfocus="limpiardiv('dapellidos');" />
+                            <div id="dapellidos"></div>
+                        </div>
+                        <label class="col-md-1 control-label">
+                            DNI
+                        </label>
+                        <div class="col-md-3">
+                            <input class="form-control" type="text" id="txtdni" name="txtdni" value="" onfocus="limpiardiv('ddni');" />
+                            <div id="ddni"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1 control-label">Celular</label>
+                        <div class="col-md-3">
+                            <input class="form-control" type="text" id="txtcelular" name="txtcelular" value="" onfocus="limpiardiv('dcelular');" />
+                            <div id="dcelular"></div>
+                        </div>
+                        <label class="col-md-1 control-label">Cargo</label>
+                        <div class="col-md-3">
+                            <input class="form-control" type="text" id="txtcargo" name="txtcargo" value="" onkeyup="fMayuscula(this);" onfocus="limpiardiv('dcargo');" />
+                            <div id="dcargo"></div>
+                        </div>
+                        <label class="col-md-1 control-label">
+                            Correo
+                        </label>
+                        <div class="col-md-3">
+                            <input class="form-control" type="text" id="txtcorreo" name="txtcorreo" value="" onfocus="limpiardiv('dcorreo');" />
+                            <div id="dcorreo"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1 control-label">RecibeCorreo</label>
+                        <div class="col-md-3">
+                            <input class="form-control" type="checkbox" id="chkrecibe" name="chkrecibe" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                <a class="btn btn-success" onclick="RegistrarUsuario();">
+                    Registrar
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="VentanaEditarUsuario" role="dialog" data-backdrop="static">
+    <div class="modal-dialog  modal-lg" style="width: 70%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Editar Usuarios</h5>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <input type="hidden" id="txtidusuario" class="form-control" value="" />
+                        <label class="col-md-1 control-label">Idiomas</label>
+                        <div class="col-md-3">
+                            @Html.DropDownList("cboidiomas1", new SIS_Ga2.Controllers.GenericController().comboidiomas("0"), new { @class = "form-control", @onchange = "limpiardiv('didiomas');" })
+                            <div id="didiomas"></div>
+                        </div>
+                        <label class="col-md-1 control-label">Cuenta</label>
+                        <div class="col-md-3">
+                            <input class="form-control" type="text" id="txtcuenta1" name="txtcuenta1" value="" onkeyup="fMayuscula(this);" onfocus="limpiardiv('dcuenta');" />
+                            <div id="dcuenta"></div>
+                        </div>
+                        <label class="col-md-1 control-label">
+                            Clave
+                        </label>
+                        <div class="col-md-3">
+                            <input class="form-control" type="text" id="txtclave1" name="txtclave1" value="" onfocus="limpiardiv('dclave');" />
+                            <div id="dclave"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1 control-label">Nombre</label>
+                        <div class="col-md-3">
+                            <input class="form-control" type="text" id="txtnombre1" name="txtnombre1" value="" onfocus="limpiardiv('dusuario');" />
+                            <div id="dusuario"></div>
+                        </div>
+                        <label class="col-md-1 control-label">Apellidos</label>
+                        <div class="col-md-3">
+                            <input class="form-control" type="text" id="txtapellidos1" name="txtapellidos1" value="" onkeyup="fMayuscula(this);" onfocus="limpiardiv('dapellidos');" />
+                            <div id="dapellidos"></div>
+                        </div>
+                        <label class="col-md-1 control-label">
+                            DNI
+                        </label>
+                        <div class="col-md-3">
+                            <input class="form-control" type="text" id="txtdni1" name="txtdni1" value="" onfocus="limpiardiv('ddni');" />
+                            <div id="ddni"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1 control-label">Celular</label>
+                        <div class="col-md-3">
+                            <input class="form-control" type="text" id="txtcelular1" name="txtcelular1" value="" onfocus="limpiardiv('dcelular');" />
+                            <div id="dcelular"></div>
+                        </div>
+                        <label class="col-md-1 control-label">Cargo</label>
+                        <div class="col-md-3">
+                            <input class="form-control" type="text" id="txtcargo1" name="txtcargo1" value="" onkeyup="fMayuscula(this);" onfocus="limpiardiv('dcargo');" />
+                            <div id="dcargo"></div>
+                        </div>
+                        <label class="col-md-1 control-label">
+                            Correo
+                        </label>
+                        <div class="col-md-3">
+                            <input class="form-control" type="text" id="txtcorreo1" name="txtcorreo1" value="" onfocus="limpiardiv('dcorreo');" />
+                            <div id="dcorreo"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1 control-label">RecibeCorreo</label>
+                        <div class="col-md-3">
+                            <input class="form-control" type="checkbox" id="chkrecibe1" name="chkrecibe1" />
+                        </div>
+                        <label class="col-md-1 control-label">Estado</label>
+                        <div class="col-md-3">
+                            <input class="form-control" type="checkbox" id="chkestado" name="chkestado" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                <a class="btn btn-success" onclick="ActualizarUsuario();">
+                    Actualizar
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="VentanaAgregarRol" role="dialog" data-backdrop="static">
+    <div class="modal-dialog  modal-lg" style="width: 50%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Agregar Roles de Usuario</h5>
+            </div>
+            <div class="modal-body" style="padding-bottom:0px;">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="hidden" id="txtidusuario_rol" class="form-control" value="" />
+                                <label class="col-md-4 control-label">Sociedades</label>
+                                <div class="col-md-8">
+                                    @Html.DropDownList("cbosociedades", new SIS_Ga2.Controllers.GenericController().combosociedades(codigosociedad), new { @class = "form-control", @onchange = "limpiardiv('dsociedad1');" })
+                                    <div id="dsociedad1"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="panel-body" style="border-style: solid;border-width: medium;border-radius:5px;overflow-y:scroll;width:100%;height:200px;">
+                                <table style="width:100%;">
+                                    <thead style="color:white;background-color:blue;">
+                                        <tr>
+                                            <th style="text-align:center;"><span></span></th>
+                                            <th style="text-align:center;"><span>Rol</span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="roldiv"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                <a class="btn btn-success" onclick="GuardarUsuarioRolSociedad();">
+                    Actualizar Rol
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="VentanaRolAplicacionFunciones" role="dialog" data-backdrop="static">
+    <div class="modal-dialog  modal-lg" style="width: 70%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Editar Funciones de Rol</h5>
+            </div>
+            <div class="modal-body" style="padding-bottom:0px;">
+                <div class="form-horizontal">
+                    @*<div class="col-md-6">*@
+                    <div class="form-group">
+                        <input type="hidden" id="txtidusuario" class="form-control" value="" />
+                        <label class="col-md-2 control-label">Aplicación</label>
+                        <div class="col-md-4">
+                            @Html.DropDownList("aplicacionfuncion", new SIS_Ga2.Controllers.GenericController().comboaplicaciones(), new { @class = "form-control" })
+                            <div id="dsociedad2"></div>
+                        </div>
+                        @*</div>
+                            <div class="form-group">*@
+                        <label class="col-md-2 control-label">
+                            Nombre Rol
+                        </label>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" id="txtnomrol2" name="txtnomrol2" value="" onfocus="limpiardiv('dnomrol2');" disabled />
+                            <div id="dnomrol2"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12" style="overflow-y:scroll;width:100%;height:325px;">
+                            <table class="table table-condensed" id="tablarolAplicacionFunciones">
+                                <thead style="background-color:#1D4F79;color:white;">
+                                    <tr>
+                                        <th style="text-align:center;"><span>Menú</span></th>
+                                        <th style="text-align:center;"><span>Todas</span></th>
+                                        <th style="text-align:center;"><span>Borrar</span></th>
+                                        <th style="text-align:center;"><span>Actualizar</span></th>
+                                        <th style="text-align:center;"><span>Ingreso</span></th>
+                                        <th style="text-align:center;"><span>Lectura</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbrolAplicacionFunciones"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                <a class="btn btn-success" onclick="GuardarRolAplicacionFunciones();">
+                    Actualizar Función
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section ViewScript {
+    <script src="~/Scripts/Modal.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            //document.getElementById('tree').innerHTML = '';
+            ListarUsuario();
+        });
+        function ListarUsuario() {
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("ListarUsuario", "Usuarios")',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (listado) {
+                    var contenido = "";
+                    var obj = (typeof listado) == 'string' ? eval('(' + listado + ')') : listado;
+                    for (var i = 0; i < obj.length; i++) {
+                        contenido += "<tr>" +
+                            "<td style='text-align: center'>" + obj[i].cuenta + "</td>" +
+                            "<td style='text-align: center'>" + obj[i].codigosociedad + "</td>" +
+                            "<td style='text-align: center'>" + obj[i].Descripcionsociedad + "</td>" +
+                            "<td style='text-align: center'>" + obj[i].Nombre + ' ' + obj[i].Apellidos + "</td>" +
+                            "<td style='text-align: center'>" + obj[i].Correo + "</td>" +
+                            "<td style='text-align: center'>" + obj[i].LangName + "</td>"                                      
+                        if (obj[i].Estado == true) {
+                            contenido = contenido + "<td style='text-align:center;' id='ACTIVO'>" +
+                                                    "<a class='bs-tooltip' data-original-title='ACTIVO'><i class='icol-accept' style='font-size:16px;'></i></a></td>"+
+                                                    "<td style='text-align:center;'>" + 
+                                                    "<a title='Agregar Rol' style='cursor:pointer;' onclick='AgregarRol(" + obj[i].idautorizacionusuario + ")'>" +
+                                                    "<i class='icon-list-ul'></i>" + "</a></td>" +
+                                                    "<td style='text-align:center;'>" + "<a title='Editar Usuario' style='cursor:pointer;' onclick='EditarUsuario(" + obj[i].idautorizacionusuario + ")'>" +
+                                                     "<i class='icon-cogs'></i>" + "</a></td>" 
+
+                        } else {
+                            contenido = contenido + "<td style='text-align:center;' id='DESACTIVO'>" +
+                                                    "<a class='bs-tooltip' data-original-title='DESACTIVO'><i class='icol-cross' style='font-size:16px;'></i></a></td>"+
+                                                    "<td style='text-align:center;'></td>" +
+                                                    "<td style='text-align:center;'>" + "<a title='Editar Usuario' style='cursor:pointer;' onclick='EditarUsuario(" + obj[i].idautorizacionusuario + ")'>" +
+                                                    "<i class='icon-cogs'></i>" + "</a></td>" 
+                            }                    
+                        contenido = contenido + "</tr>";
+                    }
+                    $('#tbodyUsuario').empty().html(contenido);
+                    $('#tblUsuario').DataTable({ responsive: true, details: false });
+                },
+                error: function (response) {
+                    if (response.length != 0) {
+                        alert(response);
+                    }
+                }
+            })
+        }
+        function NuevoUsuario() {
+            $("#VentanaNuevoUsuario").modal('show');
+            LimpiarNuevoUsuario();
+        }
+        function LimpiarNuevoUsuario() {
+            document.getElementById("cboidiomas").value = "0";
+            document.getElementById("txtcuenta").value = "";
+            document.getElementById("txtclave").value = "";
+            document.getElementById("txtnombre").value = "";
+            document.getElementById("txtapellidos").value = "";
+            document.getElementById("txtdni").value = "";
+            document.getElementById("txtcelular").value = "";
+            document.getElementById("txtcargo").value = "";
+            document.getElementById("txtcorreo").value = "";
+            document.getElementById("chkrecibe").checked = false;
+        }
+        function validacion(val) {
+            var capa = document.getElementById(val);
+            var h1 = document.createElement("span");
+            h1.innerHTML = "* Campo requerido";
+            h1.className = "label-control"
+            h1.style.cssText = "color:red";
+            capa.appendChild(h1);
+        }
+        function limpiardiv(val) {
+            document.getElementById(val).innerHTML = "";
+        }
+
+        function RegistrarUsuario() {
+            var cboidiomas = document.getElementById("cboidiomas").value;
+            var cuenta = document.getElementById("txtcuenta").value;
+            var clave = document.getElementById("txtclave").value;
+            var nombre = document.getElementById("txtnombre").value;
+            var apellidos = document.getElementById("txtapellidos").value;
+            var dni = document.getElementById("txtdni").value;
+            var celular = document.getElementById("txtcelular").value;
+            var cargo = document.getElementById("txtcargo").value;
+            var correo = document.getElementById("txtcorreo").value;
+            var chkrecibe = document.getElementById("chkrecibe").checked;
+
+            var objData = {};
+            objData["cboidiomas"] = cboidiomas;
+            objData["cuenta"] = cuenta;
+            objData["clave"] = clave;
+            objData["nombre"] = nombre;
+            objData["apellidos"] = apellidos;
+            objData["dni"] = dni;
+            objData["celular"] = celular;
+            objData["cargo"] = cargo;
+            objData["correo"] = correo;
+            objData["chkrecibe"] = chkrecibe;
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("RegistroUsuario", "Usuarios")',
+                data: JSON.stringify(objData),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (resultado) {
+                    if (resultado = true) {
+                        location.reload();
+                    }
+                }
+            });
+        }
+
+
+        function EditarUsuario(val) {
+            var idusuario = val;
+            var objData = {};
+            objData["idusuario"] = idusuario;
+            $("#VentanaEditarUsuario").modal('show');
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("EditarUsuario", "Usuarios")',
+                data: JSON.stringify(objData),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (usuario) {
+                    document.getElementById("cboidiomas1").value = usuario.Idlanguage;
+                    document.getElementById("txtcuenta1").value = usuario.cuenta;
+                    document.getElementById("txtclave1").value = "";
+                    document.getElementById("txtnombre1").value = usuario.Nombre;
+                    document.getElementById("txtapellidos1").value = usuario.Apellidos;
+                    document.getElementById("txtdni1").value = usuario.DNI;
+                    document.getElementById("txtcelular1").value = usuario.Celular;
+                    document.getElementById("txtcargo1").value = usuario.Cargo;
+                    document.getElementById("txtcorreo1").value = usuario.Correo;
+                    document.getElementById("chkrecibe1").checked = usuario.RecibeCorreo;
+                    document.getElementById("txtidusuario").value = idusuario;
+                    document.getElementById("chkestado").checked = usuario.Estado;
+                }
+            });
+        }
+
+        function ActualizarUsuario() {
+            var cboidiomas = document.getElementById("cboidiomas1").value;
+            var cuenta = document.getElementById("txtcuenta1").value;
+            var clave = document.getElementById("txtclave1").value;
+            var nombre = document.getElementById("txtnombre1").value;
+            var apellidos = document.getElementById("txtapellidos1").value;
+            var dni = document.getElementById("txtdni1").value;
+            var celular = document.getElementById("txtcelular1").value;
+            var cargo = document.getElementById("txtcargo1").value;
+            var correo = document.getElementById("txtcorreo1").value;
+            var chkrecibe = document.getElementById("chkrecibe1").checked;
+            var idusuario = document.getElementById("txtidusuario").value;
+            var chkestado = document.getElementById("chkestado").checked;
+            var objData = {};
+            objData["cboidiomas"] = cboidiomas;
+            objData["cuenta"] = cuenta;
+            objData["clave"] = clave;
+            objData["nombre"] = nombre;
+            objData["apellidos"] = apellidos;
+            objData["dni"] = dni;
+            objData["celular"] = celular;
+            objData["cargo"] = cargo;
+            objData["correo"] = correo;
+            objData["chkrecibe"] = chkrecibe;
+            objData["idusuario"] = idusuario;
+            objData["chkestado"] = chkestado;
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("ActualizarUsuario", "Usuarios")',
+                data: JSON.stringify(objData),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (resultado) {
+                    if (resultado = true) {
+                        location.reload();
+                    }
+                }
+            });
+        }
+
+        function AgregarRol(idusuario) {
+            var objData = {};
+            //objData["idusuario"] = idusuario;
+            $("#VentanaAgregarRol").modal('show');
+            document.getElementById("cbosociedades").value = "0";
+            $('#roldiv').empty();
+            document.getElementById("txtidusuario_rol").value = idusuario;
+        }
+
+
+
+        $("#cbosociedades").change(function () {
+            var sociedades = document.getElementById("cbosociedades").value;
+            var idusuario = document.getElementById("txtidusuario_rol").value;
+            var objData = {};
+            objData["sociedad"] = sociedades;
+            objData["idusuario"] = idusuario;
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("ListarRolesPorSociedad", "Usuarios")',
+                data: JSON.stringify(objData),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (paginaroles) {
+                    var contenido = "";
+                    var obj = (typeof paginaroles) == 'string' ? eval('(' + paginaroles + ')') : paginaroles;
+                    for (var i = 0; i < obj.length; i++) {
+                        contenido += "<tr>" +
+                            "<td style='text-align: center'><input type='checkbox' class='checked' id='check_" + i + "' value='"+obj[i].idRol+"' />" + "" + "</td>" +
+                            "<td style='text-align: center'>" + obj[i].DescripcionRol + "</td>" +
+                            "</tr>";
+                    }
+                    $('#roldiv').empty().html(contenido);
+                }
+            });
+        });
+        function GuardarUsuarioRolSociedad() {
+            var checkbox = document.getElementsByClassName("checked").length;
+            var seleccionados = "";
+            for (j = 0; j < checkbox; j++) {
+                if (document.getElementById("check_" + j).checked == true) {
+                    var idrol = document.getElementById("check_" + j).value;
+                    seleccionados += idrol + '|';
+                }
+            }
+            var objData = {};
+            var cbosociedades = document.getElementById("cbosociedades").value;
+            var idusuario = document.getElementById("txtidusuario_rol").value;
+            objData["seleccionados"] = seleccionados;
+            objData["idusuario"] = idusuario;
+            objData["cbosociedades"] = cbosociedades;
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("AgregarRol", "Usuarios")',
+                data: JSON.stringify(objData),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (resultado) {
+                    if (resultado = true) {
+                        location.reload();
+                    }
+                }
+            });
+
+        }
+
+        @*function AnadirAplicacion(idrol, contador) {
+            document.getElementById('tree').innerHTML = '';
+            document.getElementById("txtnomrol1").value = "";
+            var des = document.getElementById('descripcionrolanadir_' + contador).innerHTML;
+            document.getElementById("txtnomrol1").value = des;
+            document.getElementById("aplicacion").value = "0";
+            $("#VentanaRolAplicacion").modal("show");
+       }
+        function GuardarMenuRolAplicacion() {
+            var ul, li, a, seleccionadosfinal;
+            var seleccionadostext = "";
+            var checkbox = document.getElementsByClassName("sim-tree-checkbox checked").length;
+            var seleccionadoschecked = document.getElementsByClassName("sim-tree-checkbox checked").length;
+            var seleccionadossemi = document.getElementsByClassName("sim-tree-checkbox sim-tree-semi").length;
+            // var checkbox = document.getElementsByClassName("sim-tree-checkbox").length;
+            var seleccionadosfinal = seleccionadoschecked + seleccionadossemi;
+            ul = document.getElementsByClassName("sim-tree");
+            li = ul[0].getElementsByTagName("li");
+            var cantidadli = ul[0].getElementsByTagName("li").length;
+            // li = seleccionados[i].getElementsByClassName
+            for (j = 0; j < cantidadli; j++) {
+                a = li[j].getElementsByTagName("a")[0];
+                if (a.getElementsByTagName("i")[0].className == "sim-tree-checkbox checked" || a.getElementsByTagName("i")[0].className == "sim-tree-checkbox sim-tree-semi") {
+                    seleccionadostext += a.textContent + '|';
+                }
+            }
+            var objData = {};
+            var rol = document.getElementById("txtnomrol1").value;
+            var aplicacion = document.getElementById("aplicacion").value;
+            objData["seleccionados"] = seleccionadostext;
+            objData["rol"] = rol;
+            objData["aplicacion"] = aplicacion;
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("GuardarMenuRolAplicacion", "Roles")',
+                data: JSON.stringify(objData),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (resultado) {
+                    if (resultado = true) {
+                        $("#VentanaRolAplicacion").modal('hide');
+                    }
+                }
+            });
+        }
+
+        function EditarFunciones(idrol, contador) {
+            $('#tbrolAplicacionFunciones').empty().html();
+            document.getElementById("txtnomrol2").value = "";
+            var des = document.getElementById('descripcionrolanadir_' + contador).innerHTML;
+            document.getElementById("txtnomrol2").value = des;
+            $("#VentanaRolAplicacionFunciones").modal("show");
+            document.getElementById("aplicacionfuncion").value = 1;
+            var idaplicacion = document.getElementById("aplicacionfuncion").value;
+            var objData = {};
+            objData["rol"] = des;
+            objData["aplicacion"] = idaplicacion;
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("EditarFunciones", "Roles")',
+                data: JSON.stringify(objData),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (paginaroles) {
+                    var contenido = "";
+                    var obj = (typeof paginaroles) == 'string' ? eval('(' + paginaroles + ')') : paginaroles;
+                    for (var i = 0; i < obj.length; i++) {
+                        contenido += "<tr>" +
+                         "<td style='text-align: center'>" + obj[i].NombreOpcion + "</td>" +
+                         "<td style='text-align: center'><input type='checkbox' id='ChkFuncionAll_" + obj[i].NombreOpcion + "_" + des + "' value='" + obj[i].NombreOpcion + "_FuncionAll'/></td>" +
+                         "<td style='text-align: center'><input type='checkbox' id='ChkFuncionBorrar_" + obj[i].NombreOpcion + "_" + des + "' value='" + obj[i].NombreOpcion + "_FuncionBorrar'/></td>" +
+                         "<td style='text-align: center'><input type='checkbox'  id='ChkFuncionActualiza_" + obj[i].NombreOpcion + "_" + des + "' value='" + obj[i].NombreOpcion + "_FuncionActualiza'/></td>" +
+                         "<td style='text-align: center'><input type='checkbox' id='ChkFuncionIngreso_" + obj[i].NombreOpcion + "_" + des + "' value='" + obj[i].NombreOpcion + "_FuncionIngreso'/></td>" +
+                         "<td style='text-align: center'><input type='checkbox' id='ChkFuncionLectura_" + obj[i].NombreOpcion + "_" + des + "' value='" + obj[i].NombreOpcion + "_FuncionLectura'/></td>"
+                          + "</tr>";
+                    }
+                    $('#tbrolAplicacionFunciones').empty().html(contenido);
+                    //$('#tablarolAplicacionFunciones').DataTable({
+                    //    "scrollY": "400px",
+                    //    "scrollCollapse": true,
+                    //});
+                    for (var i = 0; i < obj.length; i++) {
+                        document.getElementById('ChkFuncionAll_' + obj[i].NombreOpcion + '_' + des).checked = obj[i].FuncionAll;
+                        document.getElementById('ChkFuncionBorrar_' + obj[i].NombreOpcion + '_' + des).checked = obj[i].FuncionBorrar;
+                        document.getElementById('ChkFuncionActualiza_' + obj[i].NombreOpcion + '_' + des).checked = obj[i].FuncionActualiza;
+                        document.getElementById('ChkFuncionIngreso_' + obj[i].NombreOpcion + '_' + des).checked = obj[i].FuncionIngreso;
+                        document.getElementById('ChkFuncionLectura_' + obj[i].NombreOpcion + '_' + des).checked = obj[i].FuncionLectura;
+                    }
+                }
+            });
+        }
+
+        function GuardarRolAplicacionFunciones() {
+            var check = $("input:checkbox").length;
+            var valorchekes = "";
+            for (i = 0; i < check; i++) {
+                var seleccion = $("input:checkbox")[i].checked;
+                valorchekes += $("input:checkbox")[i].value + '_' + seleccion + '|';
+            }
+            var objData = {};
+            var rol = document.getElementById("txtnomrol2").value;
+            var aplicacion = document.getElementById("aplicacionfuncion").value;
+            objData["seleccionados"] = valorchekes;
+            objData["rol"] = rol;
+            objData["aplicacion"] = aplicacion;
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("GuardarRolAplicacionFunciones", "Roles")',
+                data: JSON.stringify(objData),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (resultado) {
+                    if (resultado = true) {
+                        $("#VentanaRolAplicacionFunciones").modal('hide');
+                    }
+                }
+            });
+        }*@
+    </script>
+}

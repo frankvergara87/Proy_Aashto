@@ -1,0 +1,35 @@
+D:\SIS_Ga2\SIS_Ga2.Entity\bin\Debug\SIS_Ga2.Entity.dll
+D:\SIS_Ga2\SIS_Ga2.Entity\bin\Debug\SIS_Ga2.Entity.pdb
+D:\SIS_Ga2\SIS_Ga2.Entity\obj\Debug\SIS_Ga2.Entity.dll
+D:\SIS_Ga2\SIS_Ga2.Entity\obj\Debug\SIS_Ga2.Entity.pdb
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2.Entity\bin\Debug\SIS_Ga2.Entity.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2.Entity\bin\Debug\SIS_Ga2.Entity.pdb
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2.Entity\obj\Debug\SIS_Ga2.Entity.csprojResolveAssemblyReference.cache
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2.Entity\obj\Debug\SIS_Ga2.Entity.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2.Entity\obj\Debug\SIS_Ga2.Entity.pdb
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2.Entity\bin\Debug\SIS_Ga2.Entity.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2.Entity\bin\Debug\SIS_Ga2.Entity.pdb
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2.Entity\obj\Debug\SIS_Ga2.Entity.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2.Entity\obj\Debug\SIS_Ga2.Entity.pdb
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2.Entity\bin\Debug\SIS_Ga2.Entity.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2.Entity\bin\Debug\SIS_Ga2.Entity.pdb
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2.Entity\obj\Debug\SIS_Ga2.Entity.csprojResolveAssemblyReference.cache
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2.Entity\obj\Debug\SIS_Ga2.Entity.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2.Entity\obj\Debug\SIS_Ga2.Entity.pdb
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2.Entity\bin\Debug\SIS_Ga2.Entity.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2.Entity\bin\Debug\SIS_Ga2.Entity.pdb
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2.Entity\obj\Debug\SIS_Ga2.Entity.csprojResolveAssemblyReference.cache
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2.Entity\obj\Debug\SIS_Ga2.Entity.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2.Entity\obj\Debug\SIS_Ga2.Entity.pdb
+C:\Logistica\Solver\SIS_Ga2.Entity\bin\Debug\SIS_Ga2.Entity.dll
+C:\Logistica\Solver\SIS_Ga2.Entity\bin\Debug\SIS_Ga2.Entity.pdb
+C:\Logistica\Solver\SIS_Ga2.Entity\obj\Debug\SIS_Ga2.Entity.csproj.CoreCompileInputs.cache
+C:\Logistica\Solver\SIS_Ga2.Entity\obj\Debug\SIS_Ga2.Entity.dll
+C:\Logistica\Solver\SIS_Ga2.Entity\obj\Debug\SIS_Ga2.Entity.pdb
+C:\Logistica\Solver\SIS_Ga2.Entity\obj\Debug\SIS_Ga2.Entity.csprojAssemblyReference.cache
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2.Entity\bin\Debug\SIS_Ga2.Entity.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2.Entity\bin\Debug\SIS_Ga2.Entity.pdb
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2.Entity\obj\Debug\SIS_Ga2.Entity.csprojAssemblyReference.cache
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2.Entity\obj\Debug\SIS_Ga2.Entity.csproj.CoreCompileInputs.cache
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2.Entity\obj\Debug\SIS_Ga2.Entity.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2.Entity\obj\Debug\SIS_Ga2.Entity.pdb

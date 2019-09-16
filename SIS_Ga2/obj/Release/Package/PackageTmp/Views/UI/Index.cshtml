@@ -1,0 +1,332 @@
+﻿@model IEnumerable<SIS_Ga2.Entity.UI>
+
+@section FormTitle
+{
+    @*<span id="Elemento.Titulo" name="Elemento.Titulo" class="textotitulo">Elemento.Titulo</span>*@
+}
+@section Formcommets
+{
+    <a href="javascript:void(0);" class="btn btn-primary button-submit" onclick="VerRegistoModal();">
+        @*<img src="@Url.Content("~/assets/img/images/new.png")" class="listaicono" />*@
+        <span id="Elemento.CrearNuevo" name="Elemento.CrearNuevo">Elemento.CrearNuevo</span>
+    </a>
+}
+
+<div class="col-md-12">
+    <div class="widget box">
+        <div class="widget-header">
+            <h4><i class="icon-reorder"></i><span id="Elemento.ListarElementoXIdioma" name="Elemento.ListarElementoXIdioma">Elemento.ListarElementoXIdioma</span></h4>
+        </div>
+        <div class="widget-content">
+            <table class="table table-striped table-bordered table-hover table-checkable table-responsive datatable" id="tblUIPivot">
+                <thead>
+                    <tr>
+                        <th class="hidden-xs;align-center;"><span id="Idioma.Elemento" name="Idioma.Elemento">Idioma.Elemento</span></th>
+                        @foreach (var fila in Model)
+                        {
+                            foreach (var cell in fila.Idioma)
+                            {
+                        <th>@cell.LangName</th>
+                            }
+                            break;
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        int contadorFila = 0;
+                        int contadorColumna = 0;
+                        var separador = "|";
+                    }
+
+                    @foreach (SIS_Ga2.Entity.UI row in Model)
+                    {
+                        contadorFila = contadorFila + 1;
+                    <tr>
+                        <td>
+                            <input type="hidden" name="HND_@contadorFila" id="HND_@contadorFila" class="form-control" />
+                            <input type="hidden" name="HNDTEXT_@row.ElementCode" id="HNDTEXT_@row.ElementCode" class="form-control" value="@row.ElementCode" />
+                            @row.ElementCode
+                        </td>
+
+                        @foreach (var cell in row.Idioma)
+                            {
+                                contadorColumna = contadorColumna + 1;
+
+
+                            <td>
+                                <input type="text" id="Code_@contadorFila@separador@cell.IdUILanguage" name="Code_@contadorFila@separador@cell.IdUILanguage" value="@cell.ElementCaptionText" onkeypress="return ActivarModificado(event, this);" onkeydown="return ActivarModificadoCtrl(event, this);" />
+                            </td>
+                            }
+                        @{
+                                contadorColumna = 0;
+                        }
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="form-actions fluid">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <div class="col-md-3">
+                    </div>
+                    <div class="col-md-3">
+                        <a href="@Url.Action("Index", "Tablero")" class="btn btn-danger button-submit" style="width:80%;">
+                            <span id="Idioma.cancelar" name="solicitud.cancelar">Idioma.cancelar</span>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a class="btn btn-primary button-submit" style="width:80%;" onclick="return ActualizarJsonCodigoElementos();">
+                            <span id="Idioma.Registrar" name="Idioma.Registrar">Idioma.Registrar</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="RegistrarNuevoElemento" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content" style="width: 700px;">
+            <form class="form-horizontal">
+
+                <div class="modal-header">
+                    <h3 class="modal-title">
+                        <span id="Elemento.CrearNuevo" name="Elemento.CrearNuevo">Elemento.CrearNuevo</span>
+
+                    </h3>
+                </div>
+
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">
+                            <span id="Elemento.Codigo" name="Elemento.Codigo">Elemento.Codigo</span>
+                        </label>
+                        <div class="col-md-7">
+                            <input type="text" id="ElementCode" name="ElementCode" class="form-control" />
+                        </div>
+                        <div id="divCodigoELemento"></div>
+                    </div>
+
+                </div>
+                <!-- Botones de controles-->
+                <div class="modal-footer">
+                    <button class="btn" data-dismiss="modal" aria-hidden="true" id="btn_cerrar">Cerrar</button>
+                    <button type="submit" class="submit btn btn-primary pull-right" onclick="return RigistrarElementCode();">
+                        <span id="Elemento.Registrar" name="Elemento.Registrar">Elemento.Registrar</span>
+                    </button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="Alerta" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="bootbox-close-button close" style="margin-top: -10px;"></button>
+                <div class="bootbox-body" id="txtMensaje"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true" id="btn_cerrar">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="~/Scripts/jquery.noty.packaged.min.js"></script>
+<script language="JavaScript">
+
+    $('#tblUIPivot').on('draw.dt', function () {
+        //debugger;
+        ActualizarCaption_sInfo();
+    });
+
+    function VerRegistoModal()
+    {
+        document.getElementById("ElementCode").value = "";
+
+        $("#RegistrarNuevoElemento").modal('show');
+        $('#RegistrarNuevoElemento').on('shown.bs.modal', function () {
+            $('#ElementCode').focus();
+        })
+
+    }
+
+    function Alerta(strMensaje)
+    {
+        $("#Alerta").modal('show');
+        document.getElementById("txtMensaje").innerHTML = '<h3>'+ strMensaje + '</h3>';
+    };
+
+    function ObtenerListaElementosGrilla()
+    {
+
+        var oTable = document.getElementById('tblUIPivot');
+        var array = new Array();
+        for (i = 1; i < oTable.rows.length; i++)
+        {
+            var oCells = oTable.rows.item(i).cells;
+            if (oTable.rows.item(i).cells.item(0).children[0].value == "1")
+            {
+                for (var j = 1; j < oCells.length; j++)
+                {
+                    var cellVal = oCells.item(j).children[0].value;
+                    var Nombre = oCells.item(j).children[0].name.split('|')[1];
+                    var fila = {};
+                    fila["ElementCode"] = oTable.rows.item(i).cells.item(0).children[1].value;
+                    fila["IdUILanguage"] =  Nombre;
+                    fila["ElementCaptionText"] = cellVal;
+                    array.push(fila);
+                }
+            }
+        }
+        return array;
+
+     }
+
+    function ActualizarJsonCodigoElementos()
+    {
+        if (ObtenerListaElementosGrilla().length == 0)
+            //noty({ text: 'No hay datos para actualizar en la lista.', layout: 'center', type: 'warning', timeout: 2000 });
+                Alerta('No hay datos para actualizar en la lista.');
+        else
+        {
+            var UI = JSON.stringify( ObtenerListaElementosGrilla());
+            var DataParametros = { "UI": UI };
+            $.ajax({
+                url: '@Url.Action("Actualizar", "UI")',
+                traditional: true,
+                async: false,
+                cache: false,
+                data: DataParametros,
+                context: document.body,
+                type: "POST",
+                dataType: "json",
+                success: function (result)
+                {
+                    if (result == "OK")
+                    {
+
+                        //noty({ text: 'Se actualizaron los datos', layout: 'center', type: 'success', timeout: 1000 });
+                        Alerta('Se actualizaron los registros');
+
+                        var oTable = document.getElementById('tblUIPivot');
+                        for (i = 1; i < oTable.rows.length; i++)
+                            if (oTable.rows.item(i).cells.item(0).children[0].value == "1")
+                                oTable.rows.item(i).cells.item(0).children[0].value = "";
+                    }
+                    else
+
+                        //noty({ text: 'No se actualizaron los datos', layout: 'center', type: 'error', timeout: 1000 });
+                        Alerta('¡No se actualizaron los datos!');
+                },
+                error: function (xhr)
+                {
+                    //noty({ text: 'Ocurrió un error de registro', layout: 'center', type: 'error', timeout: 1000 });
+                    Alerta('¡Ocurrió un error de registro!');
+                }
+            });
+        }
+    }
+
+
+
+    function ActivarModificado(evt,obj)
+    {
+        //debugger;
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        //alert(charCode);
+        if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123) || charCode == 8 || charCode == 32 || charCode == 225 || charCode == 233 || charCode == 237 || charCode == 243 || charCode == 250)
+        {
+            obj.parentNode.parentNode.cells.item(0).children[0].value = "1";
+            return true;
+        }
+        if (charCode == 36 || charCode == 35 || charCode == 9 || charCode == 37 || charCode == 39  )
+            return true;
+        else
+            return false;
+    }
+
+
+    function ActivarModificadoCtrl(evt, obj)
+    {
+       // debugger;
+        evt = evt || window.event // IE support
+        var c = evt.keyCode
+        var ctrlDown = evt.ctrlKey || evt.metaKey // Mac support
+        if (ctrlDown && c == 86)
+            obj.parentNode.parentNode.cells.item(0).children[0].value = "1";
+    }
+
+
+
+    function RigistrarElementCode()
+    {
+
+        var bandera = true;
+        document.getElementById("divCodigoELemento").innerHTML = "";
+        var ElementCode = document.getElementById("ElementCode").value;
+        if (ElementCode.length == 0) {
+            MensajeError("divCodigoELemento");
+            return false;
+        } else {
+            document.getElementById("divCodigoELemento").innerHTML = "";
+        }
+        var ElementCode = document.getElementById("ElementCode").value;
+        var DataParametros = { "ElementCode": ElementCode };
+        $.ajax({
+            url: '@Url.Action("Create", "UI")',
+            traditional: true,
+            async: false,
+            cache: false,
+            data: DataParametros,
+            context: document.body,
+            type: "POST",
+            dataType: "json",
+            success: function (result)
+            {
+                if (result == "OK")
+                {
+                    var link = document.createElement('a');
+                    link.href = '@Url.Action(actionName: "index", controllerName:"UI")';
+                    document.body.appendChild(link);
+                    link.click();
+                }
+            },
+            error: function (xhr)
+            {
+                alert("error de json");
+            }
+        });
+        return false;
+    }
+
+    function MensajeError(val)
+    {
+        var capa = document.getElementById(val);
+        var h1 = document.createElement("span");
+        h1.innerHTML = "* Campo requerido";
+        h1.className = "label-control"
+        h1.style.cssText = "color:red";
+        capa.appendChild(h1);
+    }
+
+
+</script>
+
+
+
+
+

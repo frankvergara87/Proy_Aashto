@@ -1,0 +1,138 @@
+﻿@using SIS_Ga2.Entity
+@using SIS_Ga2.Business
+@using System.Globalization
+
+@{
+    parametrogeneral parametros = new parametrogeneral();
+    AplicacionBL objBL = new AplicacionBL();
+    Usuario usuario = Session["sistema.usuario"] as Usuario;
+    if (usuario != null)
+    {
+        //parametros = parametrogeneralBL.GetParametroGeneralByIdSociedadLogistica(usuario.BESOCIEDAD.idSociedadLogistica);
+    }
+    else
+    {
+        //Response.Redirect(Url.Action("Login", "Seguridad"));
+        return;
+    }
+}
+<!-- Header -->
+<header class="header navbar navbar-fixed-top" role="banner">
+    <!-- Top Navigation Bar -->
+    <div class="container">
+        <!-- Only visible on smartphones, menu toggle -->
+        <ul class="nav navbar-nav">
+            <li class="nav-toggle"><a href="javascript:void(0);" title=""><i class="icon-reorder"></i></a></li>
+        </ul>
+        <!-- Logo -->
+        <a class="navbar-brand" @*href="@Url.Action("index", "Tablero")"*@>
+            <span class="photo"><img src="@parametros.rutalogo" style="height:48px !important;" /></span>
+        </a>
+        <!-- /logo -->
+        <!-- Sidebar Toggler -->
+        <a href="#" class="toggle-sidebar bs-tooltip" data-placement="bottom" data-original-title="Ocultar barra de menús">
+            <i class="icon-reorder"></i>
+        </a>
+        <ul class="nav navbar-nav navbar-left hidden-xs hidden-sm">
+            <li>
+                <a href="#">
+                    <span class="username" id="usuario.login" name="usuario.login">Ga2 Sistemas y Servicios</span>
+                </a>
+            </li>
+        </ul>       
+<
+        <script type="text/javascript">
+            $(document).ready(function () {
+                cambio();
+            });
+            function mostrarhora() {
+                now = new Date();
+                var valor = (document.getElementById("hora").innerHTML).trim();
+                day = "" + now.getDate(); if (day.length == 1) { day = "0" + day; }
+                hour = "" + now.getHours(); if (hour.length == 1) { hour = "0" + hour; }
+                minute = "" + now.getMinutes(); if (minute.length == 1) { minute = "0" + minute; }
+                second = "" + now.getSeconds(); if (second.length == 1) { second = "0" + second; }
+                var f = hour + ":" + minute + ":" + second;
+                document.getElementById("hora").innerHTML = f;
+            }
+            function cambio() {
+                setInterval(() => {
+                    mostrarhora();
+                }, 1000);
+            }
+        </script>        
+        <!-- /Sidebar Toggler -->
+        <!-- Top Left Menu -->
+        <!-- /Top Left Menu -->
+        <!-- Top Right Menu -->
+        <ul class="nav navbar-nav navbar-right">
+            <li class="hidden-sm hidden-phone">
+                <a href="#" title="">
+                    <i class="icon-calendar"></i>
+                    @DateTime.Now.ToString("dd/MM/yyyy")<span id="hora">
+                    </span>
+                </a>
+            </li>
+            @*<li class="dropdown hidden-xs hidden-sm">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="icon-envelope"></i>
+                        <span class="badge" id="cantidad"></span>
+                    </a>
+                    <ul class="dropdown-menu extended notification" id="Notificaciones"></ul>
+                </li>*@
+            @*<li class="dropdown">
+                    <a href="#" class="project-switcher-btn dropdown-toggle">
+                        <i class="icon-th-large"></i>
+                        <span id="Usuario.Aplicaciones" name="Usuario.Aplicaciones">Usuario.Aplicaciones</span>
+                    </a>
+                </li>*@
+            <!-- User Login Dropdown -->
+            <li class="dropdown user">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <!--<img alt="" src="assets/img/avatar1_small.jpg" />-->
+                    <i class="icon-male"></i>
+                    <span class="username" id="usuario.login" name="usuario.login">@usuario.cuenta</span>
+                    <i class="icon-caret-down small"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    @*<li class="dropdown">
+                        <a href="#" title="" data-toggle="dropdown"><i class="icon-tasks"></i><span id="webindex.languages" name="webindex.languages">webindex.languages </span><i class="icon-angle-down left-padding"></i></a>
+                        <ul class="dropdown-menu pull-right">*@
+                    @*<li class="sub-menu">
+                        <a href="#">
+                            <i class="icon-plane"></i>
+                            <span>IDIOMAS</span>
+                        </a>
+                        <ul>
+                            @foreach (SIS_Ga2.Entity.UILanguage idioma in ListaIdiomas)
+                            {
+                                <li>
+                                    <a href="@Url.Action("ChangeLanguage", "UILanguage", new { lang = idioma.IdUILanguage })" title="">@idioma.LangName - @idioma.LangCode</a>
+                                </li>
+                            }
+
+                            @*</ul>
+                                </li>
+                        </ul>*@
+                    @*</li>*@
+                    @*@{
+                            if (usuarioid == 0)
+                            {
+                                <li><a href="@Url.Action("SelectProfile", "Seguridad")"><i class="icon-rol"></i> Cambiar perfil</a></li>
+                            }
+                        }*@
+                    @*<li><a href="@Url.Action(" SelectProfile", "Seguridad" )"><i class="icon-rol"></i></a></li>*@
+                    @*<li><a href="@Url.Action("Perfil", "Usuario")"><i class="icon-user"></i><span id="conf.perfil" name="conf.perfil">conf.perfil</span></a></li>
+                        <li class="divider"></li>*@
+                    @*<li><a href="@Url.Action(" Perfil", "Usuario" )"><i class="icon-user"></i><span id="conf.perfil" name="conf.perfil"></span></a></li>*@
+                    <li class="divider"></li>
+                    @*<li><a href="@Url.Action(" Logout", "Seguridad" )"><i class="icon-key"></i><span id="usuario.LogOut" name="usuario.LogOut">usuario.LogOut</span></a></li>*@
+                    <li><a href="@Url.Action("Logout", "Seguridad" )"><i class="icon-key"></i><span id="usuario.LogOut" name="usuario.LogOut">Cerrar Sesión</span></a></li>
+
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+
+</header>

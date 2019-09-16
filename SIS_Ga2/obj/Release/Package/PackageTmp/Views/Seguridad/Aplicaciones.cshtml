@@ -1,0 +1,212 @@
+﻿@using SIS_Ga2.Entity
+@{
+    Layout = null;
+
+    Usuario usuario = Session["sistema.usuario"] as Usuario;
+    Sistema sistema = Session["sistema.general"] as Sistema;
+    if (usuario == null)
+    {
+        Response.Redirect(Url.Action("Login", "Seguridad"));
+        return;
+    }
+}
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>ASOCEM - SISTEMAS</title>
+    @Styles.Render("~/Content/css")
+
+    @Scripts.Render("~/Content/js")
+
+    <link href="~/assets/css/screenAplicaciones.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            cambio();
+        });
+        function mostrarhora() {
+            now = new Date();
+            var valor = (document.getElementById("hora").innerHTML).trim();
+            day = "" + now.getDate(); if (day.length == 1) { day = "0" + day; }
+            hour = "" + now.getHours(); if (hour.length == 1) { hour = "0" + hour; }
+            minute = "" + now.getMinutes(); if (minute.length == 1) { minute = "0" + minute; }
+            second = "" + now.getSeconds(); if (second.length == 1) { second = "0" + second; }
+            var f = hour + ":" + minute + ":" + second;
+            document.getElementById("hora").innerHTML = f;
+        }
+        function cambio() {
+            setInterval(() => {
+                mostrarhora();
+            }, 1000);
+        }
+        function MostrarAplicaciones(obj){
+            showSpinner()
+            obj.disabled = true;
+            $.get("/Seguridad/MostrarAplicaciones",
+            function (result)
+            {
+                //disp-none
+                if (result == "OK"){
+
+                    $("#spinner").removeClass("disp-block").addClass("disp-none")
+                    var link = document.createElement('a');
+                    link.href = '@Url.Action("Aplicaciones", "Seguridad")';
+                    document.body.appendChild(link);
+                    link.click();
+                    link.click();
+                }
+            });
+        }
+
+        function showSpinner() {
+            $("#spinner").addClass("disp-block")
+
+        }
+
+        function verayuda(){
+            $("#exampleModal").modal("show");
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <div id="spinner" class="container-loader disp-none animated fadeIn">
+        <div class="box-flex-loader">
+            <div class="wrapperss">
+                <div class="blue ball"></div>
+                <div class="red ball"></div>
+                <div class="yellow ball"></div>
+                <div class="green ball"></div>
+            </div>
+        </div>
+    </div>
+
+    <header class="header navbar navbar-fixed-top" style="background-color:#38749c;" role="banner">
+        <div class="container">
+            <ul class="nav navbar-nav navbar-left">
+                <li>
+                    <a href="#" onclick="verayuda();">
+                        <span class="username" id="ayuda" style="font-weight:bold;" name="ayuda">AYUDA</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden-sm hidden-phone style-link">
+
+                    <i class="icon-calendar"></i>
+                    @DateTime.Now.ToString("dd/MM/yyyy") <span id="hora">
+                    </span>
+
+                </li>
+                <li class="dropdown user">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="icon-male"></i>
+                        <span class="username" id="usuario.login" name="usuario.login">@Session["nombreusuario"]</span>
+                        <i class="icon-caret-down small"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="@Url.Action("Logout", "Seguridad")">
+                                <i class="icon-key"></i> Log Out
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="row" style="height:150px;">
+    </div>
+
+    <div class="row" style="height:150px;">
+        <div class="col-sm-2"></div>
+
+        <div class="col-md-8 col-lg-8" style="border:1px solid #666; box-shadow: 10px 6px 39px -8px rgba(21,56,79,0.79); border-radius:10px; margin-left:0px;">
+            <div class="container" style="margin-top:15px; margin-bottom:15px;">
+
+                <div class="col-xs-hidden col-sm-hidden col-md-2 col-lg-2">
+                </div>
+
+                <form class="col-md-2 col-lg-2" method="post" onsubmit="showSpinner()" action="/Seguridad/Aplicaciones?IdAplicacion=1">
+                    <button type="submit" style="height:300px; width:100%; border-radius: 10px" class="btn" role="button">                        
+                        <div class="row" style="text-align:center;margin-left:0px;">
+                            DISEÑO DE ASFALTO
+                        </div>
+                        <div class="row">
+                            <img src="/assets/Asfalto.jpg" height="55" width="190" />
+                        </div>
+                    </button>
+                </form>
+                <form class="col-md-2 col-lg-2" method="post" onsubmit="showSpinner()" action="/Seguridad/Aplicaciones?IdAplicacion=2">                    
+                    <button type="submit" style="height:300px; width:100%;border-radius: 10px" class="btn" role="button">
+                        <div class="row" style="text-align:center;margin-left:0px;">
+                            DISEÑO DE ADOQUIN
+                        </div>
+                        <div class="row">
+                            <img src="/assets/Adoquines.jpg" height="55" width="190" />
+                        </div>
+
+                    </button>
+                </form>
+                <form class="col-md-2 col-lg-2" method="post" onsubmit="showSpinner()" action="/Seguridad/Aplicaciones?IdAplicacion=3">
+                    <button type="submit" style="height:300px; width:100%;border-radius: 10px" class="btn" role="button">
+                        <div class="row" style="text-align:center;margin-left:0px;">
+                            DISEÑO DE CONCRETO
+                        </div>
+                        <div class="row">
+                            <img src="/assets/Concreto.jpg" height="55" width="190" />
+                        </div>
+
+                    </button>
+                </form>
+
+                <div class="col-xs-hidden col-sm-hidden col-md-2 col-lg-2">
+                </div>
+
+            </div>
+
+            <div class="row" style="text-align:center; margin-top:10px;margin-bottom:10px;">
+                <img src="~/images/logoAsocem.png" height="100" width="200" />
+            </div>
+
+        </div>
+
+        <div class="col-sm-2"></div>
+
+    </div>
+
+
+    <div class="footer">
+        <div class="pull-left">
+            <label style="text-align:left;color:white;margin-left:10px;font-weight:bold;"> Ga2 Sistemas</label>
+        </div>
+        <div class="pull-right">
+            <label style="text-align:right;color:white;margin-right:10px;font-weight:bold;">&copy; 2019 Ga2 Sistemas</label>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ayuda</h5>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

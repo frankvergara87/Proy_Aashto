@@ -1,0 +1,49 @@
+.v1 {
+    border-left: 3px solid #9C7338;
+    height: 50px;
+    margin-left: 1.1rem;
+}
+
+.box {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.f1 {
+    flex: 1;
+}
+
+.rojo {
+    background-color: red;
+}
+
+.verde {
+    background-color: green;
+}
+
+.footer {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    /* Set the fixed height of the footer here */
+    height: 20px;
+    background-color: #38749c;
+}
+
+    @media screen and (max-width: 991px) {
+        .footer {
+            bottom: auto;   
+        }
+    }
+
+.botonactivo {
+    background-color: #808080;
+    color: white;
+}

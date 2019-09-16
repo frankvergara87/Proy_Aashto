@@ -1,0 +1,302 @@
+﻿@using SIS_Ga2.Entity
+@using SIS_Ga2.Controllers
+
+@model IEnumerable<SIS_Ga2.Entity.Proyecto>
+@{
+    //Layout = null;
+
+    ViewBag.Title = "Proyecto";
+    Usuario usuario = Session["sistema.usuario"] as Usuario;
+    Sistema sistema = Session["sistema.general"] as Sistema;
+    if (sistema == null)
+    {
+        Response.Redirect(Url.Action("Login", "Seguridad"));
+        return;
+    }
+}
+
+
+
+@*<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <script src="js/bootstrap-datetimepicker.min.js"></script>*@
+@*<script src="~/Scripts/javaga2/ContratosIndex.js"></script>*@
+
+@*<input type="hidden" id="txtidTipoDiseno" value="@sistema.idAplicacion" />
+    <input type="hidden" id="txtUsuario" value="@sistema.idUsuario" />*@
+
+<input type="hidden" id="txtidTipoDiseno" value="@sistema.idAplicacion" />
+<input type="hidden" id="txtidUsuario" value="@sistema.idUsuario" />
+
+<div class="widget">
+    <div class="widget-header">
+        <div class="pull-left">
+            <h3><span id="Proyectos" name="Proyectos">CONSULTA DE PROYECTOS</span></h3>
+        </div>
+        <div class="pull-right">
+            <a class="btn btn-lg" style="background-color:#39749C; color:white;" onclick="NuevoProyecto();">
+                <i class="icol-add"></i>
+                <span id="Nuevo" name="Nuevo">Nuevo</span>
+            </a>
+        </div>
+    </div>
+    <div class="widget-header">
+        <h4><i class="icon-reorder"></i>Filtros</h4>
+        <div class="toolbar">
+            <div class="btn-group">
+                <span class="btn btn-xs widget-collapse"><i class="icon-angle-down"></i></span>
+            </div>
+        </div>
+    </div>
+    <div class="well widget-content" style="border-radius:10px;">
+        <form id="filtros">
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <label for="Proyecto">Proyecto</label>
+                    <input id="Proyecto" type="text" class="form-control" placeholder="Proyecto">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="FecProyecto">Fecha Proyecto</label>
+                    @*<input typeof="text" name="FecProyecto" class="form-control datepicker hasDatePicker" id="FecProyecto" placeholder="Fecha de Proyecto">*@
+                    @Html.Editor("FechaBusqueda", new { htmlAttributes = new { @class = "form-control datepicker input-width-small", @onFocus = "limpiardiv('dfechasalida');" } })
+                    @*<input typeof="text" name="FecProyecto" class="form-control datepicker" id="FecProyecto" placeholder="Fecha de Proyecto">*@
+
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="idFechaFin">Fec fin de contrato</label>
+                    <input id="idFechaFin" type="text" class="form-control datepicker" placeholder="Fecha de fin de contrato">
+                </div>
+            </div>
+            <button type="submit" id="buscar" class="btn btn-primary"> <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Buscar</button>
+        </form>
+    </div>
+
+    <div>
+        <div class="table table-responsive">
+            <table class="table datatable table-hover table-checkable" id="tbProyectos">
+                <thead style="color:darkblue;">
+                    <tr>
+                        <th class="align-center;" id="id">No</th>
+                        <th class="align-center;" id="CodProyecto">Código</th>
+                        <th class="align-center;" id="FecProyecto">Fecha</th>
+                        <th style="display:none;" id="idTipDiseno">idTipDiseño</th>
+                        <th class="align-center;" id="TipDiseno">Diseño</th>
+                        <th class="hidden-xs hidden-sm; align-center" id="NumDiseno">Num Diseño</th>
+                        <th class="hidden-xs hidden-sm; align-center" id="Tramo">Tramo</th>
+                        <th class="hidden-xs hidden-sm hidden-md; align-center;" id="Ubicacion">Ubicación</th>
+                        <th class="hidden-xs hidden-sm hidden-md; align-center;" id="Reglamento">Reglamento</th>
+                        <th class="hide" id="idReglamento">idReglamento</th>
+                        <th class="align-center;" id="Opciones">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody id="bodyProyectos">
+            </table>
+        </div>
+    </div>
+</div>
+
+@*-----------------------------------------------------------------------------------------------------*@
+@*ESTO ES EL POP UP DEL DATA ENTRY PARA UN PROYECTO NUEVO                                              *@
+@*-----------------------------------------------------------------------------------------------------*@
+
+<div class="modal fade" id="RegistrarProyecto" role="dialog" data-backdrop="static">
+    @using (Html.BeginForm("FormRegistraProyecto", "Home", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+
+        <div class="modal-dialog  modal-lg" style="width: 60%;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="h1ProyectoNuevo">REGISTRAR PROYECTO NUEVO</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" style="text-align:left">Nombre</label>
+                            @*<span id="Producto.NombreProducto" name="Producto.NombreProducto">Producto.NombreProducto</span>*@
+                            <div class="col-md-9">
+                                <input type="text" id="NombreProyecto" name="NombreProyecto" class="form-control" value="" style="text-transform:uppercase" />
+                                @*<input type="text" id="NombreProyecto" name="NombreProyecto" class="form-control" value="" onfocus="limpiardiv('dNombreProducto');" onblur="fMayuscula(this);" onkeyup="addStyleUpperCase(this);" style="text-transform:uppercase" />*@
+                                <div id="dNombreProyecto"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" style="text-align:left">Diseño Número</label>
+                            <div class="col-md-3">
+                                <input type="text" id="Diseno" name="Diseno" class="form-control" value="" style="text-transform:uppercase" />
+                                @*<input type="text" id="NombreProyecto" name="NombreProyecto" class="form-control" value="" onfocus="limpiardiv('dNombreProducto');" onblur="fMayuscula(this);" onkeyup="addStyleUpperCase(this);" style="text-transform:uppercase" />*@
+                                <div id="dDiseno"></div>
+                            </div>
+                            <label class="col-md-2 control-label" style="text-align:left">Tipo de Diseño</label>
+                            <div class="col-md-4">
+                                @Html.DropDownList("idTipoDiseno", new HomeController().ComboTipoDiseno(0), new { @class = "form-control" })
+                                @*<input type="text" id="TipoDiseno" name="TipoDiseno" class="form-control" value="" style="text-transform:uppercase" />*@
+                                @*<input type="text" id="NombreProyecto" name="NombreProyecto" class="form-control" value="" onfocus="limpiardiv('dNombreProducto');" onblur="fMayuscula(this);" onkeyup="addStyleUpperCase(this);" style="text-transform:uppercase" />*@
+                                <div id="dTipoDiseno"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" style="text-align:left">Tramo</label>
+                            <div class="col-md-9">
+                                <input class="form-control" type="text" id="Tramo" name="Tramo" value="" style="text-align:left; text-transform:uppercase" />
+                                <div id="dTramo"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" style="text-align:left">Fecha</label>
+                            <div class="col-md-3">
+                                <input type="text" id="Fecha" style="z-index:-1" name="Fecha" class="datepicker" value="@DateTime.Today.ToString("dd/MM/yyyy")" />
+                                @*<input class="form-control" type="text" id="Fecha" name="Fecha" value="" style="text-align:left; text-transform:uppercase" />*@
+                                <div id="dFecha"></div>
+                            </div>
+                            <label class="col-md-2 control-label" style="text-align:left">Ubicación</label>
+                            <div class="col-md-4">
+                                <input class="form-control" type="text" id="Ubicacion" name="Ubicacion" value="" style="text-align:left; text-transform:uppercase" />
+                                <div id="dUbicacion"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" style="text-align:left">Reglamento</label>
+                            <div class="col-md-9">
+                                @Html.DropDownList("Reglamento", new HomeController().ComboReglamento(0), new { @class = "form-control" })
+                                @*<input class="form-control" type="text" id="Reglamento" name="Reglamento" value="" style="text-align:left; text-transform:uppercase" />*@
+                                <div id="dReglamento"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                        <button type="submit" id="btnNuevo" class="btn btn-success" onclick="return ValidarFormulario();">
+                            Registrar
+                        </button>
+                        @*<button type="submit" id="btnEdita" class="btn btn-success" onclick="return ValidarFormulario();">
+                                <span id="Producto.actualizar" name="Producto.actualizar">Producto.actualizar</span>
+                            </button>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<script>
+    $(document).ready(function () {
+        $(".datepicker").datepicker({
+            defaultDate: +0,
+            showOtherMonths: true,
+            autoSize: true,
+            dateFormat: 'dd/mm/yyyy',
+        });
+        ListarProyectos();
+        //_ajax('/Contratos/ListadoContratosIndex', "GET")
+        //    .then((listado) => listar(listado));
+    });
+
+    function ListarProyectos() {
+        var idTipoDiseno = document.getElementById("txtidTipoDiseno").value;
+        var idUsuario = document.getElementById("txtidUsuario").value;
+        var contenido = "";
+
+        var objData = {};
+        objData["idTipoDiseno"] = idTipoDiseno;
+        objData["idUsuario"] = idUsuario;
+
+        $.ajax({
+            type: "POST",
+            url: '/Proyectos/ListarProyectos',
+            data: JSON.stringify(objData),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (Proyectos) {
+                    debugger;
+                var obj = (typeof Proyectos) == 'string' ? eval('(' + Proyectos + ')') : Proyectos;
+                for (i = 0; i < obj.length; i++) {
+
+
+                    contenido = contenido + "<tr>" +
+                        "<td style='text-align: center'>" + obj[i].idProyecto + "</td>" +
+                        "<td style='text-align: center'>" + obj[i].CodProyecto + "</td>" +
+                        "<td style='text-align: center'>" + obj[i].FecProyecto + "</td>" +
+                        "<td style='display:none;'>" + obj[i].idTipoDiseno + "</td>" +
+                        "<td style='text-align: center'>" + obj[i].TipoDiseno + "</td>" +
+                        "<td style='text-align: center'>" + obj[i].NumDiseno + "</td>" +
+                        "<td style='text-align: center'>" + obj[i].Tramo + "</td>" +
+                        "<td style='text-align: center'>" + obj[i].Ubicacion + "</td>" +
+                        "<td style='text-align: center'>" + obj[i].Reglamento + "</td>" +
+                        "<td style='display:none;'>" + obj[i].idReglamento + "</td>" +
+                        "<td><a title='Editar' style='cursor:pointer' onclick='EditarProductoVentas(" + obj[i].idProyecto + ")'>" +
+                        "<i class='icol-text-signature'></i>" +
+                        "</a> &nbsp </td></tr>"
+                }
+
+                $("#bodyProyectos").empty().html(contenido);
+                //ActualizarCaption_sInfo();
+                $('#tbProyectos').DataTable({
+                    "paging": true,
+                    "ordering": true,
+                    "info": true,
+                    "searching": true,
+                });
+            }
+        });
+    }
+
+    function NuevoProyecto() {
+        $("#RegistrarProyecto").modal('show');
+    }
+
+    function NuevoProducto() {
+        //$('#h5TituloEdita').hide();
+        //$('#btnNuevo').show();
+        //$('#btnEdita').hide();
+
+        //$("#SKUProducto").prop("disabled", false);
+        ////$('#divEstado').hide();
+        //LimpiarPopUpProducto();
+    }
+
+</script>
+
+@*<input type="text" id="input1" placeholder="input" required class="form-control" />
+    <input type="text" id="input2" placeholder="input" required class="form-control" />*@
+
+@*<div class="col-md-4">
+        <label class="form-control">N18 Nom</label>
+        <input type="text" id="valornom" value="6.96" class="form-control" />
+    </div>
+    <div class="col-md-4">
+        <label class="form-control">N18 Calc</label>
+        <input type="text" id="valorcalc" placeholder="Log" class="form-control" />
+    </div>*@
+
+
+@*<a  type="button" id="boton" onclick="Calcular" class="form-control col-md-2" /> Esto si estaba comentado*@
+@*<div class="col-md-2">
+        <a class="btn btn-lg" style="background-color:#39749C; color:white;" onclick="Calcular();">
+            <i class="icol-add"></i>
+            <span id="Calcular" name="Calcular">Calcular</span>
+        </a>
+    </div>*@
+@*<label class="form-control col-md-2">log_10  (∆𝑃𝑆𝐼/(4.5−1.5))</label> Esto si estaba comentado*@
+@*<input type="text" id="respuesta" placeholder="D req" class="form-control" />*@
+
+
+@*<script>
+            function Calcular() {
+                var objData = {};
+                var valornom = document.getElementById("valornom").value;
+                var input1 = document.getElementById("input1").value;
+                var input2 = document.getElementById("input2").value;
+                objData["n18nom"] = valornom;
+                objData["input1"] = input1;
+                objData["input2"] = input2;
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("Calcular", "Home")',
+                    data: JSON.stringify(objData),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (resultado) {
+                     document.getElementById("respuesta").value=resultado;
+                    }
+                });
+            }
+    </script>*@

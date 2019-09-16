@@ -1,0 +1,64 @@
+﻿<script type="text/javascript">
+    var textos;
+    try {
+        //$('#VentanaDeEspera').modal('show');
+        var serviceURL = '/UILanguage/uiElements';
+        $.ajax({
+            url: serviceURL,
+            type: 'POST',
+            data: { 'lang': 'es' },
+            context: document.body,
+            traditional: true,
+            success: function (xhr) {show_titles(xhr);},
+            error: function (xhr) {
+                $('#VentanaDeEspera').modal('hide');
+                alert("Error has occurred..");
+            }
+        });
+    }
+    catch (e) {
+        console.log(e);
+    }
+
+    //metodo que lee de la BD los elementos
+    function show_titles(result) {
+        var all = document.getElementsByTagName("span");
+        console.log(all);
+        console.log(all.length);
+        console.log(result);
+        
+        for (var i = 0; i < all.length; i++) {
+            for (var x = 0; x < result.length; x++) {
+                // Do something with the element here
+                console.log(all[i].getAttribute("id"));
+                if (all[i].id == result[x].ElementCode)
+                {
+                    all[i].innerHTML = result[x].ElementCaptionText;
+                }
+                    
+            }
+        }
+
+        var elementos_sInfo_Tabla = [];
+        for (var x = 0; x < result.length; x++)
+        {
+            if (result[x].ElementCode == "DataTable.sInfo.Hasta")
+                elementos_sInfo_Tabla.push(result[x]);
+            if (result[x].ElementCode == "DataTable.sInfo.De")
+                elementos_sInfo_Tabla.push(result[x]);
+            if (result[x].ElementCode == "DataTable.sInfo.Registros")
+                elementos_sInfo_Tabla.push(result[x]);
+            if (result[x].ElementCode == "DataTable.sInfoEmpty.Mostrando")
+                elementos_sInfo_Tabla.push(result[x]);
+            if (result[x].ElementCode == "DataTable.sInfoEmpty.Hasta")
+                elementos_sInfo_Tabla.push(result[x]);
+            if (result[x].ElementCode == "DataTable.sInfoEmpty.De")
+                elementos_sInfo_Tabla.push(result[x]);
+            if (result[x].ElementCode == "DataTable.sInfoEmpty.Registros")
+                elementos_sInfo_Tabla.push(result[x]);
+        }
+        document.getElementById("HDUIElementCodeAll").value = JSON.stringify(elementos_sInfo_Tabla);
+        $('#VentanaDeEspera').modal('hide');
+    }
+
+</script>

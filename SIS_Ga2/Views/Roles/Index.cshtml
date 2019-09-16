@@ -1,0 +1,476 @@
+﻿@model  List<SIS_Ga2.Entity.rol>
+@using SIS_Ga2.Entity
+@{
+    ViewBag.Title = "Mantenimiento de Roles";
+    string codigosociedad = ViewBag.codigosociedad;
+
+}
+
+<!--=== Responsive DataTable ===-->
+<script type="text/javascript" src="~/Scripts/javaga2/JavaScriptGa2.js"></script>
+<script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+<link href="~/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="~/plugins/jquery-ui/jquery-ui-1.10.2.custom.css" rel="stylesheet" />
+<script src="~/Scripts/javaga2/simTree.js"></script>
+<link href="~/Scripts/javaga2/jquerysctipttop.css" rel="stylesheet" />
+<link href="~/Scripts/javaga2/simTree.css" rel="stylesheet" />
+<link href="~/assets/css/laoder.css" rel="stylesheet" />
+
+<div class="table-responsive">
+    <div class="widget">
+        <div class="widget-header">
+            <div class="col-md-10">
+                <h3><span id="Mantenimiento de Roles " name="Mantenimiento de Roles">Mantenimiento de Roles</span></h3>
+            </div>
+            <div class="col-md-2">
+                <a class="btn btn-lg" style="background-color:#39749C; color:white;" onclick="NuevoRol();">
+                    <i class="icol-add"></i>
+                    <span id="Nuevo" name="Nuevo">Nuevo</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <table class="table table-hover table-checkable table-responsive" id="tblRol">
+        <thead style="color:darkblue;">
+            <tr>
+                <th style="text-align:center;"><span>DescripcionRol</span></th>
+                <th style="text-align:center;"><span>CodigoSociedad</span></th>
+                <th style="text-align:center;"><span>DescripcionSociedad</span></th>
+                <th style="text-align:center;"><span>RUCSociedad</span></th>
+                <th style="text-align:center;"><span>EditarMenú</span></th>
+                <th style="text-align:center;"><span>EditarFunciones</span></th>
+            </tr>
+        </thead>
+        <tbody id="tbodyRol"></tbody>
+    </table>
+</div>
+
+
+<div class="modal fade" id="VentanaNuevoRol" role="dialog" data-backdrop="static">
+    <div class="modal-dialog  modal-lg" style="width: 70%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Registro de Roles</h5>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <input type="hidden" id="txtidusuario" class="form-control" value="" />
+                        <label class="col-md-1 control-label">Sociedades</label>
+                        <div class="col-md-3">
+                            @Html.DropDownList("cbosociedades", new SIS_Ga2.Controllers.GenericController().combosociedades(codigosociedad), new { @class = "form-control", @onchange = "limpiardiv('dsociedad');" })
+                            <div id="dsociedad"></div>
+                        </div>
+                        <label class="col-md-1 control-label">CódigoRol</label>
+                        <div class="col-md-3">
+                            <input class="form-control" type="text" id="txtcodrol" name="txtcodrol" value="" onkeyup="fMayuscula(this);" onfocus="limpiardiv('dcodigorol');" />
+                            <div id="dcodigorol"></div>
+                        </div>
+                        <label class="col-md-1 control-label">
+                            Nombre Rol
+                        </label>
+                        <div class="col-md-3">
+                            <input class="form-control" type="text" id="txtnomrol" name="txtnomrol" value="" onfocus="limpiardiv('dnomrol');" />
+                            <div id="dnomrol"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                <a class="btn btn-success" onclick="RegistrarRol();">
+                    Registrar
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- modal !!-->
+<div class="modal fade" id="VentanaRolAplicacion" role="dialog" data-backdrop="static">
+    <div class="modal-dialog  modal-lg" style="width: 70%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Editar Menú</h5>
+            </div>
+            <div class="modal-body" style="padding-bottom:0px;">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="hidden" id="txtidusuario" class="form-control" value="" />
+                                <input type="hidden" id="codigosociedadanadir" class="form-control" value="" />
+                                <label class="col-md-2 control-label">Aplicación</label>
+                                <div class="col-md-10">
+                                    @Html.DropDownList("aplicacion", new SIS_Ga2.Controllers.GenericController().comboaplicaciones(), new { @class = "form-control" })
+                                    <div id="dsociedad1"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">
+                                    Nombre Rol
+                                </label>
+                                <div class="col-md-10">
+                                    <input class="form-control" type="text" id="txtnomrol1" name="txtnomrol1" value="" onfocus="limpiardiv('dnomrol');" disabled />
+                                    <div id="dnomrol1"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div id="tree" class="panel-body" style="border-style: solid;border-width: medium;border-radius:5px;overflow-y:scroll;width:100%;height:425px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                <a class="btn btn-success" onclick="GuardarMenuRolAplicacion();">
+                    Actualizar Menú
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="VentanaRolAplicacionFunciones" role="dialog" data-backdrop="static">
+    <div class="modal-dialog  modal-lg" style="width: 70%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Editar Funciones de Rol</h5>
+            </div>
+            <div class="modal-body" style="padding-bottom:0px;">
+                <div class="form-horizontal">
+                    @*<div class="col-md-6">*@
+                    <div class="form-group">
+                        <input type="hidden" id="txtidusuario" class="form-control" value="" />
+                        <label class="col-md-2 control-label">Aplicación</label>
+                        <div class="col-md-4">
+                            @Html.DropDownList("aplicacionfuncion", new SIS_Ga2.Controllers.GenericController().comboaplicaciones(), new { @class = "form-control" })
+                            <div id="dsociedad2"></div>
+                        </div>
+                        @*</div>
+                            <div class="form-group">*@
+                        <label class="col-md-2 control-label">
+                            Nombre Rol
+                        </label>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" id="txtnomrol2" name="txtnomrol2" value="" onfocus="limpiardiv('dnomrol2');" disabled />
+                            <div id="dnomrol2"></div>
+                        </div>
+                    </div>
+                    <div class="form-group" >
+                        <div class="col-md-12" style="overflow-y:scroll;width:100%;height:325px;">
+                            <table class="table table-condensed" id="tablarolAplicacionFunciones">
+                                <thead style="background-color:#1D4F79;color:white;">
+                                    <tr>
+                                        <th style="text-align:center;"><span>Menú</span></th>
+                                        <th style="text-align:center;"><span>Todas</span></th>
+                                        <th style="text-align:center;"><span>Borrar</span></th>
+                                        <th style="text-align:center;"><span>Actualizar</span></th>
+                                        <th style="text-align:center;"><span>Ingreso</span></th>
+                                        <th style="text-align:center;"><span>Lectura</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbrolAplicacionFunciones"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                <a class="btn btn-success" onclick="GuardarRolAplicacionFunciones();">
+                    Actualizar Función
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section ViewScript {
+    <script src="~/Scripts/Modal.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            document.getElementById('tree').innerHTML = '';
+            ListarRol();
+        });
+
+        $("#aplicacion").change(function () {
+            $('#tree').empty();
+            
+            var loader = `<div class="container" id="loader">
+                            <div class="ring">
+                                Cargando
+                                <span class="loader-span"></span>
+                            </div>
+                        </div>`;
+
+            $('#tree').append(loader);
+
+            var rol = document.getElementById("txtnomrol1").value;
+            var codigosociedad = document.getElementById("codigosociedadanadir").value;
+            $.get("/Roles/ChangeMenuPorAplicacion",
+                { value: $("#aplicacion").val(), rol: rol ,codigosociedad:codigosociedad},
+                function (data) {
+                    var obj = (typeof data) == 'string' ? eval('(' + data + ')') : data;
+                    var tree = simTree({
+                        el: '#tree',
+                        data: obj,
+                        check: true,
+                        linkParent: true,
+                        //check: true,
+                        onClick: function (item) {
+                            //console.log(item)
+                        },
+                        onChange: function (item) {
+                            //console.log(item)
+                        }
+                    });
+                })                
+                .always(function() {
+                    $('#loader').remove();
+                })
+
+
+        });
+
+        $("#aplicacionfuncion").change(function () {
+            var des = document.getElementById("txtnomrol2").value;
+            var idaplicacion = document.getElementById("aplicacionfuncion").value;
+            var objData = {};
+            objData["rol"] = des;
+            objData["aplicacion"] = idaplicacion;
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("EditarFunciones", "Roles")',
+                data: JSON.stringify(objData),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (paginaroles) {
+                    var contenido = "";
+                    var obj = (typeof paginaroles) == 'string' ? eval('(' + paginaroles + ')') : paginaroles;
+                    for (var i = 0; i < obj.length; i++) {
+                        contenido += "<tr>" +
+                            "<td style='text-align: center'>" + obj[i].NombreOpcion + "</td>" +
+                            "<td style='text-align: center'><input type='checkbox' id='ChkFuncionAll_" + obj[i].NombreOpcion + "_" + des + "' value='" + obj[i].NombreOpcion + "_FuncionAll'/></td>" +
+                            "<td style='text-align: center'><input type='checkbox' id='ChkFuncionBorrar_" + obj[i].NombreOpcion + "_" + des + "' value='" + obj[i].NombreOpcion + "_FuncionBorrar'/></td>" +
+                            "<td style='text-align: center'><input type='checkbox'  id='ChkFuncionActualiza_" + obj[i].NombreOpcion + "_" + des + "' value='" + obj[i].NombreOpcion + "_FuncionActualiza'/></td>" +
+                            "<td style='text-align: center'><input type='checkbox' id='ChkFuncionIngreso_" + obj[i].NombreOpcion + "_" + des + "' value='" + obj[i].NombreOpcion + "_FuncionIngreso'/></td>" +
+                            "<td style='text-align: center'><input type='checkbox' id='ChkFuncionLectura_" + obj[i].NombreOpcion + "_" + des + "' value='" + obj[i].NombreOpcion + "_FuncionLectura'/></td>"
+                             + "</tr>";
+                    }
+                    $('#tbrolAplicacionFunciones').empty().html(contenido);
+                    for (var i = 0; i < obj.length; i++) {
+                        document.getElementById('ChkFuncionAll_' + obj[i].NombreOpcion + '_' + des).checked = obj[i].FuncionAll;
+                        document.getElementById('ChkFuncionBorrar_' + obj[i].NombreOpcion + '_' + des).checked = obj[i].FuncionBorrar;
+                        document.getElementById('ChkFuncionActualiza_' + obj[i].NombreOpcion + '_' + des).checked = obj[i].FuncionActualiza;
+                        document.getElementById('ChkFuncionIngreso_' + obj[i].NombreOpcion + '_' + des).checked = obj[i].FuncionIngreso;
+                        document.getElementById('ChkFuncionLectura_' + obj[i].NombreOpcion + '_' + des).checked = obj[i].FuncionLectura;
+                    }
+                }
+            });
+        });
+
+        function ListarRol() {
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("ListarRol", "Roles")',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (roles) {
+                    var contenido = "";
+                    var obj = (typeof roles) == 'string' ? eval('(' + roles + ')') : roles;
+                    for (var i = 0; i < obj.length; i++) {
+                        contenido += "<tr>" +
+                            "<td style='text-align: center' id='descripcionrolanadir_" + i + "'>" + obj[i].DescripcionRol + "</td>" +
+                            "<td style='text-align: center'>" + obj[i].CodigoSociedad + "</td>" +
+                            "<td style='text-align: center'>" + obj[i].DescripcionSociedad + "</td>" +
+                            "<td style='text-align: center'>" + obj[i].RUCSociedad + "</td>" +
+                           "<td style='text-align:center;'>" + "<a title='Añadir Aplicación' style='cursor:pointer;' onclick='AnadirAplicacion(" + obj[i].idrol + ',"' + obj[i].CodigoSociedad +'",' + i +")'>" +
+                           "<i class='icon-list-ul'></i>" + "</a></td>" +
+                           "<td style='text-align:center;'>" + "<a title='Añadir Aplicación' style='cursor:pointer;' onclick='EditarFunciones(" + obj[i].idrol + ',' + i + ")'>" +
+                           "<i class='icon-cogs'></i>" + "</a></td>" +
+                            "</tr>";
+                    }
+                    $('#tbodyRol').empty().html(contenido);
+                    $('#tblRol').DataTable({ responsive: true, details: false });
+                },
+                error: function (response) {
+                    if (response.length != 0) {
+                        alert(response);
+                    }
+                }
+            })
+        }
+        function NuevoRol() {
+            $("#VentanaNuevoRol").modal('show');
+            LimpiarNuevoRol();
+        }
+        function LimpiarNuevoRol() {
+            document.getElementById("cbosociedades").value = "0";
+            document.getElementById("txtcodrol").value = "";
+            document.getElementById("txtnomrol").value = "";
+        }
+        function validacion(val) {
+            var capa = document.getElementById(val);
+            var h1 = document.createElement("span");
+            h1.innerHTML = "* Campo requerido";
+            h1.className = "label-control"
+            h1.style.cssText = "color:red";
+            capa.appendChild(h1);
+        }
+        function limpiardiv(val) {
+            document.getElementById(val).innerHTML = "";
+        }
+
+        function RegistrarRol() {
+            var idsociedad = document.getElementById("cbosociedades").value;
+            var codigorol = document.getElementById("txtcodrol").value;
+            var nombrerol = document.getElementById("txtnomrol").value;
+            var objData = {};
+            objData["idsociedad"] = idsociedad;
+            objData["codigorol"] = codigorol;
+            objData["nombrerol"] = nombrerol;
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("RegistroRol", "Roles")',
+                data: JSON.stringify(objData),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (resultado) {
+                    if (resultado = true) {
+                        location.reload();
+                    }
+                }
+            });
+        }
+
+        function AnadirAplicacion(idrol,codigosociedad,contador) {
+            document.getElementById('tree').innerHTML = '';
+            document.getElementById("txtnomrol1").value = "";
+            var des = document.getElementById('descripcionrolanadir_' + contador).innerHTML;
+            document.getElementById("txtnomrol1").value = des;
+            document.getElementById("aplicacion").value = "0";
+            document.getElementById("codigosociedadanadir").value = codigosociedad;
+            $("#VentanaRolAplicacion").modal("show");
+       }
+        function GuardarMenuRolAplicacion() {
+            debugger;
+            var ul, li, a, seleccionadosfinal;
+            var seleccionadostext = "";
+            var checkbox = document.getElementsByClassName("sim-tree-checkbox checked").length;
+            var seleccionadoschecked = document.getElementsByClassName("sim-tree-checkbox checked").length;
+            var seleccionadossemi = document.getElementsByClassName("sim-tree-checkbox sim-tree-semi").length;
+            // var checkbox = document.getElementsByClassName("sim-tree-checkbox").length;
+            var seleccionadosfinal = seleccionadoschecked + seleccionadossemi;
+            ul = document.getElementsByClassName("sim-tree");
+            li = ul[0].getElementsByTagName("li");
+            var cantidadli = ul[0].getElementsByTagName("li").length;
+            // li = seleccionados[i].getElementsByClassName
+            for (j = 0; j < cantidadli; j++) {
+                a = li[j].getElementsByTagName("a")[0];
+                if (a.getElementsByTagName("i")[0].className == "sim-tree-checkbox checked" || a.getElementsByTagName("i")[0].className == "sim-tree-checkbox sim-tree-semi") {
+                    seleccionadostext += a.textContent + '|';
+                }
+            }
+            var objData = {};
+            var rol = document.getElementById("txtnomrol1").value;
+            var aplicacion = document.getElementById("aplicacion").value;
+            var codigosociedad = document.getElementById("codigosociedadanadir").value;
+            objData["seleccionados"] = seleccionadostext;
+            objData["rol"] = rol;
+            objData["aplicacion"] = aplicacion;
+            objData["codigosociedad"] = codigosociedad;
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("GuardarMenuRolAplicacion", "Roles")',
+                data: JSON.stringify(objData),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (resultado) {
+                    if (resultado = true) {
+                        $("#VentanaRolAplicacion").modal('hide');
+                    }
+                }
+            });
+        }
+
+        function EditarFunciones(idrol, contador) {
+            $('#tbrolAplicacionFunciones').empty().html();
+            document.getElementById("txtnomrol2").value = "";
+            var des = document.getElementById('descripcionrolanadir_' + contador).innerHTML;
+            document.getElementById("txtnomrol2").value = des;
+            $("#VentanaRolAplicacionFunciones").modal("show");
+            document.getElementById("aplicacionfuncion").value = 1;
+            var idaplicacion = document.getElementById("aplicacionfuncion").value;
+            var objData = {};
+            objData["rol"] = des;
+            objData["aplicacion"] = idaplicacion;
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("EditarFunciones", "Roles")',
+                data: JSON.stringify(objData),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (paginaroles) {
+                    var contenido = "";
+                    var obj = (typeof paginaroles) == 'string' ? eval('(' + paginaroles + ')') : paginaroles;
+                    for (var i = 0; i < obj.length; i++) {
+                        contenido += "<tr>" +
+                         "<td style='text-align: center'>" + obj[i].NombreOpcion + "</td>" +
+                         "<td style='text-align: center'><input type='checkbox' id='ChkFuncionAll_" + obj[i].NombreOpcion + "_" + des + "' value='" + obj[i].NombreOpcion + "_FuncionAll'/></td>" +
+                         "<td style='text-align: center'><input type='checkbox' id='ChkFuncionBorrar_" + obj[i].NombreOpcion + "_" + des + "' value='" + obj[i].NombreOpcion + "_FuncionBorrar'/></td>" +
+                         "<td style='text-align: center'><input type='checkbox'  id='ChkFuncionActualiza_" + obj[i].NombreOpcion + "_" + des + "' value='" + obj[i].NombreOpcion + "_FuncionActualiza'/></td>" +
+                         "<td style='text-align: center'><input type='checkbox' id='ChkFuncionIngreso_" + obj[i].NombreOpcion + "_" + des + "' value='" + obj[i].NombreOpcion + "_FuncionIngreso'/></td>" +
+                         "<td style='text-align: center'><input type='checkbox' id='ChkFuncionLectura_" + obj[i].NombreOpcion + "_" + des + "' value='" + obj[i].NombreOpcion + "_FuncionLectura'/></td>"
+                          + "</tr>";
+                    }
+                    $('#tbrolAplicacionFunciones').empty().html(contenido);
+                    //$('#tablarolAplicacionFunciones').DataTable({
+                    //    "scrollY": "400px",
+                    //    "scrollCollapse": true,
+                    //});
+                    for (var i = 0; i < obj.length; i++) {
+                        document.getElementById('ChkFuncionAll_' + obj[i].NombreOpcion + '_' + des).checked = obj[i].FuncionAll;
+                        document.getElementById('ChkFuncionBorrar_' + obj[i].NombreOpcion + '_' + des).checked = obj[i].FuncionBorrar;
+                        document.getElementById('ChkFuncionActualiza_' + obj[i].NombreOpcion + '_' + des).checked = obj[i].FuncionActualiza;
+                        document.getElementById('ChkFuncionIngreso_' + obj[i].NombreOpcion + '_' + des).checked = obj[i].FuncionIngreso;
+                        document.getElementById('ChkFuncionLectura_' + obj[i].NombreOpcion + '_' + des).checked = obj[i].FuncionLectura;
+                    }
+                }
+            });
+        }
+
+        function GuardarRolAplicacionFunciones() {
+            var check = $("input:checkbox").length;
+            var valorchekes = "";
+            for (i = 0; i < check; i++) {
+                var seleccion = $("input:checkbox")[i].checked;
+                valorchekes += $("input:checkbox")[i].value + '_' + seleccion + '|';
+            }
+            var objData = {};
+            var rol = document.getElementById("txtnomrol2").value;
+            var aplicacion = document.getElementById("aplicacionfuncion").value;
+            objData["seleccionados"] = valorchekes;
+            objData["rol"] = rol;
+            objData["aplicacion"] = aplicacion;
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("GuardarRolAplicacionFunciones", "Roles")',
+                data: JSON.stringify(objData),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (resultado) {
+                    if (resultado = true) {
+                        $("#VentanaRolAplicacionFunciones").modal('hide');
+                    }
+                }
+            });
+        }
+    </script>
+}

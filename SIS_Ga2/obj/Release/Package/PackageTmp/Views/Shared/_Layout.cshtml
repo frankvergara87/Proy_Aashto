@@ -1,0 +1,93 @@
+﻿@using SIS_Ga2.Entity
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    @RenderSection("head", false)
+    @Styles.Render("~/Content/css")
+
+    @Scripts.Render("~/Content/js")
+    <style>
+        .navbar {
+            background-color:  #3f4b60 !important;
+        }
+    </style>
+</head>
+<body>
+    @Html.Partial("_Header")
+    <input type="hidden" id="HDUIElementCodeAll" />
+    <div id="container">
+        <div id="sidebar" class="sidebar-fixed">
+            <div id="sidebar-content">
+                @Html.Partial("_MenuBar")
+                @Html.Partial("_Notification")
+            </div>
+            <div id="divider" class="resizeable"></div>
+        </div>
+        <div id="content">
+            <div class="container">
+                @*@Html.Partial("_StatusBar")*@
+                <div class="page-header">
+                    <div>
+                        @RenderSection("FormTitle", required: false)
+                        <br />
+                        @RenderSection("Formcommets", required: false)
+                    </div>
+                </div>
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    @*@Html.Partial("_Translate")*@
+    @RenderSection("ViewScript", false)
+
+    <script>
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+    </script>
+    @*<script type="text/javascript">
+        $(document).ready(function () {
+            //debugger;
+            function getRandValue() {
+                //debugger;
+                document.getElementById("Notificaciones").innerHTML = "";
+
+                $.get("/Notificaciones/ObteneListaNotificion", { id: '@usuario.idautorizacionusuario' }, function (data) {
+
+                    //debugger;
+                    var items = '';
+                    var rows = '';
+                    var rows1 = '';
+                    var rows2 = '';
+                    var rows3 = '';
+                    rows1 = "<li class='title'><p>Tiene " + data.length + " nuevos mensajes</p></li>";
+                    var datos;
+                    var contador = 0;
+                    $.each(data, function (index, row) {
+                        //debugger;
+                        rows2 += "<li>"
+                            + "<span style='font-weight:bold; padding-left:5px;'>" + row.FechaCompleta
+                            + "</span>" + "<span class='text' style='padding-left:5px;'>" + row.asunto +"</span>"
+                            + "</li>";
+                        contador++;
+                    });
+                    rows3 = "<li class='footer'>"
+                        + "</li>"
+                        + "</li>";
+                    rows = rows1 + rows2 + rows3;
+                    document.getElementById('cantidad').innerHTML = data.length;
+                    $('#Notificaciones').append(rows);
+                });
+
+
+            }
+            setInterval(getRandValue, 10000);
+        });
+    </script>*@
+</body>
+</html>

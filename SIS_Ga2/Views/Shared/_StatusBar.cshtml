@@ -1,0 +1,33 @@
+﻿@using System.Globalization
+@{
+
+
+}
+<div class="crumbs">
+    <ul id="breadcrumbs" class="breadcrumb">
+        <li>
+            <a href="@Url.Action("index", "Home")">
+                <i class="icon-home"></i>
+                <span id="statusbar.inicio" name="statusbar.inicio">statusbar.inicio</span>
+            </a>
+        </li>
+        @*<li class="current">
+                <a href="#" title=""></a>
+            </li>*@
+    </ul>
+    @*<ul class="crumb-buttons">
+        <li class="dropdown">
+            <a href="#" title="" data-toggle="dropdown"><i class="icon-tasks"></i><span id="webindex.languages" name="webindex.languages">webindex.languages </span><i class="icon-angle-down left-padding"></i></a>
+            @*<ul class="dropdown-menu pull-right">
+                @foreach (SIS_Ga2.Entity.UILanguage idioma in ListaIdiomas)
+                {
+                    <li>
+                        <a href="@Url.Action("ChangeLanguage", "UILanguage", new { lang = idioma.IdUILanguage })" title=""><i class="icon-reorder"></i>@idioma.LangName - @idioma.LangCode</a>
+                    </li>
+                }
+            </ul>
+        </li>
+        <li><a href="#" title=""><i class="icon-calendar"></i><span>@DateTime.Now.ToString("dddd, dd MMMM yyyy")</span></a></li>
+
+    </ul>*@
+</div>

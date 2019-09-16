@@ -1,0 +1,242 @@
+﻿@using SIS_Ga2.Entity
+@using SIS_Ga2.Controllers
+
+@model IEnumerable<SIS_Ga2.Entity.Proyecto>
+@{
+    ViewBag.Title = "Diseno";
+    Usuario usuario = Session["sistema.usuario"] as Usuario;
+    Sistema sistema = Session["sistema.general"] as Sistema;
+    if (sistema == null)
+    {
+        Response.Redirect(Url.Action("Login", "Seguridad"));
+        return;
+    }
+}
+
+<input type="hidden" id="txtidTipoDiseno" value="@sistema.idAplicacion" />
+<input type="hidden" id="txtidUsuario" value="@sistema.idUsuario" />
+<input type="hidden" id="txtidProyecto" value="@sistema.idProyecto" />
+<input type="hidden" id="txtidReglamento" value="@sistema.idReglamento" />
+@*<input type="hidden" id="txtCodProyecto" value="@sistema.CodProyecto" />
+<input type="hidden" id="txtTipoDiseno" value="@sistema.TipoDiseno" />*@
+
+@*<div class="col-md-8 col-lg-8" style="border:1px solid #666; box-shadow: 10px 6px 39px -8px rgba(21,56,79,0.79); border-radius:10px; margin-left:0px;">*@
+<div class="row">
+    <div class="well widget-content" style="border-radius:10px; height:300px">
+        <h4>DATOS DEL PROYECTO</h4>
+        <div class="form-group col-md-3">
+            <label for="Proyecto">Proyecto</label>
+            <input id="Proyecto" type="text" class="form-control" disabled value=@sistema.CodProyecto>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="Reglamento">Reglamento</label>
+            <input id="Reglamento" type="text" class="form-control" disabled value=@sistema.Reglamento>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="TipoDiseno">Tipo de Diseno</label>
+            <input id="TipoDiseno" type="text" class="form-control" disabled value=@sistema.TipoDiseno>
+        </div>
+    </div>
+</div>
+
+<div class="widget box">
+    <div class="widget-header">
+        <h4>DISEÑO DE PAVIMENTOS - </h4>
+        <div class="toolbar no-padding">
+            <div class="btn-group">
+                <span class="btn btn-xs widget-collapse">
+                    <i class="icon-angle-down"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="widget-content">
+        <table class="table table-hover" id="Parametros">
+            <thead>
+                <tr>
+                    <th class="align-center;">No</th>
+                    <th class="align-center;">Parametros Diseño</th>
+                    <th class="align-center;">Indices Diseño</th>
+                    <th class="align-center;">Calculo</th>
+                    <th class="align-center;">Ayuda</th>
+                </tr>
+            </thead>
+            <tbody id="tbodyParametro">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="modal fade" id="VentanaPeriodo" role="dialog" data-backdrop="static">
+    <div class="modal-dialog  modal-lg" style="width: 30%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Selección del Periodo</h5>
+            </div>
+            <div class="modal-body">
+                @*<div class="form-group">*@
+                @*<div class="modal-body" style="padding-bottom:0px;">*@
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <label class="col-md-2 control-label">Periodos</label>
+                        <div class="col-md-8">
+                            @Html.DropDownList("Periodos", new SIS_Ga2.Controllers.DisenoController().ComboPeriodo(), new { @class = "form-control" })
+                        </div>
+                    </div>
+                </div>
+                @*</div>*@
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                <a class="btn btn-success" onclick="CalcularPeriodo();">
+                    Registrar
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    $(document).ready(function () {
+        ListarParametros();
+    });
+
+    function ListarParametros() {
+        var Diseno = document.getElementById("txtidTipoDiseno").value;
+        var objData = {};
+        var contenido = "";
+        objData["idTipoDiseno"] = Diseno;
+        $.ajax({
+                type: "POST",
+                url: '@Url.Action("ListarParametrosxTipoDiseno", "Diseno")',
+                data: JSON.stringify(objData),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (ParametrosDiseno) {
+                    var obj = (typeof ParametrosDiseno) == 'string' ? eval('(' + ParametrosDiseno + ')') : ParametrosDiseno;
+                    for (i = 0; i < obj.length; i++) {
+                        contenido = contenido + "<tr id=Linea" + i + ">" +
+                            "<td style='text-align:left; border:0; border-bottom:groove' name=Indice" + i + ">" + obj[i].idParametro + "</td>" +
+                            "<td style='text-align:left; border:0; border-bottom:groove' name=Parametro" + i + ">" + obj[i].DescripcionParametro + "</td>" +
+                            "<td style='text-align:center; border:0; border-bottom:groove' name=Calculo" + i + ">0.00</td>" +
+                            "<td style='text-align:left; border:0; border-bottom:groove;'>" +
+                            "<a title='Calcular Parametro' style='cursor:pointer;' onclick='CalcularParametro(" + obj[i].idParametro + ', ' + obj[i].idTipoDiseno + ", this)'>" +
+                            "<i class='icol-calculator'></i></a></td >" +
+                            "<td style='text-align:center; border:0; border-bottom:groove;'><i class='icol-comment'></i></td>" +
+                            "</tr>"
+                    }
+                    $('#tbodyParametro').empty().html(contenido);
+                    //$('#Parametros').DataTable({
+                    //    "paging": true,
+                    //    "ordering": false,
+                    //    "info": true,
+                    //    "searching": true
+                    //});
+                }
+        });
+    };
+
+    function CalcularParametro(idParametro, idTipoDiseno, nodo) {
+        var Res;
+
+        switch (idParametro) {
+            case 1:
+                $("#VentanaPeriodo").modal("show");
+                break;
+            case 2:
+                CalcularESAL();
+                break;
+            case 3:
+                CalcularConfianza();
+                break;
+            case 4:
+                CalcularZR();
+                break;
+            case 5:
+                CalcularSo();
+                break;
+            case 6:
+                Calcularfc();
+                break;
+            case 7:
+                CalcularMR();
+                break;
+            case 8:
+                CalcularEc();
+                break;
+            case 9:
+                CalcularJ();
+                break;
+            case 10:
+                CalcularKc();
+                break;
+            case 11:
+                CalcularCd();
+                break;
+            case 12:
+                CalcularPi();
+                break;
+            case 13:
+                CalcularPt();
+                break;
+            case 14:
+                CalcularServicio();
+                break;
+            case 15:
+                CalcularSubrasante();
+                break;
+        }
+    }
+
+    function CalcularPeriodo() {
+        var Tabla;
+        var Campo;
+        var res;
+
+        res = document.getElementById("Periodos").value;
+        tBody = document.getElementById("tbodyParametro")
+        tBody.rows.Linea0.cells.Calculo0.innerText = res
+        //document.getElementById("Parametros")
+        //var Tabla;
+        //var seleccion = document.getElementById("Periodos");
+        ////res = document.getElementById("txtResultado").value;
+        //document.getElementById("Calculo" + ).value = seleccion;
+    }
+
+    function CalcularConfianza() {
+
+        document.location.href = "@Url.Action("Index", "Confianza")";
+
+        var Diseno = document.getElementById("txtidTipoDiseno").value;
+        var Proyecto = document.getElementById("txtidProyecto").value;
+        var Reglamento = document.getElementById("txtidReglamento").value;
+
+        var objData = {};
+        var contenido = "";
+
+        objData["idTipoDiseno"] = 1;
+        objData["idProyecto"] = 1;
+        objData["idReglamento"] = 1;
+
+        //objData["idTipoDiseno"] = Diseno;
+        //objData["idProyecto"] = Proyecto
+        //objData["idReglamento"] = Reglamento;
+
+        debugger;
+
+        $.ajax({
+            type: "GET",
+            url: '@Url.Action("RegistraConfianza", "Diseno")',
+            //data: JSON.stringify(objData),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (ParametrosDiseno) {
+
+            }
+        });
+    }
+
+
+</script>

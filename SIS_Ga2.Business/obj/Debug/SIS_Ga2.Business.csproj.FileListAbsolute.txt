@@ -1,0 +1,81 @@
+D:\SIS_Ga2\SIS_Ga2.Business\bin\Debug\SIS_Ga2.Business.dll
+D:\SIS_Ga2\SIS_Ga2.Business\bin\Debug\SIS_Ga2.Business.pdb
+D:\SIS_Ga2\SIS_Ga2.Business\bin\Debug\SIS_Ga2.DataAccess.dll
+D:\SIS_Ga2\SIS_Ga2.Business\bin\Debug\SIS_Ga2.Entity.dll
+D:\SIS_Ga2\SIS_Ga2.Business\bin\Debug\DbManager.dll
+D:\SIS_Ga2\SIS_Ga2.Business\bin\Debug\CriptoSecurity.dll
+D:\SIS_Ga2\SIS_Ga2.Business\bin\Debug\SIS_Ga2.DataAccess.pdb
+D:\SIS_Ga2\SIS_Ga2.Business\bin\Debug\SIS_Ga2.Entity.pdb
+D:\SIS_Ga2\SIS_Ga2.Business\obj\Debug\SIS_Ga2.Business.csprojResolveAssemblyReference.cache
+D:\SIS_Ga2\SIS_Ga2.Business\obj\Debug\SIS_Ga2.Business.dll
+D:\SIS_Ga2\SIS_Ga2.Business\obj\Debug\SIS_Ga2.Business.pdb
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2.Business\bin\Debug\SIS_Ga2.Business.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2.Business\bin\Debug\SIS_Ga2.Business.pdb
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2.Business\bin\Debug\SIS_Ga2.DataAccess.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2.Business\bin\Debug\SIS_Ga2.Entity.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2.Business\bin\Debug\DbManager.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2.Business\bin\Debug\CriptoSecurity.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2.Business\bin\Debug\SIS_Ga2.DataAccess.pdb
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2.Business\bin\Debug\SIS_Ga2.Entity.pdb
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2.Business\obj\Debug\SIS_Ga2.Business.csprojResolveAssemblyReference.cache
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2.Business\obj\Debug\SIS_Ga2.Business.dll
+C:\Users\Home\Desktop\Backup_SIS_Ga2 (Calato)\SIS_Ga2(Comprobar)\SIS_Ga2.Business\obj\Debug\SIS_Ga2.Business.pdb
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2.Business\bin\Debug\SIS_Ga2.Business.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2.Business\bin\Debug\SIS_Ga2.Business.pdb
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2.Business\bin\Debug\SIS_Ga2.DataAccess.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2.Business\bin\Debug\SIS_Ga2.Entity.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2.Business\bin\Debug\DbManager.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2.Business\bin\Debug\CriptoSecurity.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2.Business\bin\Debug\SIS_Ga2.DataAccess.pdb
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2.Business\bin\Debug\SIS_Ga2.Entity.pdb
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2.Business\obj\Debug\SIS_Ga2.Business.csprojResolveAssemblyReference.cache
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2.Business\obj\Debug\SIS_Ga2.Business.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2.Business\obj\Debug\SIS_Ga2.Business.pdb
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2.Business\bin\Debug\SIS_Ga2.Business.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2.Business\bin\Debug\SIS_Ga2.Business.pdb
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2.Business\bin\Debug\SIS_Ga2.DataAccess.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2.Business\bin\Debug\SIS_Ga2.Entity.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2.Business\bin\Debug\DbManager.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2.Business\bin\Debug\CriptoSecurity.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2.Business\bin\Debug\SIS_Ga2.DataAccess.pdb
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2.Business\bin\Debug\SIS_Ga2.Entity.pdb
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2.Business\obj\Debug\SIS_Ga2.Business.csprojResolveAssemblyReference.cache
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2.Business\obj\Debug\SIS_Ga2.Business.dll
+C:\Users\Home\Desktop\ga2seguridad - copia\SIS_Ga2.Business\obj\Debug\SIS_Ga2.Business.pdb
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2.Business\bin\Debug\SIS_Ga2.Business.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2.Business\bin\Debug\SIS_Ga2.Business.pdb
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2.Business\bin\Debug\SIS_Ga2.DataAccess.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2.Business\bin\Debug\SIS_Ga2.Entity.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2.Business\bin\Debug\DbManager.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2.Business\bin\Debug\CriptoSecurity.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2.Business\bin\Debug\SIS_Ga2.DataAccess.pdb
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2.Business\bin\Debug\SIS_Ga2.Entity.pdb
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2.Business\obj\Debug\SIS_Ga2.Business.csprojResolveAssemblyReference.cache
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2.Business\obj\Debug\SIS_Ga2.Business.dll
+C:\Users\Home\Desktop\SOLVER\SIS_Ga2.Business\obj\Debug\SIS_Ga2.Business.pdb
+C:\Logistica\Solver\SIS_Ga2.Business\bin\Debug\SIS_Ga2.Business.dll
+C:\Logistica\Solver\SIS_Ga2.Business\bin\Debug\SIS_Ga2.Business.pdb
+C:\Logistica\Solver\SIS_Ga2.Business\bin\Debug\SIS_Ga2.DataAccess.dll
+C:\Logistica\Solver\SIS_Ga2.Business\bin\Debug\SIS_Ga2.Entity.dll
+C:\Logistica\Solver\SIS_Ga2.Business\bin\Debug\DbManager.dll
+C:\Logistica\Solver\SIS_Ga2.Business\bin\Debug\CriptoSecurity.dll
+C:\Logistica\Solver\SIS_Ga2.Business\bin\Debug\SIS_Ga2.DataAccess.pdb
+C:\Logistica\Solver\SIS_Ga2.Business\bin\Debug\SIS_Ga2.Entity.pdb
+C:\Logistica\Solver\SIS_Ga2.Business\obj\Debug\SIS_Ga2.Business.csprojAssemblyReference.cache
+C:\Logistica\Solver\SIS_Ga2.Business\obj\Debug\SIS_Ga2.Business.csproj.CoreCompileInputs.cache
+C:\Logistica\Solver\SIS_Ga2.Business\obj\Debug\SIS_Ga2.Business.csproj.CopyComplete
+C:\Logistica\Solver\SIS_Ga2.Business\obj\Debug\SIS_Ga2.Business.dll
+C:\Logistica\Solver\SIS_Ga2.Business\obj\Debug\SIS_Ga2.Business.pdb
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2.Business\bin\Debug\SIS_Ga2.Business.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2.Business\bin\Debug\SIS_Ga2.Business.pdb
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2.Business\bin\Debug\SIS_Ga2.DataAccess.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2.Business\bin\Debug\SIS_Ga2.Entity.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2.Business\bin\Debug\DbManager.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2.Business\bin\Debug\CriptoSecurity.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2.Business\bin\Debug\SIS_Ga2.DataAccess.pdb
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2.Business\bin\Debug\SIS_Ga2.Entity.pdb
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2.Business\obj\Debug\SIS_Ga2.Business.csprojAssemblyReference.cache
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2.Business\obj\Debug\SIS_Ga2.Business.csproj.CoreCompileInputs.cache
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2.Business\obj\Debug\SIS_Ga2.Business.csproj.CopyComplete
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2.Business\obj\Debug\SIS_Ga2.Business.dll
+D:\Revisar\VLemaLeon-ga2_asocem-4927577ba494\VLemaLeon-ga2_asocem-4927577ba494\SIS_Ga2.Business\obj\Debug\SIS_Ga2.Business.pdb

@@ -1,0 +1,216 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>AASHTO</title>
+    <!-- jQuery -->
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+    <!-- Bootstrap -->
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Theme -->
+    <link href="~/assets/css/main.css" rel="stylesheet" />
+    <link href="~/assets/css/plugins.css" rel="stylesheet" />
+    <link href="~/assets/css/responsive.css" rel="stylesheet" />
+    <link href="~/assets/css/icons.css" rel="stylesheet" />
+
+    <!-- Login -->
+    <link href="~/assets/css/login.css" rel="stylesheet" />
+
+    <link href="~/assets/css/fontawesome/font-awesome.min.css" rel="stylesheet" />
+
+    <script>
+        //$(document).ready(function ()
+        //{
+        //    "use strict";
+        //    Login.init(); // Init login JavaScript
+        //});
+    </script>
+</head>
+
+<body class="login">
+
+    <!-- Logo -->
+    <div class="logo">
+        <img src="~/images/LogoAsocen.png" style="height:150px;"/>
+    </div>
+    <!-- /Logo -->
+    <!-- Login Box -->
+    <div class="box">
+        <div class="content">
+            <!-- Login Formular -->
+            <div class="page-signin-container" id="page-signin-form">
+                @using (Html.BeginForm("IniciarSesion", "Seguridad", FormMethod.Post))
+                {
+                    <!-- Title -->
+                    <h3 class="form-title">Control de Acceso</h3>
+                    <!-- Error Message -->
+                    <div class="alert fade in alert-danger" style="display: none;">
+                        <i class="icon-remove close" data-dismiss="alert"></i>
+                        Ingrese su código de usuario y clave de acceso
+                    </div>
+                    <!-- Input Fields -->
+                    <div class="form-group">
+                        <!--<label for="username">Username:</label>-->
+                        <div class="input-icon">
+                            <i class="icon-user"></i>
+                            <input type="text" name="cuenta" id="cuenta" class="form-control" placeholder="Codigo de Usuario" autofocus="autofocus" data-rule-required="true" data-msg-required="Por favor ingrese el codigo de usuario" />
+                        </div>
+                        <div id="divcuentaerror">
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <!--<label for="password">Password:</label>-->
+                        <div class="input-icon">
+                            <i class="icon-lock"></i>
+                            <input type="password" name="clave" id="clave" class="form-control" placeholder="clave de Acceso" data-rule-required="true" data-msg-required="Por favor ingrese su clave de acceso" />
+                        </div>
+                        <div id="divpassword">
+                        </div>
+                    </div>
+                    if ((Session["log"] != null) && (Session["log"] == "Error"))
+                    {
+                        <div id='login'>
+                            <span class="label-danger">Error en usuario o Contraseña</span>
+                        </div>
+                    }
+                    if (TempData["CorreoNoExiste"] != null)
+                    {
+                        var Mensaje = TempData["CorreoNoExiste"];
+                        <span style="color:red">@Mensaje</span>
+                    }
+
+
+                    <!-- /Input Fields -s->
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        @*<label class="checkbox pull-left"><input type="checkbox" class="uniform" name="remember"> Recordar</label>*@
+                        <button type="submit" class="submit btn btn-primary pull-right" onclick="return validalogin();">
+                            Validar Acceso <i class="icon-angle-right"></i>
+                        </button>
+                    </div>
+                }
+            </div>
+
+            <!-- Cambiar contraseña -->
+            @*<div class="page-signin-container" id="page-signin-forgot-form">
+                <h2 class="m-t-0 m-b-4 text-xs-center font-weight-semibold font-size-20">Enviar contraseña</h2>
+                @using (Html.BeginForm("SendPassword", "Seguridad", FormMethod.Post))
+                {
+                    <fieldset class="form-group form-group-lg">
+                        <input id="usernamerecovery" name="usernamerecovery" type="email" class="form-control" placeholder="Correo electrónico">
+                           <div id="divcuentaerrorRecovery" />
+                    </fieldset>
+                    <div class="clearfix">
+                        <label class="custom-control pull-xs-left" style="font-weight: lighter !important;">
+                            * Se enviará un correo electronico con las instrucciones para recuperar su contraseña.
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-block btn-lg btn-primary m-t-3" onclick="return validaloginRecovery();">Enviar</button>
+                    <br />
+                    <div class="m-t-2 text-muted">
+                        <a href="#" id="page-signin-forgot-back">&larr; Regresar</a>
+                    </div>
+                    <br />
+                }
+            </div>*@
+
+            <!-- /.content -->
+        </div>
+        <!-- /Login Box -->
+
+    </div>
+    @*<div class="footer">
+        <a href="#" class="sign-up" id="page-signin-forgot-link" >Olvido su Contraseña?</a>
+        @ViewBag.Token
+    </div>*@
+    <script type="text/javascript">
+        function mensajeError(val) {
+            var capa = document.getElementById(val);
+            var h1 = document.createElement("span");
+            h1.innerHTML = "* Campo requerido";
+            h1.className = "label-control"
+            h1.style.cssText = "color:red";
+            capa.appendChild(h1);
+        }
+        function validalogin()
+        {
+            //debugger;
+            document.getElementById("divcuentaerror").innerHTML = "";
+            document.getElementById("divpassword").innerHTML = "";
+            var bandera = true;
+            var usuario = document.getElementById("cuenta").value;
+            var password = document.getElementById("clave").value;
+
+
+            if (document.getElementById("login")) {
+                document.getElementById("login").style.display = "none";
+            }
+
+            if (usuario.length == 0) {
+                mensajeError("divcuentaerror");
+                bandera = false;
+            } else {
+                document.getElementById("divcuentaerror").innerHTML = "";
+            }
+
+            if (password.length == 0) {
+                mensajeError("divpassword");
+                bandera = false;
+            } else {
+                document.getElementById("divpassword").innerHTML = "";
+            }
+
+            return bandera;
+        }
+
+
+
+        function validaloginRecovery() {
+            //debugger;
+            document.getElementById("divcuentaerrorRecovery").innerHTML = "";
+            var bandera = true;
+            var password = document.getElementById("usernamerecovery").value;
+
+            if (password.length == 0) {
+                mensajeError("divcuentaerrorRecovery");
+                bandera = false;
+            } else {
+                document.getElementById("divcuentaerrorRecovery").innerHTML = "";
+            }
+            return bandera;
+        }
+
+        $(function ()
+        {
+            $('#page-signin-forgot-link').on('click', function (e)
+            {
+                e.preventDefault();
+                $('#page-signin-form').css({ display: 'none' });
+                $('#page-signin-forgot-form').css({ display: 'block' });
+                $('#page-signin-forgot-link').css({ display: 'none' });
+                document.getElementById('usernamerecovery').focus();
+                $(window).trigger('resize');
+            });
+
+            $('#page-signin-forgot-back').on('click', function (e)
+            {
+                e.preventDefault();
+                $('#page-signin-form').css({ display: 'block' });
+                $('#page-signin-forgot-form').css({ display: 'none' });
+                $('#page-signin-forgot-link').css({ display: 'block' });
+                document.getElementById('cuenta').focus();
+                $(window).trigger('resize');
+            });
+        });
+    </script>
+</body>
+
+</html>

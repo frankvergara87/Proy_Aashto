@@ -1,0 +1,16 @@
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2.DataAccess\bin\Release\SIS_Ga2.DataAccess.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2.DataAccess\bin\Release\SIS_Ga2.DataAccess.pdb
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2.DataAccess\bin\Release\SIS_Ga2.Entity.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2.DataAccess\bin\Release\SIS_Ga2.Entity.pdb
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2.DataAccess\obj\Release\SIS_Ga2.DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2.DataAccess\obj\Release\SIS_Ga2.DataAccess.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2.DataAccess\obj\Release\SIS_Ga2.DataAccess.pdb
+C:\Logistica\Solver\SIS_Ga2.DataAccess\bin\Release\SIS_Ga2.DataAccess.dll
+C:\Logistica\Solver\SIS_Ga2.DataAccess\bin\Release\SIS_Ga2.DataAccess.pdb
+C:\Logistica\Solver\SIS_Ga2.DataAccess\bin\Release\SIS_Ga2.Entity.dll
+C:\Logistica\Solver\SIS_Ga2.DataAccess\bin\Release\SIS_Ga2.Entity.pdb
+C:\Logistica\Solver\SIS_Ga2.DataAccess\obj\Release\SIS_Ga2.DataAccess.csprojAssemblyReference.cache
+C:\Logistica\Solver\SIS_Ga2.DataAccess\obj\Release\SIS_Ga2.DataAccess.csproj.CoreCompileInputs.cache
+C:\Logistica\Solver\SIS_Ga2.DataAccess\obj\Release\SIS_Ga2.DataAccess.csproj.CopyComplete
+C:\Logistica\Solver\SIS_Ga2.DataAccess\obj\Release\SIS_Ga2.DataAccess.dll
+C:\Logistica\Solver\SIS_Ga2.DataAccess\obj\Release\SIS_Ga2.DataAccess.pdb

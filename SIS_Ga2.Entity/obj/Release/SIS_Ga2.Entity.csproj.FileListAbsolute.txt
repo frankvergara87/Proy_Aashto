@@ -1,0 +1,10 @@
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2.Entity\bin\Release\SIS_Ga2.Entity.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2.Entity\bin\Release\SIS_Ga2.Entity.pdb
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2.Entity\obj\Release\SIS_Ga2.Entity.dll
+C:\Users\Home\Desktop\ga2seguridad\SIS_Ga2.Entity\obj\Release\SIS_Ga2.Entity.pdb
+C:\Logistica\Solver\SIS_Ga2.Entity\bin\Release\SIS_Ga2.Entity.dll
+C:\Logistica\Solver\SIS_Ga2.Entity\bin\Release\SIS_Ga2.Entity.pdb
+C:\Logistica\Solver\SIS_Ga2.Entity\obj\Release\SIS_Ga2.Entity.csprojAssemblyReference.cache
+C:\Logistica\Solver\SIS_Ga2.Entity\obj\Release\SIS_Ga2.Entity.csproj.CoreCompileInputs.cache
+C:\Logistica\Solver\SIS_Ga2.Entity\obj\Release\SIS_Ga2.Entity.dll
+C:\Logistica\Solver\SIS_Ga2.Entity\obj\Release\SIS_Ga2.Entity.pdb
