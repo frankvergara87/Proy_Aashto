@@ -6,7 +6,7 @@ namespace SIS_Ga2.Entity
     public class BEUsuario
     {
 
-        //prueba
+        //subiendo esta mierda...
 
         public int idUsuario { get; set; }
         public string DNI { get; set; }
