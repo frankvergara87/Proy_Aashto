@@ -69,6 +69,45 @@ namespace SIS_Ga2.Controllers
 
         }
 
+        public List<SelectListItem> ComboPeriodos(int idPeriodo)
+        {
+            List<BEPeriodo> Periodos = new List<BEPeriodo>();
+            GenericController Obj = new GenericController();
+            Periodos = Obj.ListarComboPeriodos(idPeriodo);
+            //List<SelectListItem> data_list = new List<SelectListItem> { new SelectListItem() { Text = string.Format("[{0}]", "SELECCIONAR"), Value = "0" } };
+            List<SelectListItem> data_list = new List<SelectListItem>();
+            data_list.AddRange(Periodos.Select(a => new SelectListItem() { Text = a.Periodo.ToUpper(), Value = Convert.ToString(a.idPeriodo) }));
+
+            return data_list;
+
+        }
+
+        public List<SelectListItem> ComboTasaCrecimiento(int idTasaCrecimiento)
+        {
+            List<BETasaCrecimiento> TasaCrecimiento = new List<BETasaCrecimiento>();
+            GenericController Obj = new GenericController();
+            TasaCrecimiento = Obj.ListarComboTasaCrecimiento(idTasaCrecimiento);
+            //List<SelectListItem> data_list = new List<SelectListItem> { new SelectListItem() { Text = string.Format("[{0}]", "SELECCIONAR"), Value = "0" } };
+            List<SelectListItem> data_list = new List<SelectListItem>();
+            data_list.AddRange(TasaCrecimiento.Select(a => new SelectListItem() { Text = a.TasaCrecimiento.ToUpper(), Value = Convert.ToString(a.IdTasaCrecimiento) }));
+
+            return data_list;
+
+        }
+
+        public List<SelectListItem> ListaTipoPavimento(int idTasaCrecimiento)
+        {
+            List<BETipoPavimento> TasaCrecimiento = new List<BETipoPavimento>();
+            GenericController Obj = new GenericController();
+            TasaCrecimiento = Obj.ListarTipoPavimentos(idTasaCrecimiento);
+            //List<SelectListItem> data_list = new List<SelectListItem> { new SelectListItem() { Text = string.Format("[{0}]", "SELECCIONAR"), Value = "0" } };
+            List<SelectListItem> data_list = new List<SelectListItem>();
+            data_list.AddRange(TasaCrecimiento.Select(a => new SelectListItem() { Text = a.TipoPavimento.ToUpper(), Value = Convert.ToString(a.idTipoPavimento) }));
+
+            return data_list;
+
+        }
+
         public List<SelectListItem> ComboReglamento(int idReglamento)
         {
             List<Reglamentos> Reglamento = new List<Reglamentos>();
@@ -105,6 +144,14 @@ namespace SIS_Ga2.Controllers
 
         //}
 
+        [HttpPost]
+        public ActionResult FormServFinal()
+        {
+            int valorSerFinal;
+            BEParametroDiseno paramDiseno = new BEParametroDiseno();
+
+            return RedirectToAction("Index", "Diseno");
+        }
         [HttpPost]
         public ActionResult FormRegistraProyecto()
         {

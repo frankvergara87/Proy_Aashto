@@ -22,8 +22,8 @@
 @*<input type="hidden" id="txtidTipoDiseno" value="@sistema.idAplicacion" />
     <input type="hidden" id="txtUsuario" value="@sistema.idUsuario" />*@
 
-<input type="hidden" id="txtidTipoDiseno" value="@sistema.idAplicacion"/>
-<input type="hidden" id="txtidUsuario" value="@sistema.idUsuario"/>
+<input type="hidden" id="txtidTipoDiseno" value="@sistema.idAplicacion" />
+<input type="hidden" id="txtidUsuario" value="@sistema.idUsuario" />
 
 <div class="widget">
     <div class="widget-header">
@@ -38,7 +38,7 @@
         </div>
     </div>
     <div class="widget-header">
-        <h4><i class="icon-reorder"></i>Filtros</h4>
+        <h4><i class="icon-reorder"></i>Parámetros de Diseño</h4>
         <div class="toolbar">
             <div class="btn-group">
                 <span class="btn btn-xs widget-collapse"><i class="icon-angle-down"></i></span>
@@ -49,22 +49,70 @@
         <form id="filtros">
             <div class="row">
                 <div class="form-group col-md-3">
-                    <label for="Proyecto">Proyecto</label>
-                    <input id="Proyecto" type="text" class="form-control" placeholder="Proyecto">
+                    <label for="PerDiseno">PERIODO DE DISEÑO</label>
+                    @Html.DropDownList("idPeriodo", new HomeController().ComboPeriodos(0), new { @class = "form-control" })
+                    @*<input type="text" id="TipoDiseno" name="TipoDiseno" class="form-control" value="" style="text-transform:uppercase" />*@
+                    @*<input type="text" id="NombreProyecto" name="NombreProyecto" class="form-control" value="" onfocus="limpiardiv('dNombreProducto');" onblur="fMayuscula(this);" onkeyup="addStyleUpperCase(this);" style="text-transform:uppercase" />*@
                 </div>
-                <div class="form-group col-md-2">
-                    <label for="FecProyecto">Fecha Proyecto</label>
-                    @*<input typeof="text" name="FecProyecto" class="form-control datepicker hasDatePicker" id="FecProyecto" placeholder="Fecha de Proyecto">*@
-                    @Html.Editor("FechaBusqueda", new { htmlAttributes = new { @class = "form-control datepicker input-width-small", @onFocus = "limpiardiv('dfechasalida');" } })
-                    @*<input typeof="text" name="FecProyecto" class="form-control datepicker" id="FecProyecto" placeholder="Fecha de Proyecto">*@
+
+                <div class="form-group col-md-3">
+
+                    <label for="CantidadEsal">CANTIDAD DE ESAL</label>
+                    <input id="CantidadEsal" type="text" class="form-control" placeholder="Cantidad de Esal">
+                </div>
+
+                <div class="form-group col-md-3">
+
+                    <label for="Confiabilidad">CONFIABILIDAD (R%)</label>
+                    <input id="Confiabilidad" type="text" class="form-control" placeholder="Confiabilidad">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Calcular</button>
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="form-group col-md-3">
+
+                    <label for="CombiEstandar">ERROR DE COMB. ESTÁNDAR</label>
+                    <input id="CombiEstandar" type="text" class="form-control" placeholder="Error de Combinación Estándar">
+                </div>
+                <div class="form-group col-md-3">
+
+                    <label for="ModResilencia">MÓDULO DE RESILENCIA</label>
+                    <input id="ModResilencia" type="text" class="form-control" placeholder="Módulo de Resilencia">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="ModuResilencia()">Calcular</button>
 
                 </div>
                 <div class="form-group col-md-3">
-                    <label for="idFechaFin">Fec fin de contrato</label>
-                    <input id="idFechaFin" type="text" class="form-control datepicker" placeholder="Fecha de fin de contrato">
+
+                    <label for="ServINI">SERVICIABILIDAD INICIAL (Pi)</label>
+                    <input id="ServINI" type="text" class="form-control" placeholder="Serviciabilidad Inicial">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="ServFinal()">Calcular</button>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="form-group col-md-3">
+
+                    <label for="ServFINAL">SERVICIABILIDAD FINAL (Pt)</label>
+                    <input id="ServFINAL" type="text" class="form-control" placeholder="Serviciabilidad Final">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="ServFinal()">Calcular</button>
+
+                </div>
+                <div class="form-group col-md-3">
+
+                    <label for="DifServ">DIF. DE SERVICIABILIDAD (∆PSI)</label>
+                    <input id="DifServ" type="text" class="form-control" placeholder="Diferencia de Serviciabilidad">
+
+                </div>
+
+                <div class="form-group col-md-3">
+
+                    <label for="DesvEsta">DESV. ESTÁNDAR NORMAL (ZR)</label>
+                    <input id="DesvEsta" type="text" class="form-control" placeholder="Desviación Estándar">
+
                 </div>
             </div>
-            <button type="submit" id="buscar" class="btn btn-primary"> <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Buscar</button>
         </form>
     </div>
 
@@ -92,6 +140,163 @@
     </div>
 </div>
 
+@*-----------------------------------------------------------------------------------------------------*@
+@*SERVICIABILIDAD FINAL (Pt)                          *@
+@*-----------------------------------------------------------------------------------------------------*@
+
+<div class="modal fade" id="ServFinal" role="dialog" data-backdrop="static">
+    @* @using (Html.BeginForm("FormRegistraProyecto", "Home", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {*@
+    <div class="modal-dialog  modal-lg" style="width: 60%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="h1ProyectoNuevo">ÍNDICE DE SERVICIABILIDAD FINAL (Pt)</h5>
+            </div>
+            <div class="modal-body">
+                <table width="800" height="224" border="0">
+                    <tr>
+                        <td width="400">
+                            <div class="form-group">
+                                <img src="~/images/ServFinal.jpg" height="227" width="400" />
+
+                            </div>
+                        </td>
+                        <td width="235">
+                            <label for="ValorobESAL">*Valor obtenido según ESAL:</label>
+                            <input id="ValorobESAL" type="text" class="form-control" placeholder="Valor obtenido según ESAL">
+
+                            <label for="ValorobESAL">*Valor recomendado:</label>
+                            <input id="ValorobESAL" type="text" class="form-control" placeholder="Valor obtenido según ESAL">
+
+                            <label for="ValorobESAL" style="color:#FF0000"><strong>Escribe el Valor:</label>
+                            <input id="ValorobESAL" type="text" class="form-control" placeholder="Ingresa un valor">
+
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" id="btnNuevo" class="btn btn-success" onclick="return ValidarFormulario();">
+                        Aceptar
+                    </button>
+
+                </div>
+            </div>
+        </div>
+        @*}*@
+    </div>
+</div>
+@*-----------------------------------------------------------------------------------------------------*@
+@*MODULO DE RESILENCIA (Pt)                          *@
+@*-----------------------------------------------------------------------------------------------------*@
+
+<div class="modal fade" id="ModuResilencia" role="dialog" data-backdrop="static">
+    @* @using (Html.BeginForm("FormRegistraProyecto", "Home", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {*@
+    <div class="modal-dialog  modal-lg" style="width: 60%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="h1ProyectoNuevo">MÓDULO DE RESILENCIA</h5>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="form-group col-md-3">
+                        <label for="PerDiseno"<strong>CBR (Subrasante)</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" style="text-align:left">Colocar el CBR (%)</label>
+                        <div class="col-md-9">
+                            <input type="text" id="CBR" name="CBR" size="20" class="form-control" value="" style="text-transform:uppercase" />
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-3">
+                        <label for="PerDiseno"<strong>Cálculo de MR (Subrasante)</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" style="text-align:left" style="color:#FF0000">MR(psi) = 2,555*CBR^0.64</label>
+                        <div class="col-md-9">
+                            <input type="text" id="MR" name="MR" size="20" class="form-control" value="" style="text-transform:uppercase" />
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    
+                   
+                            <label class="col-md-2 control-label" style="text-align:left" style="color:#FF0000">*El cálculo se está realizando en base al CBR de la subrasante</label>
+
+                    
+                 </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                        <button type="submit" id="btnNuevo" class="btn btn-success" onclick="return ValidarFormulario();">
+                            Aceptar
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+            @*}*@
+        </div>
+    </div>
+</div>
+@*-----------------------------------------------------------------------------------------------------*@
+@*SERVICIABILIDAD INICIAL (Pt)                          *@
+@*-----------------------------------------------------------------------------------------------------*@
+
+<div class="modal fade" id="ServInicial" role="dialog" data-backdrop="static">
+    @* @using (Html.BeginForm("FormRegistraProyecto", "Home", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {*@
+    <div class="modal-dialog  modal-lg" style="width: 60%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="h1ProyectoNuevo">ÍNDICE DE SERVICIABILIDAD INICIAL (Pi)</h5>
+            </div>
+            <div class="modal-body">
+                <table width="800" height="224" border="0">
+                    <tr>
+                        <td width="400">
+                            <div class="form-group">
+                                <img src="~/images/ServFinal.jpg" height="227" width="400" />
+
+                            </div>
+                        </td>
+                        <td width="235">
+                            <label for="ValorobESAL">*Valor obtenido según ESAL:</label>
+                            <input id="ValorobESAL" type="text" class="form-control" placeholder="Valor obtenido según ESAL">
+
+                            <label for="ValorobESAL">*Valor recomendado:</label>
+                            <input id="ValorobESAL" type="text" class="form-control" placeholder="Valor obtenido según ESAL">
+
+                            <label for="ValorobESAL" style="color:#FF0000"><strong>Escribe el Valor:</label>
+                            <input id="ValorobESAL" type="text" class="form-control" placeholder="Ingresa un valor">
+
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" id="btnNuevo" class="btn btn-success" onclick="return ValidarFormulario();">
+                        Aceptar
+                    </button>
+
+                </div>
+            </div>
+        </div>
+        @*}*@
+    </div>
+</div>
 @*-----------------------------------------------------------------------------------------------------*@
 @*ESTO ES EL POP UP DEL DATA ENTRY PARA UN PROYECTO NUEVO                                              *@
 @*-----------------------------------------------------------------------------------------------------*@
@@ -238,6 +443,18 @@
         $("#RegistrarProyecto").modal('show');
     }
 
+      function ServFinal() {
+        $("#ServFinal").modal('show');
+    }
+
+        function ServInicial() {
+        $("#ServInicial").modal('show');
+    }
+
+
+        function ModuResilencia() {
+        $("#ModuResilencia").modal('show');
+    }
     function NuevoProducto() {
         //$('#h5TituloEdita').hide();
         //$('#btnNuevo').show();

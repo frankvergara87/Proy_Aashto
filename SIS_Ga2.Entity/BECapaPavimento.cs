@@ -6,14 +6,17 @@ using System.Threading.Tasks;
 
 namespace SIS_Ga2.Entity
 {
-  public  class BEProyecto
+    public class BECapaPavimento
     {
-        public int idProyecto{ get; set; }
-        public string Num_Proyecto { get; set; }
-        public string Proyecto { get; set; }
-        public string idUsuario { get; set; }
-        public bool Estado { get; set; }
-        public string Aplicacion { get; set; }   
+        public int idCapaPavimento { get; set; }
+        public int idDiseno { get; set; }
+        public int idTipoDiseno { get; set; }
+        public decimal ValorME { get; set; }
+        public decimal ValorMR { get; set; }
+        public decimal ValorCBR { get; set; }
+        public decimal FC { get; set; }
+        public decimal EspesorCM { get; set; }
+        public decimal EspesorPulgadas { get; set; }
         public double FechaCreacion { get; set; }
         public double HoraCreacion { get; set; }
         public string UsrCreacion { get; set; }

@@ -36,7 +36,31 @@ namespace SIS_Ga2.Controllers
             return Lista;
         }
 
-    //-----------------------------------------------------------------------------------------------------------
+
+        public List<BEPeriodo> ListarComboPeriodos(int idPeriodo)
+        {
+            BLPeriodos Periodos = new BLPeriodos();
+            List<BEPeriodo> Lista = new List<BEPeriodo>();
+            Lista = Periodos.ListarPeriodos(idPeriodo);
+            return Lista;
+        }
+
+        public List<BETasaCrecimiento> ListarComboTasaCrecimiento(int idTasaCrecimiento)
+        {
+            BLTasaCrecimiento TasaCrecimiento = new BLTasaCrecimiento();
+            List<BETasaCrecimiento> Lista = new List<BETasaCrecimiento>();
+            Lista = TasaCrecimiento.ListarTasaCrecimiento(idTasaCrecimiento);
+            return Lista;
+        }
+
+        public List<BETipoPavimento> ListarTipoPavimentos(int idTipoPavimento)
+        {
+            BLTipoPavimento TipoPavimento = new BLTipoPavimento();
+            List<BETipoPavimento> Lista = new List<BETipoPavimento>();
+            Lista = TipoPavimento.ListarTipoPavimento(idTipoPavimento);
+            return Lista;
+        }
+        //-----------------------------------------------------------------------------------------------------------
 
         public IEnumerable<System.Web.Mvc.SelectListItem> ComboFiltro(string value)
         {
