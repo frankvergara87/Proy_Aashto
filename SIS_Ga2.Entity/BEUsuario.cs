@@ -5,6 +5,7 @@ namespace SIS_Ga2.Entity
 {
     public class BEUsuario
     {
+
         public int idUsuario { get; set; }
         public string DNI { get; set; }
         public string Apellido { get; set; }
