@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace SIS_Ga2.Entity
 {
    public class BEDiseno
